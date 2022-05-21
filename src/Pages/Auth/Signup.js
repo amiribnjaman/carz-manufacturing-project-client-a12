@@ -14,7 +14,6 @@ const Signup = () => {
     //  Create a user using react hook form
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = async data => {
-        console.log(data)
         await createUserWithEmailAndPassword(data.email, data.password)
         await updateProfile({ displayName: data.name })
         reset()
