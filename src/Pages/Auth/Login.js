@@ -17,11 +17,11 @@ const Login = () => {
         reset()
     };
 
-    useEffect(()=> {
-        if(user){
-            console.log(user);
-        }
-    }, [user])
+    // useEffect(()=> {
+    //     if(user){
+    //         console.log(user);
+    //     }
+    // }, [user])
 
     // Handle Sign in google popup
     const handleSignInWithGoogle = () => {

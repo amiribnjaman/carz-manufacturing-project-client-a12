@@ -24,11 +24,11 @@ const Signup = () => {
         signInWithGoogle()
     }
 
-    useEffect(() => {
-        if (user) {
-            console.log(user);
-        }
-    }, [user])
+    // useEffect(() => {
+    //     if (user) {
+    //         console.log(user);
+    //     }
+    // }, [user])
 
     return (
         <div className='signup-page md:pt-10'>
