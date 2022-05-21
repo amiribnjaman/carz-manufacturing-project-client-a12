@@ -24,11 +24,10 @@ const Signup = () => {
         signInWithGoogle()
     }
 
-    // useEffect(() => {
-    //     if (user) {
-    //         console.log(user);
-    //     }
-    // }, [user])
+    let newUser;
+    useEffect(() => {
+        newUser = creatingUser
+    }, [creatingUser])
 
     return (
         <div className='signup-page md:pt-10'>
@@ -80,8 +79,9 @@ const Signup = () => {
                             {errors.password?.type === 'required' && <span className='text-sm text-left text-red-800'>{errors.password?.message}</span>}
                             {errors.password?.type === 'minLength' && <span className='text-sm text-left text-red-800'>{errors.password?.message}</span>}
 
-                            <button
-                                type="submit" class="text-white mt-4 bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5">SIGNUP</button>
+                            <button type="submit" class={`${creatingLoading ? 'bg-gray-300 py-2.5 cursor-not-allowed' : 'bg-gray-800 text-white hover:bg-gray-900 py-3'} mt-4  focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 `}>{creatingLoading ? <div class="flex items-center justify-center ">
+                                <div class="w-6 h-6 border-b-2 border-gray-800 rounded-full animate-spin"></div>
+                            </div> : 'SIGNUP'}</button>
                         </form>
                         <p className=' text-left'><small className=''>New to carZ? <Link to='/login' className='text-blue-600'>Login</Link></small></p>
                         <div className='flex items-center px-1'>

@@ -17,6 +17,11 @@ const Login = () => {
         reset()
     };
 
+    // if (load) {
+    //     return;
+    // }
+
+    // const loading = false
     // useEffect(()=> {
     //     if(user){
     //         console.log(user);
@@ -68,7 +73,9 @@ const Login = () => {
                             {errors.password?.type === 'required' && <span className='text-sm text-left text-red-800'>{errors.password?.message}</span>}
                             {errors.password?.type === 'minLength' && <span className='text-sm text-left text-red-800'>{errors.password?.message}</span>}
 
-                            <button type="submit" class="text-white mt-4 bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5">LOGIN</button>
+                            <button type="submit" class={`${loading ? 'bg-gray-300 py-2.5 cursor-not-allowed' : 'bg-gray-800 text-white hover:bg-gray-900 py-3'} mt-4  focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-lg text-sm px-5 `}>{loading ? <div class="flex items-center justify-center ">
+                                <div class="w-6 h-6 border-b-2 border-gray-800 rounded-full animate-spin"></div>
+                            </div> : 'LOGIN'}</button>
                         </form>
 
                         <p className='text-left'><small className=''>New to carZ? <Link to='/signup' className='text-blue-600'>Signup</Link></small></p>

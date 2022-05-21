@@ -19,17 +19,22 @@ const Navbar = () => {
                         <li>
                             {
                                 !user ? <Link
-                                    to="/login" class="block py-2 pr-4 pl-3 text-black rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Login</Link> : user?.photoURL ? <img
+                                    to="/login" class="block py-2 pr-4 pl-3 text-black rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Login</Link> : user?.photoURL ? <><img
                                         onClick={() => setShowLogout(!showLogout)}
-                                        class="w-8 h-8 rounded-full cursor-pointer" src={user?.photoURL} alt={user.displayName} /> : <div
-                                            onClick={() => setShowLogout(!showLogout)}
-                                            class="relative w-10 h-10 overflow-hidden cursor-pointer bg-gray-100 rounded-full ">
-                                    <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
-                                </div>
+                                        class="w-8 h-8 rounded-full cursor-pointer" src={user?.photoURL} alt={user.displayName} />
+                                        <p><small>{user?.displayName?.split(' ')[0]}</small></p>
+                                    </> : <>
+                                    <div
+                                        onClick={() => setShowLogout(!showLogout)}
+                                        class="relative w-10 h-10 overflow-hidden cursor-pointer bg-gray-100 rounded-full ">
+                                        <svg class="absolute w-12 h-12 text-gray-400 -left-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+
+                                    </div>
+                                    <p><small>{user?.displayName?.split(' ')[0]}</small></p></>
 
                             }
 
-                            <p><small>{user?.displayName?.split(' ')[0]}</small></p>
+
                         </li>
 
                         {/* User profile and logout button  */}
