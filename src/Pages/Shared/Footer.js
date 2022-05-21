@@ -6,7 +6,7 @@ const Footer = () => {
     const year = date.getFullYear()
 
     return (
-        <footer class="p-4 mt-10 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800">
+        <footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800">
             <div class="sm:flex w-11/12 mx-auto sm:items-center sm:justify-between">
                 <Link to="https://flowbite.com" class="flex items-center mb-4 sm:mb-0">
                     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">the car<span>Z</span></span>
