@@ -1,7 +1,21 @@
-.buniness-section{
+/* Business Section */
+.buniness-section {
     background: linear-gradient(0deg, rgba(49, 63, 71, 0.9), rgba(55, 75, 82, 0.7)), url('../../Assets/Images/business-bg2.jpg');
     min-height: 70vh;
     width: 100%;
     background-size: cover;
     background-position: center;
+}
+
+/* Review Carousle */
+.react-3d-carousel {
+    height: 300px !important;
+}
+.slider-container,
+.slider-single-content,
+.slider-single .active,
+.react-3d-carousel .slider-container,
+.react-3d-carousel .slider-container .slider-content,
+.react-3d-carousel .slider-container .slider-content .slider-single {
+    height: 100% !important;
 }
