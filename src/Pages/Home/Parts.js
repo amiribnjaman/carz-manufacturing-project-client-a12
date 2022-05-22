@@ -18,7 +18,7 @@ const Parts = () => {
 
                     <h5 className='font-semibold'>price: $199</h5>
                     <p>Ratings: 5</p>
-                    <button className=' border rounded-sm border-[#00CCBD] px-5 mt-4 py-2 hover:bg-[#00CCBD] hover:text-white'>Purchase Now</button>
+                    <button className=' border rounded-sm border-[#000] px-5 mt-4 py-2 hover:bg-[#000] hover:text-white'>Purchase Now</button>
                 </div>
             </div>
             <div className='grid grid-cols-2 gap-4 shadow p-2'>
@@ -35,7 +35,7 @@ const Parts = () => {
 
                     <h5 className='font-semibold'>price: $199</h5>
                     <p>Ratings: 5</p>
-                    <button className=' border rounded-sm border-[#00CCBD] px-5 mt-4 py-2 hover:bg-[#00CCBD] hover:text-white'>Purchase Now</button>
+                    <button className=' border rounded-sm border-[#000] px-5 mt-4 py-2 hover:bg-[#000] hover:text-white'>Purchase Now</button>
                 </div>
             </div>
             <div className='grid grid-cols-2 gap-4 shadow p-2'>
@@ -52,7 +52,7 @@ const Parts = () => {
 
                     <h5 className='font-semibold'>price: $199</h5>
                     <p>Ratings: 5</p>
-                    <button className=' border rounded-sm border-[#00CCBD] px-5 mt-4 py-2 hover:bg-[#00CCBD] hover:text-white'>Purchase Now</button>
+                    <button className=' border rounded-sm border-[#000] px-5 mt-4 py-2 hover:bg-[#000] hover:text-white'>Purchase Now</button>
                 </div>
             </div>
             <div className='grid grid-cols-2 gap-4 shadow p-2'>
@@ -69,7 +69,7 @@ const Parts = () => {
 
                     <h5 className='font-semibold'>price: $199</h5>
                     <p>Ratings: 5</p>
-                    <button className=' border rounded-sm border-[#00CCBD] px-5 mt-4 py-2 hover:bg-[#00CCBD] hover:text-white'>Purchase Now</button>
+                    <button className=' border rounded-sm border-[#000] px-5 mt-4 py-2 hover:bg-[#000] hover:text-white'>Purchase Now</button>
                 </div>
             </div>
             

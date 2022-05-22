@@ -1,0 +1,7 @@
+.buniness-section{
+    background: linear-gradient(0deg, rgba(49, 63, 71, 0.9), rgba(55, 75, 82, 0.7)), url('../../Assets/Images/business-bg2.jpg');
+    min-height: 70vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+}
