@@ -14,14 +14,14 @@ const Navbar = () => {
                 <Link to="/" class="flex items-center">
                     <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">the car<span>Z</span></span>
                 </Link>
-                <div class="flex items-center md:order-2 relative pt-3">
+                <div class="flex items-center md:order-2 relative">
                     <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                         <li>
                             {
                                 !user ? <Link
                                     to="/login" class="block py-2 pr-4 pl-3 text-black rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Login</Link> : user?.photoURL ? <><img
                                         onClick={() => setShowLogout(!showLogout)}
-                                        class="w-8 h-8 rounded-full cursor-pointer" src={user?.photoURL} alt={user.displayName} />
+                                        class="w-8 h-8 rounded-full cursor-pointer inline-block mt-3" src={user?.photoURL} alt={user.displayName} />
                                         <p><small>{user?.displayName?.split(' ')[0]}</small></p>
                                     </> : <>
                                     <div
@@ -38,7 +38,7 @@ const Navbar = () => {
                         </li>
 
                         {/* User profile and logout button  */}
-                        <div className={`${showLogout && user ? 'block' : 'hidden'} absolute top-[50px] left-[-55px] bg-gray-100  px-5 py-2 rounded shadow-sm`}>
+                        <div className={`${showLogout && user ? 'block' : 'hidden'} absolute top-[65px] left-[-55px] bg-gray-100  px-5 py-2 rounded shadow-sm`}>
                             <ul>
                                 <li>
                                     <button to="/" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 dark:text-white" aria-current="page">Profile</button>
