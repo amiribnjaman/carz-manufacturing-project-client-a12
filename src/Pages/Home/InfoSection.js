@@ -11,7 +11,7 @@ const InfoSection = () => {
                     <FontAwesomeIcon icon={faBox} className='p-5 h-8 w-8 border-2 border-slate-400 bg-white rounded-full' />
                     <h3 className='text-xl pl-3 font-semibold'>Quality Products</h3>
                 </div>
-                <div className='bg-gradient-to-r from-sky-500 to-[#00CCBD] py-10 flex justify-center items-center'>
+                <div className='bg-gradient-to-r from-[#099e94] to-[#00CCBD] py-10 flex justify-center items-center'>
                     <FontAwesomeIcon icon={faPersonRunning} className='p-5 h-8 w-8 border-2 border-slate-400 bg-white rounded-full' />
                     <h3 className='text-xl pl-3 font-semibold'>Less Price</h3>
                 </div>
