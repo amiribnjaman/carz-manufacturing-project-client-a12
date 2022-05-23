@@ -9,6 +9,7 @@ import Dashboard from './Pages/Dashboard/Dashboard'
 import MyOrders from './Pages/Dashboard/MyOrders';
 import AddReview from './Pages/Dashboard/AddReview';
 import MyProfile from './Pages/Dashboard/MyProfile';
+import ProtectedRoute from './Pages/Auth/ProtectedRoute.js'
 
 function App() {
   return (
@@ -19,7 +20,10 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
-        <Route path='/dashboard' element={<Dashboard />}>
+        <Route path='/dashboard' element={
+        <ProtectedRoute>
+          <Dashboard />
+        </ProtectedRoute>}>
           <Route index element={<MyOrders />} />
           <Route path='addreview' element={<AddReview />} />
           <Route path='myprofile' element={<MyProfile />} />

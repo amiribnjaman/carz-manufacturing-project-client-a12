@@ -1,10 +1,12 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithGoogle, useCreateUserWithEmailAndPassword, useUpdateProfile, useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { useForm } from "react-hook-form";
 
 const Signup = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [user, loading, error] = useAuthState(auth);
     const [createUserWithEmailAndPassword, creatingUser, creatingLoading, creatingError,] = useCreateUserWithEmailAndPassword(auth);
@@ -24,10 +26,17 @@ const Signup = () => {
         signInWithGoogle()
     }
 
-    let newUser;
-    useEffect(() => {
-        newUser = creatingUser
-    }, [creatingUser])
+    // After creating user he/she will be redirected
+    const from = location.state?.from?.pathname || "/";
+    if (user) {
+        // Send them back to the page they tried to visit when they were
+        // redirected to the login page. Use { replace: true } so we don't create
+        // another entry in the history stack for the login page.  This means that
+        // when they get to the protected page and click the back button, they
+        // won't end up back on the login page, which is also really nice for the
+        // user experience.
+        navigate(from, { replace: true });
+    };
 
     return (
         <div className='signup-page md:pt-10'>
