@@ -26,17 +26,31 @@ const Signup = () => {
         signInWithGoogle()
     }
 
-    // After creating user he/she will be redirected
-    const from = location.state?.from?.pathname || "/";
-    if (user) {
-        // Send them back to the page they tried to visit when they were
-        // redirected to the login page. Use { replace: true } so we don't create
-        // another entry in the history stack for the login page.  This means that
-        // when they get to the protected page and click the back button, they
-        // won't end up back on the login page, which is also really nice for the
-        // user experience.
-        navigate(from, { replace: true });
-    };
+    // Upsert User into database
+    if (creatingUser || googleUser) {
+        const user = creatingUser || googleUser;
+        fetch('http://localhost:5000/user', {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({
+                email: user?.user?.email,
+                name: user?.user?.displayName,
+                role: "user"
+            })
+        })
+            .then(res => res.json())
+            .then(data => {
+                // After creating user he/she will be redirected
+                const from = location.state?.from?.pathname || "/";
+                if (user) {
+                    navigate(from, { replace: true });
+                };
+                console.log(data);
+            })
+    }
+
 
     return (
         <div className='signup-page md:pt-10'>
