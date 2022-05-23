@@ -50,7 +50,7 @@ const Reviews = () => {
     }
     return (
         <>
-            <h2 className='text-3xl mb-10 font-semibold'>What Our Clients Says?</h2>
+            <h2 className='text-3xl mb-10 mt-24 font-semibold'>What Our Clients Says?</h2>
             <div className='w-4/6 mx-auto mb-10'>
                 <Carousel slides={slides} interval={4000} onSlideChange={callback} />
             </div>

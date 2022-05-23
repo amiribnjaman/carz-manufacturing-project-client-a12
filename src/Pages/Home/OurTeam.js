@@ -1,17 +1,15 @@
 import React from 'react';
-import user1 from '../../Assets/Images/user/user1.jpg'
 import user2 from '../../Assets/Images/user/user2.jpg'
 import user3 from '../../Assets/Images/user/user3.jpg'
 import user4 from '../../Assets/Images/user/user4.jpg'
 import user5 from '../../Assets/Images/user/user5.jpg'
-import user6 from '../../Assets/Images/user/user-w-6.jpg'
 
 const OurTeam = () => {
     return (
-        <div className='w-10/12 expert-section mx-auto mt-32 mb-20'>
+        <div className='w-10/12 expert-section mx-auto mt-24 mb-8'>
             <h2 className='text-3xl font-semibold'>Meet Our Experts</h2>
             <p className='w-3/6 mx-auto text-center text-sm'>We have a bunch of talented & expert team whom always doing hard work for ensure the best services. </p>
-            <div className='grid md:grid-cols-4 h-[90%] gap-4 w-full mt-16'>
+            <div className='grid md:grid-cols-4 h-[90%] gap-4 w-full mt-12'>
                 <div className='expert-box opacity-1 cursor-pointer shadow-md'>
                     <img className='w-full h-[100%] rounded-md' src={user3} alt="" />
                     <div className='expert-details flex items-center text-center justify-center font-semibold text-black'>

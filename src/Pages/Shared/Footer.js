@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css'
 
 const Footer = () => {
     const date = new Date()
@@ -9,7 +10,7 @@ const Footer = () => {
         <footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800">
             <div class="sm:flex w-11/12 mx-auto sm:items-center sm:justify-between">
                 <Link to="/" class="flex items-center mb-4 sm:mb-0">
-                    <span class="self-center text-xl font-semibold whitespace-nowrap dark:text-white">the car<span>Z</span></span>
+                <span class="self-center LOGO text-xl font-semibold whitespace-nowrap dark:text-white">thecar<span className='text-[#00CCBD]'>Z</span></span>
                 </Link>
                 <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
                     <li>

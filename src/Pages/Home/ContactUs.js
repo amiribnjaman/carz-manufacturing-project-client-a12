@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactUs = () => {
     return (
-        <div className='contact-section mt-40 mb-10 text-left w-9/12 mx-auto'>
+        <div className='contact-section mt-24 mb-10 text-left w-9/12 mx-auto'>
             <h2 className='text-3xl font-semibold font-[Roboto Flex]'>Have You any query?</h2>
             <h2 className='text-3xl font-semibold'>Please Fill free to message.</h2>
             <div className='grid md:grid-cols-2 gap-3 mt-10'>

@@ -5,7 +5,7 @@ import './Home.css'
 
 const BusinessSummary = () => {
     return (
-        <div className='my-20 buniness-section w-11/12 mx-auto'>
+        <div className='my-24 buniness-section w-11/12 mx-auto'>
             <h3 className='text-white text-3xl pt-12 font-semibold'>Business Statistics</h3>
             <div className='w-11/12 mb-10 mx-auto grid grid-cols-1 md:grid-cols-4 gap-5 align-items-center text-white mt-16'>
                 <div className='bg-[rgba(0,0,0,.3)] rounded-md py-7'>
