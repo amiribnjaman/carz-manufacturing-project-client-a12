@@ -4,8 +4,8 @@ import {
     useLocation,
     Navigate,
 } from "react-router-dom";
+import LoadingSpinner from "../../Components/LoadingSpinner";
 import auth from "../../firebase.init";
-import LoadingSpinner from "../Shared/LoadingSpinner";
 
 const ProtectedRoute = ({ children }) => {
     const [user, loading, error] = useAuthState(auth);
