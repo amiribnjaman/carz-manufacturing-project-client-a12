@@ -4,9 +4,9 @@ import user1 from '../../Assets/Images/user/user1.jpg'
 
 const Reviews = () => {
     let slides = [
-        <div className='text-black bg-gray-200 w-full'>
+        <div className='comment-container text-black bg-gray-200 w-full'>
             <div className='mt-4 px-8'>
-                <p><span className='text-4xl font-semibold'>&ldquo;</span> This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. <span className='text-4xl font-semibold'>&rdquo;</span></p>
+                <p><span className='text-4xl font-semibold'>&ldquo;</span> This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. <span className='text-4xl font-semibold -mb-2 inline-block'>&rdquo;</span></p>
                 <div>
 
                     <div className='mt-4 w-14 h-14 text-center mx-auto '>
@@ -17,32 +17,35 @@ const Reviews = () => {
                 </div>
             </div>
         </div>,
-        // <div className='text-black bg-gray-200 w-full'>
-        //     <div className='mt-4 px-8'>
-        //         <p><span className='text-4xl font-semibold'>&ldquo;</span> This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. <span className='text-4xl font-semibold'>&rdquo;</span></p>
-        //         <div>
+        <div className='comment-container text-black bg-gray-200 w-full'>
+            <div className='mt-4 px-8'>
+                <p><span className='text-4xl font-semibold'>&ldquo;</span> This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. <span className='text-4xl font-semibold -mb-2 inline-block'>&rdquo;</span></p>
+                <div>
 
-        //             <div className='mt-4 w-14 h-14 text-center mx-auto '>
-        //                 <img className='w-full h-full rounded-full' src={user1} alt="" />
-        //             </div>
-        //             <h6>Ratings: 5</h6>
-        //             <h5 className=' text-xl font-semibold'>Stephen Hertz</h5>
-        //         </div>
-        //     </div>
-        // </div>,
-        // <div className='text-black bg-gray-200 w-full'>
-        //     <div className='mt-4 px-8'>
-        //         <p><span className='text-4xl font-semibold'>&ldquo;</span> This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. <span className='text-4xl font-semibold'>&rdquo;</span></p>
-        //         <div>
+                    <div className='mt-4 w-14 h-14 text-center mx-auto '>
+                        <img className='w-full h-full rounded-full' src={user1} alt="" />
+                    </div>
+                    <h6>Ratings: 5</h6>
+                    <h5 className=' text-xl font-semibold'>Stephen Hertz</h5>
+                </div>
+            </div>
+        </div>,
+        <div className='comment-container text-black bg-gray-200 w-full'>
+            <div className='mt-4 px-8'>
+                <p><span className='text-4xl font-semibold'>&ldquo;</span> This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. <span className='text-4xl font-semibold -mb-2 inline-block'>&rdquo;</span></p>
+                <div>
 
-        //             <div className='mt-4 w-14 h-14 text-center mx-auto '>
-        //                 <img className='w-full h-full rounded-full' src={user1} alt="" />
-        //             </div>
-        //             <h6>Ratings: 5</h6>
-        //             <h5 className=' text-xl font-semibold'>Stephen Hertz</h5>
-        //         </div>
-        //     </div>
-        // </div>,
+                    <div className='mt-4 w-14 h-14 text-center mx-auto '>
+                        <img className='w-full h-full rounded-full' src={user1} alt="" />
+                    </div>
+                    <h6>Ratings: 5</h6>
+                    <h5 className=' text-xl font-semibold'>Stephen Hertz</h5>
+                </div>
+            </div>
+        </div>,
+       
+        
+        
 
         // <img src="https://picsum.photos/800/300/?random" alt="1" />,
         // <img src="https://picsum.photos/800/301/?random" alt="2" />,

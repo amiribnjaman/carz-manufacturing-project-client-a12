@@ -1,17 +1,16 @@
 import React from 'react';
-import banner from '../../Assets/Images/banner.jpg'
 
 
 const Banner = () => {
     return (
         <div>
-            <div className='relative'>
-                <img className='w-full' src={banner} alt="" />
-                <div className='absolute top-1/4 flex justify-center left-1/4 text-white'>
+            <div className='relative banner-section -z-20'>
+                <div className='banner-image-box absolute text-white'>
                     <div>
-                        <h5 className='text-sm'>carZ manufacturing</h5>
-                        <h1 className='text-6xl text-[#00CCBD] font-bold'>Believe in the Best Quality</h1>
-                        <p>We dominate this world for year of year. Our supreme objective is provide the best Quality. </p>
+                        <h5 className='text-sm uppercase'>car'Z A manufacturing company</h5>
+                        <h1 className='text-5xl text-[#00CCBD] font-bold'>We Believe in Quality</h1>
+                        <p>Our supreme objective is to provide the best Quality Products. </p>
+                        <button className='px-8 py-2 cursor-pointer hover:bg-[#00CCBD] text-white border border-[#00CCBD] mt-6 '>Explore More</button>
                     </div>
                 </div>
             </div>

@@ -33,15 +33,15 @@ const Navbar = () => {
                                     <p><small>{user?.displayName?.split(' ')[0]}</small></p></>
 
                             }
-
-
                         </li>
 
                         {/* User profile and logout button  */}
-                        <div className={`${showLogout && user ? 'block' : 'hidden'} absolute top-[65px] left-[-55px] bg-gray-100  px-5 py-2 rounded shadow-sm`}>
+                        <div className={`${showLogout && user ? 'block' : 'hidden'} z-40 absolute top-[65px] left-[-55px] bg-gray-100  px-5 py-2 rounded shadow-sm`}>
                             <ul>
                                 <li>
-                                    <button to="/" class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 dark:text-white" aria-current="page">Profile</button>
+                                    <Link 
+                                    onClick={() => setShowLogout(!showLogout)}
+                                    to="/dashboard/myprofile" class="font-semibold block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 dark:text-white" aria-current="page">Profile</Link>
                                 </li>
                                 <li>
                                     <button
@@ -49,7 +49,7 @@ const Navbar = () => {
                                             setShowLogout(!showLogout)
                                             signOut(auth)
                                         }}
-                                        class="block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 dark:text-white" aria-current="page">Logout</button>
+                                        class="font-semibold block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 dark:text-white" aria-current="page">Logout</button>
                                 </li>
                             </ul>
                         </div>
@@ -66,7 +66,12 @@ const Navbar = () => {
                         <li>
                             <Link to="#" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">My Portfolio</Link>
                         </li>
-
+                        {user ?
+                            <li>
+                                <Link to="/dashboard" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Dashboard</Link>
+                            </li>
+                            : ''
+                        }
                     </ul>
                 </div>
             </div>

@@ -5,6 +5,10 @@ import Signup from './Pages/Auth/Signup';
 import Home from './Pages/Home/Home';
 import Footer from './Pages/Shared/Footer';
 import Navbar from './Pages/Shared/Navbar';
+import Dashboard from './Pages/Dashboard/Dashboard'
+import MyOrders from './Pages/Dashboard/MyOrders';
+import AddReview from './Pages/Dashboard/AddReview';
+import MyProfile from './Pages/Dashboard/MyProfile';
 
 function App() {
   return (
@@ -15,6 +19,11 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/dashboard' element={<Dashboard />}>
+          <Route index element={<MyOrders />} />
+          <Route path='addreview' element={<AddReview />} />
+          <Route path='myprofile' element={<MyProfile />} />
+        </Route>
       </Routes>
       <Footer />
     </div>
