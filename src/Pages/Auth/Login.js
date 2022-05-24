@@ -13,11 +13,9 @@ const Login = () => {
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
     const [signInWithEmailAndPassword, signinUser, signinLoading, signinError,] = useSignInWithEmailAndPassword(auth);
 
-
     //  Create a user using react hook form
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const onSubmit = async data => {
-        console.log(data)
         signInWithEmailAndPassword(data.email, data.password)
         reset()
     };
@@ -28,7 +26,7 @@ const Login = () => {
         signInWithGoogle()
     }
 
-    
+
     // Upsert User into database
     if (signinUser || googleUser) {
         const user = signinUser || googleUser;
@@ -45,12 +43,12 @@ const Login = () => {
         })
             .then(res => res.json())
             .then(data => {
+                localStorage.setItem("accessToken", data.token)
                 // After creating user he/she will be redirected
                 const from = location.state?.from?.pathname || "/";
                 if (user) {
                     navigate(from, { replace: true });
                 };
-                console.log(data);
             })
     }
 

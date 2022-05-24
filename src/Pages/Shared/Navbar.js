@@ -20,8 +20,8 @@ const Navbar = () => {
                     <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
                         <li>
                             {
-                                !user ? <Link
-                                    to="/login" class="block py-2 pr-4 pl-3 text-black rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Login</Link > : user?.photoURL ? <><img
+                                !user ? <CustomLink
+                                    to="/login" class="block py-2 pr-4 pl-3 text-black rounded md:bg-transparent  md:p-0 dark:text-white" aria-current="page">Login</CustomLink > : user?.photoURL ? <><img
                                         onClick={() => setShowLogout(!showLogout)}
                                         class="w-8 h-8 rounded-full cursor-pointer inline-block mt-3" src={user?.photoURL} alt={user.displayName} />
                                         <p><small>{user?.displayName?.split(' ')[0]}</small></p>
