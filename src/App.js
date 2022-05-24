@@ -14,6 +14,7 @@ import AddProduct from './Pages/Dashboard/Admin/AddProduct';
 import MakeAdmin from './Pages/Dashboard/Admin/MakeAdmin';
 import ManageAllOrders from './Pages/Dashboard/Admin/ManageAllOrders';
 import ManageProducts from './Pages/Dashboard/Admin/ManageProducts';
+import { Toaster } from 'react-hot-toast';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         </Route>
       </Routes>
       <Footer />
+      <Toaster />
     </div>
   );
 }

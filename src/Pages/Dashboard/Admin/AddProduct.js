@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
+import toast from 'react-hot-toast';
 
 const AddProduct = () => {
     const [user, loading, error] = useAuthState(auth);
-
+    const [customError, setCustomError] = useState('')
 
     const handleAddProductForm = e => {
         e.preventDefault()
@@ -31,18 +32,28 @@ const AddProduct = () => {
             description: pro_desc,
         }
 
-        fetch('http://localhost:5000/product', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                e.target.reset()
+        if (pro_name && pro_quantity && pro_price && pro_min_order && pro_image && pro_desc) {
+            fetch('http://localhost:5000/product', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(data)
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    if (data.insertedId) {
+                        toast.success('Product inserted successfully!')
+                    } else {
+                        toast.error('Something wrong. Please try again!')
+                    }
+                    e.target.reset()
+
+                })
+        } else {
+            setCustomError(<p className='text-red-500 text-[13px] ml-1 mb-1 m-3 font-semibold'>Please fill up all required fields.</p>)
+        }
 
     }
 
@@ -52,11 +63,13 @@ const AddProduct = () => {
             <div className='w-full p-4 overflow-y-auto'>
                 <h2 className='text-xl font-semibold mb-2'>Add A Product</h2>
 
+                {customError && customError}
+
                 <form onSubmit={handleAddProductForm}>
                     <div className=''>
                         <div className='flex gap-8'>
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="pro_name" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Product Name " required="" />
+                                <input type="text" name="pro_name" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Product Name *" required="" />
                             </div>
                             <div class="relative z-0 w-full mb-6 group">
                                 <input type="text" name="pro_code" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Product Unique code " />
@@ -64,25 +77,25 @@ const AddProduct = () => {
                         </div>
                         <div className='flex gap-8'>
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="number" name="pro_quantity" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Product total quantity " />
+                                <input type="number" name="pro_quantity" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Product total quantity *" />
                             </div>
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="pro_price" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Per unit price " />
+                                <input type="text" name="pro_price" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Per unit price *" />
                             </div>
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="pro_min_order" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Minimum Order " />
+                                <input type="text" name="pro_min_order" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Minimum Order *" />
                             </div>
                         </div>
 
                         <div className='flex gap-8'>
                             <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="pro_image" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Product Image URL " />
+                                <input type="text" name="pro_image" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Product Image URL *" />
                             </div>
                         </div>
 
                         <div>
                             <div class="relative z-0 w-full mb-6 group">
-                                <textarea rows='3' name="pro_desc" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Description " ></textarea>
+                                <textarea rows='3' name="pro_desc" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Description *" ></textarea>
                             </div>
                         </div>
 
