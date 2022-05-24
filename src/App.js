@@ -15,8 +15,28 @@ import MakeAdmin from './Pages/Dashboard/Admin/MakeAdmin';
 import ManageAllOrders from './Pages/Dashboard/Admin/ManageAllOrders';
 import ManageProducts from './Pages/Dashboard/Admin/ManageProducts';
 import { Toaster } from 'react-hot-toast';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from './firebase.init';
+import { useState, useEffect } from 'react';
+
 
 function App() {
+
+  // This operation for getting the user role and then set the dashboar default component.
+  const [user, setUser] = useState('')
+  const [loginUser, ,] = useAuthState(auth);
+  useEffect(() => {
+    fetch(`http://localhost:5000/user/${loginUser?.email}`, {
+      method: 'GET',
+      headers: {
+        'authorization': `Bearer ${localStorage.getItem("accessToken")}`
+      }
+    })
+      .then(res => res.json())
+      .then(data => setUser(data))
+
+  }, [loginUser?.email, user])
+
   return (
     <div className='App'>
       <Navbar />
@@ -29,13 +49,13 @@ function App() {
           <ProtectedRoute>
             <Dashboard />
           </ProtectedRoute>}>
-            
-          <Route index element={<MyOrders />} />
+
+          <Route index element={user?.role != 'admin' ? <MyOrders /> : <ManageAllOrders />} />
           <Route path='addreview' element={<AddReview />} />
           <Route path='myprofile' element={<MyProfile />} />
 
           {/* Admin routes */}
-          <Route index element={<ManageAllOrders />} />
+          <Route path='manageorder' element={<ManageAllOrders />} />
           <Route path='addproduct' element={<AddProduct />} />
           <Route path='makeadmin' element={<MakeAdmin />} />
           <Route path='manageproducts' element={<ManageProducts />} />

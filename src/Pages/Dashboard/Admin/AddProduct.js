@@ -4,7 +4,7 @@ import auth from '../../../firebase.init';
 import toast from 'react-hot-toast';
 
 const AddProduct = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user, , ] = useAuthState(auth);
     const [customError, setCustomError] = useState('')
 
     const handleAddProductForm = e => {
@@ -100,7 +100,7 @@ const AddProduct = () => {
                         </div>
 
                     </div>
-                    <button type="submit" class="mt-4 text-white bg-[#06998f] hover:bg-[#06998f] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Submit</button>
+                    <button type="submit" class="mt-4 text-white bg-[#06998f] hover:bg-[#06998f] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-6 py-2.5 text-center ">Add Product</button>
                 </form>
 
             </div >
