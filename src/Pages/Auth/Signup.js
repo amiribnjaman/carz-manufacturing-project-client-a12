@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithGoogle, useCreateUserWithEmailAndPassword, useUpdateProfile, useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -42,12 +42,13 @@ const Signup = () => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data)
+                localStorage.setItem("accessToken", data.token)
                 // After creating user he/she will be redirected
                 const from = location.state?.from?.pathname || "/";
                 if (user) {
                     navigate(from, { replace: true });
                 };
-                console.log(data);
             })
     }
 
