@@ -22,18 +22,18 @@ const Dashboard = () => {
 
     return (
         <div className='w-[95%] mx-auto mt-4 mb-10'>
-            <div class="drawer drawer-mobile h-96 overflow-y-auto">
+            <div class="drawer drawer-mobile h-[460px] overflow-y-auto">
                 <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content flex flex-col items-start justify-start">
 
                     <Outlet />
                     <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
                 </div>
-                <div class="drawer-side h-96 border mr-2">
+                <div class="drawer-side h-[460px] border mr-2">
                     <label for="my-drawer-2" class="drawer-overlay"></label>
                     <ul class="menu overflow-y-auto  w-60 text-base-content">
                         {/* <!-- Sidebar content here --> */}
-                        <aside className=' h-96 bg-gray-50' aria-label="Sidebar">
+                        <aside className=' h-[460px] bg-gray-50' aria-label="Sidebar">
                             <div class="overflow-y-auto px-3 py-4 bg-gray-50 rounded dark:bg-gray-800">
                                 <ul class="space-y-2">
                                     {user?.role != 'admin' ?

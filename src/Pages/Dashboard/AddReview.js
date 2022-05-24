@@ -26,7 +26,7 @@ const AddReview = () => {
     const [reviewValue, setReviewValue] = useState(reviewStar.value)
 
     return (
-        <div className='w-full border h-96 '>
+        <div className='w-full border h-[460px] '>
             <form className='w-3/5 ml-10 mt-2 text-left overflow-y-auto'>
                 <h2 className='text-xl font-semibold mb-2'>Add Review and send Rating </h2>
                 <hr />

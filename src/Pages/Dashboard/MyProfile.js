@@ -7,7 +7,7 @@ const MyProfile = () => {
     const [user, loading, error] = useAuthState(auth);
 
     return (
-        <div className='w-[90%] border flex justify-between h-96 text-left'>
+        <div className='w-[90%] border flex justify-between h-[460px] text-left'>
             <div className='w-full mt-4 overflow-y-auto'>
                 <div className='p-4 border mx-2'>
                     <h3 className='text-xl font-semibold '>General Info</h3>
