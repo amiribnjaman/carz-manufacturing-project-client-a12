@@ -75,6 +75,7 @@ const Purchase = () => {
                     if (data?.insertedId) {
                         toast.success('Ordered Successfully!')
                         setPaymentBtnDisable(false)
+                        setQuantity()
                     } else {
                         setPaymentBtnDisable(true)
                         toast.error('Something wrong. Please try again.')
