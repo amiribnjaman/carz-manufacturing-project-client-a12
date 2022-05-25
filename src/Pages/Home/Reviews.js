@@ -21,7 +21,6 @@ const Reviews = () => {
             <div className='mt-4 px-8'>
                 <p><span className='text-4xl font-semibold'>&ldquo;</span> This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. <span className='text-4xl font-semibold -mb-2 inline-block'>&rdquo;</span></p>
                 <div>
-
                     <div className='mt-4 w-14 h-14 text-center mx-auto '>
                         <img className='w-full h-full rounded-full' src={user1} alt="" />
                     </div>

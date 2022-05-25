@@ -19,6 +19,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
 import { useState, useEffect } from 'react';
 import Purchase from './Pages/Purchase/Purchase';
+import Payment from './Pages/Purchase/Payment';
 
 
 function App() {
@@ -64,6 +65,11 @@ function App() {
         <Route path='/purchase/:id' element={
           <ProtectedRoute>
             <Purchase />
+          </ProtectedRoute>
+        } />
+        <Route path='/payment/:id' element={
+          <ProtectedRoute>
+            <Payment />
           </ProtectedRoute>
         } />
       </Routes>
