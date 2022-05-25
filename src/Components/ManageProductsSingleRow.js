@@ -26,9 +26,9 @@ const ManageProductsSingleRow = ({ product, index }) => {
             <td class="px-6 py-4">
                 {minOrder}
             </td>
-            {/* <td class="px-6 py-4 text-right">
-                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
-            </td> */}
+            <td class="px-6 py-4 text-right">
+                <button class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</button>
+            </td>
         </tr>
 
     );

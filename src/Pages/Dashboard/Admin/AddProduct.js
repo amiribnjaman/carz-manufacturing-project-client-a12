@@ -59,7 +59,7 @@ const AddProduct = () => {
 
 
     return (
-        <div className='w-[90%] border flex justify-between h-[460px] text-left'>
+        <div className='w-full border flex justify-between h-[460px] text-left'>
             <div className='w-full p-4 overflow-y-auto'>
                 <h2 className='text-xl font-semibold mb-2'>Add A Product</h2>
 

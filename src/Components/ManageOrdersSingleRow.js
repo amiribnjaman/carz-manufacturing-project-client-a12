@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ManageOrdersSingleRow = ({ index, order }) => {
-    const { _id, email, productName, price } = order
+    const { _id, email, productName, price, payment_status } = order
 
     return (
         <tr class="border-b dark:bg-gray-800 dark:border-gray-700 odd:bg-white even:bg-gray-50 odd:dark:bg-gray-800 even:dark:bg-gray-700">
@@ -12,7 +12,7 @@ const ManageOrdersSingleRow = ({ index, order }) => {
                 {productName}
             </th>
             <td class="px-6 py-4">
-            {_id}
+                {_id}
             </td>
             <td class="px-6 py-4">
                 {email}
@@ -21,7 +21,10 @@ const ManageOrdersSingleRow = ({ index, order }) => {
                 ${price}
             </td>
             <td class="px-6 py-4 text-right">
-                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
+                {
+                    payment_status == false ? <button class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</button>
+                    : <button class="font-medium text-blue-600 dark:text-blue-500 hover:underline">On progress</button>
+                }
             </td>
         </tr>
     );

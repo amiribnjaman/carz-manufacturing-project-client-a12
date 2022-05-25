@@ -4,9 +4,11 @@ import React, { useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import ReactStars from "react-rating-stars-component";
 import auth from '../../firebase.init';
+import toast from 'react-hot-toast';
 
 const AddReview = () => {
     const [user, loading, error] = useAuthState(auth);
+    const [msg, setMsg] = useState('')
 
     const reviewStar = {
         size: 18,
@@ -25,10 +27,42 @@ const AddReview = () => {
     };
     const [reviewValue, setReviewValue] = useState(reviewStar.value)
 
+
+    const handleReviewForm = e => {
+        e.preventDefault()
+        const data = {
+            name: user?.displayName,
+            email: user?.email,
+            review: e.target.review_description.value,
+            rating: reviewValue
+        }
+
+        if (data.name && data.email && data.review && data.rating) {
+            setMsg('')
+            fetch('http://localhost:5000/review', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    toast.success('Your review Accepted!')
+                    e.target.reset()
+                })
+        } else {
+            setMsg(<p className='text-sm text-red-700 text-left my-1 ml-2'>Please fill all required fields.</p>)
+        }
+    }
+
     return (
         <div className='w-full border h-[460px] '>
-            <form className='w-3/5 ml-10 mt-2 text-left overflow-y-auto'>
+            <form
+                onSubmit={handleReviewForm}
+                className='w-3/5 ml-10 mt-2 text-left overflow-y-auto'>
                 <h2 className='text-xl font-semibold mb-2'>Add Review and send Rating </h2>
+                {msg && msg}
                 <hr />
                 <div class="relative z-0 w-full mb-6 group">
                     <input type="text" name="floating_name" class="block cursor-not-allowed py-2.5 px-2 rounded w-full text-sm text-gray-900 bg-transparent border-0 border-gray-300 appearance-none focus:outline-none focus:ring-0 bg-[#eef0f0]" placeholder="Your Name " disabled value={user?.displayName} required="" />
@@ -37,7 +71,7 @@ const AddReview = () => {
                     <input type="email" name="floating_email" class="block cursor-not-allowed py-2.5 px-2 rounded w-full text-sm text-gray-900 bg-transparent border-0 border-gray-300 appearance-none focus:outline-none focus:ring-0 bg-[#eef0f0]" placeholder="Your Email " disabled value={user?.email} required="" />
                 </div>
                 <div class="relative z-0 w-full mb-4 group">
-                    <textarea id="message" rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 focus:border" placeholder="Your review ..."></textarea>
+                    <textarea id="message" name='review_description' rows="4" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 focus:border" placeholder="Your review ..."></textarea>
                 </div>
 
                 <ReactStars {...reviewStar} />

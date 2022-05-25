@@ -20,20 +20,20 @@ const ManageAllOrders = () => {
                             <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                                 SL
                             </th>
-                            <th scope="row" class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                            <th class="font-semibold ">
                                 Product Name
                             </th>
-                            <td class="px-6 py-4">
+                            <th class="px-6 py-4">
                                 Order Id
-                            </td>
-                            <td class="px-6 py-4">
+                            </th>
+                            <th class="px-6 py-4">
                                 Customer Email
-                            </td>
-                            <td class="px-6 py-4">
+                            </th>
+                            <th class="px-6 py-4">
                                 Price
-                            </td>
-                            <td class="px-6 py-4 text-right">
-                            </td>
+                            </th>
+                            <th class="px-6 py-4 text-right">
+                            </th>
                         </tr>
                     </thead>
                     <tbody>
