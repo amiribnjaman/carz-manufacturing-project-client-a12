@@ -26,30 +26,36 @@ const Signup = () => {
         signInWithGoogle()
     }
 
+    if (googleError) {
+        console.log(googleError);
+    }
+
     // Upsert User into database
     if (creatingUser || googleUser) {
         const user = creatingUser || googleUser;
-        fetch('http://localhost:5000/user', {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify({
-                email: user?.user?.email,
-                name: user?.user?.displayName,
-                role: "user"
+        setTimeout(() => {
+            fetch('http://localhost:5000/user', {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: user?.user?.email,
+                    name: user?.user?.displayName,
+                    role: "user"
+                })
             })
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data)
-                localStorage.setItem("accessToken", data.token)
-                // After creating user he/she will be redirected
-                const from = location.state?.from?.pathname || "/";
-                if (user) {
-                    navigate(from, { replace: true });
-                };
-            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                    localStorage.setItem("accessToken", data.token)
+                    // After creating user he/she will be redirected
+                    const from = location.state?.from?.pathname || "/";
+                    if (user) {
+                        navigate(from, { replace: true });
+                    };
+                })
+        }, 1000);
     }
 
 

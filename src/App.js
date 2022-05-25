@@ -18,10 +18,10 @@ import { Toaster } from 'react-hot-toast';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
 import { useState, useEffect } from 'react';
+import Purchase from './Pages/Purchase/Purchase';
 
 
 function App() {
-
   // This operation for getting the user role and then set the dashboar default component.
   const [user, setUser] = useState('')
   const [loginUser, ,] = useAuthState(auth);
@@ -36,6 +36,7 @@ function App() {
       .then(data => setUser(data))
 
   }, [loginUser?.email, user])
+
 
   return (
     <div className='App'>
@@ -60,6 +61,11 @@ function App() {
           <Route path='makeadmin' element={<MakeAdmin />} />
           <Route path='manageproducts' element={<ManageProducts />} />
         </Route>
+        <Route path='/purchase/:id' element={
+          <ProtectedRoute>
+            <Purchase />
+          </ProtectedRoute>
+        } />
       </Routes>
       <Footer />
       <Toaster />

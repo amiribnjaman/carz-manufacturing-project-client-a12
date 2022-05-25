@@ -46,7 +46,7 @@ const Reviews = () => {
     ];
 
     const callback = function (index) {
-        console.log("callback", index);
+        // console.log("", index);
     }
     return (
         <>
