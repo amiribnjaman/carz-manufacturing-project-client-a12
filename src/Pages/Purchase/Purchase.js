@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
+import toast from 'react-hot-toast';
 
 const Purchase = () => {
     const navigate = useNavigate()
@@ -9,8 +10,12 @@ const Purchase = () => {
     const { id } = useParams()
     const [product, setProduct] = useState('')
     const [quantityMsg, setQuantityMsg] = useState('')
-    const [quantity, setQuantity] = useState(product?.minOrder)
+    const [errMsg, setErrMsg] = useState('')
+    const [quantity, setQuantity] = useState(0)
+    const [newQuantity, setNewQuantity] = useState(0)
     const [limit, setLimit] = useState(product?.quantity)
+    const [orderBtnDisable, setOrderBtnDisable] = useState(true)
+    const [paymentBtnDisable, setPaymentBtnDisable] = useState(true)
 
     useEffect(() => {
         fetch(`http://localhost:5000/product/${id}`)
@@ -22,23 +27,61 @@ const Purchase = () => {
             })
     }, [id, product])
 
-console.log(product);
+    const handleQuantityOnChange = value => {
+        if (value < quantity) {
+            setQuantityMsg(<p className='text-sm text-red-800 ml-2 text-left my-1'>Please Order at least <span className='font-semibold'>{quantity}</span> pices of <span className='font-semibold'>{product.productName}</span>.</p>)
+            setOrderBtnDisable(true)
+        } else if (value > limit) {
+            setOrderBtnDisable(true)
+            setQuantityMsg(<p className='text-sm text-red-800 ml-2 text-left my-1'>Please Order less than <span className='font-semibold'>{product.quantity}</span> pices of <span className='font-semibold'>{product.productName}</span>.</p>)
+        } else {
+            setOrderBtnDisable(false)
+            setNewQuantity(value)
+            setQuantityMsg('')
+        }
+    }
+
     const handleOrderForm = e => {
         e.preventDefault()
         const orderProduct = product.productName
         const price = product.price
-        const orderQuantity = quantity
-        
-    }
+        const orderQuantity = newQuantity
+        const address = e.target.address.value
+        const phone_number = e.target.phone_number.value
 
-    const handleQuantityOnChange = value => {
-        if (value < quantity) {
-            setQuantityMsg(<p className='text-sm text-red-800 ml-2 text-left my-1'>Please Order at least <span className='font-semibold'>{quantity}</span> pices of <span className='font-semibold'>{product.productName}</span>.</p>)
-        } else if (value > limit){
-            setQuantityMsg(<p className='text-sm text-red-800 ml-2 text-left my-1'>Please Order less than <span className='font-semibold'>{product.quantity}</span> pices of <span className='font-semibold'>{product.productName}</span>.</p>)
+        const data = {
+            email: user?.email,
+            productId: id,
+            productName: orderProduct,
+            price,
+            quantity: orderQuantity,
+            address,
+            phoneNumber: phone_number,
+            payment_status: false
+
+        }
+        if (orderProduct && price && orderQuantity && address && phone_number) {
+            setErrMsg('')
+            fetch('http://localhost:5000/order', {
+                method: 'POST',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    e.target.reset()
+                    if (data?.insertedId) {
+                        toast.success('Ordered Successfully!')
+                        setPaymentBtnDisable(false)
+                    } else {
+                        setPaymentBtnDisable(true)
+                        toast.error('Something wrong. Please try again.')
+                    }
+                })
         } else {
-            setQuantityMsg('')
-            setQuantity(value)
+            setErrMsg(<p className='text-red-800 font-semibold text-sm text-left my-1 ml-2'>Please provide all valid information to Order.</p>)
         }
     }
 
@@ -83,7 +126,7 @@ console.log(product);
                             </div>
                             <div class="relative z-0 w-full mb-6 group">
                                 <input
-                                    onChange={(e)=>handleQuantityOnChange(e.target.value)}
+                                    onChange={(e) => handleQuantityOnChange(e.target.value)}
                                     type="text" name="pro_quantity" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none" placeholder="Min Product Order Quantity" />
                                 {quantityMsg && quantityMsg}
                             </div>
@@ -94,11 +137,13 @@ console.log(product);
                                 <input type="text" name="phone_number" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none" placeholder="Your Phone Number " />
                             </div>
                         </div>
+                        {errMsg && errMsg}
                         <div className='flex gap-4'>
-                            <button type="submit" class="mt-4 text-left text-white bg-yellow-400 hover:bg-yellow-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-6 py-2.5 ">Order Now</button>
+                            <button disabled={orderBtnDisable} type="submit"
+                                class={`${orderBtnDisable ? 'cursor-not-allowed bg-gray-400 hover:bg-gray-400' : 'cursor-pointer bg-yellow-400 hover:bg-yellow-500 '} mt-2 text-left text-white  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-6 py-2.5`}>Order Now</button>
                             <button
-                            onClick={() => navigate(`/payment/${product._id}`)}
-                            type="button" class="mt-4 text-left text-white bg-[#06998f] hover:bg-[#06998f] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-6 py-2.5 ">Payment</button>
+                                onClick={() => navigate(`/payment/${product._id}`)}
+                                type="button" class={`${paymentBtnDisable ? 'cursor-not-allowed bg-gray-400 hover:bg-gray-400' : 'cursor-pointer bg-[#06998f] hover:bg-[#06998f]'} mt-2 text-left text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-6 py-2.5 `} disabled={paymentBtnDisable}>Payment</button>
                         </div>
                     </form>
                 </div>
