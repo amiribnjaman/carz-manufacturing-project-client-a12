@@ -13,7 +13,7 @@ const Parts = () => {
     }, [])
 
     const handleNavigateToPurchase = id => {
-        console.log(id);
+        navigate(`/purchase/${id}`)
     }
 
     return (
