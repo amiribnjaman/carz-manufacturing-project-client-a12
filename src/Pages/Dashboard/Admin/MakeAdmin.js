@@ -4,7 +4,7 @@ import MakeAdminSingleRow from '../../../Components/MakeAdminSingleRow';
 const MakeAdmin = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/user')
+        fetch('https://salty-peak-12518.herokuapp.com/user')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])

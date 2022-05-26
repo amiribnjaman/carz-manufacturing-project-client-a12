@@ -4,7 +4,7 @@ import ManageOrdersSingleRow from '../../../Components/ManageOrdersSingleRow';
 const ManageAllOrders = () => {
     const [orders, setOrders] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/order')
+        fetch('https://salty-peak-12518.herokuapp.com/order')
             .then(res => res.json())
             .then(data => {
                 setOrders(data)

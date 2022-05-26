@@ -3,7 +3,7 @@ import { useQuery } from 'react-query'
 import LoadingSpinner from '../../Components/LoadingSpinner';
 
 const Reviews = () => {
-    const { isLoading, error, data: reviews } = useQuery('user', () => fetch('http://localhost:5000/review').then(res => res.json()) )
+    const { isLoading, error, data: reviews } = useQuery('user', () => fetch('https://salty-peak-12518.herokuapp.com/review').then(res => res.json()))
 
     if (isLoading) {
         return <LoadingSpinner />

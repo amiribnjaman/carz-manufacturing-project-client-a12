@@ -18,7 +18,7 @@ const Payment = () => {
     console.log(id);
     // return
     useEffect(() => {
-        fetch(`http://localhost:5000/orders/${id}`)
+        fetch(`https://salty-peak-12518.herokuapp.com/orders/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProduct(data)

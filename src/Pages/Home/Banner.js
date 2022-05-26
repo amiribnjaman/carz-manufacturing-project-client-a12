@@ -3,7 +3,7 @@ import React from 'react';
 
 const Banner = () => {
     return (
-        <div>
+        <div className=''>
             <div className='relative banner-section -z-20'>
                 <div className='banner-image-box absolute mb-2 text-white'>
                     <div>

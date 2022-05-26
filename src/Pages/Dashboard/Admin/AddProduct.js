@@ -4,7 +4,7 @@ import auth from '../../../firebase.init';
 import toast from 'react-hot-toast';
 
 const AddProduct = () => {
-    const [user, , ] = useAuthState(auth);
+    const [user, ,] = useAuthState(auth);
     const [customError, setCustomError] = useState('')
 
     const handleAddProductForm = e => {
@@ -33,7 +33,7 @@ const AddProduct = () => {
         }
 
         if (pro_name && pro_quantity && pro_price && pro_min_order && pro_image && pro_desc) {
-            fetch('http://localhost:5000/product', {
+            fetch('https://salty-peak-12518.herokuapp.com/product', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

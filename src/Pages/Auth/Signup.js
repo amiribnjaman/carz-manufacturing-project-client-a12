@@ -35,7 +35,7 @@ const Signup = () => {
     if (creatingUser || googleUser) {
         const user = creatingUser || googleUser;
         setTimeout(() => {
-            fetch('http://localhost:5000/user', {
+            fetch('https://salty-peak-12518.herokuapp.com/user', {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',
@@ -62,7 +62,7 @@ const Signup = () => {
     useEffect(() => {
         if (creatingError?.code === 'auth/email-already-in-use') {
             setCustomSignupError(<p className='text-[13px] text-center text-red-500 font-semibold'>Email already exist. Please try to login. </p>);
-        }else if (googleError) {
+        } else if (googleError) {
             setCustomSignupError(<p className='text-[13px] text-center text-red-500 font-semibold'>Something wrong. Please try again.</p>)
         }
     }, [creatingError?.code, googleError])

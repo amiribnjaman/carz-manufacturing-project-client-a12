@@ -31,7 +31,7 @@ function App() {
   const [user, setUser] = useState('')
   const [loginUser, ,] = useAuthState(auth);
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${loginUser?.email}`, {
+    fetch(`https://salty-peak-12518.herokuapp.com/user/${loginUser?.email}`, {
       method: 'GET',
       headers: {
         'authorization': `Bearer ${localStorage.getItem("accessToken")}`

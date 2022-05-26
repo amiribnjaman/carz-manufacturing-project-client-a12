@@ -18,7 +18,7 @@ const Purchase = () => {
     const [paymentBtnDisable, setPaymentBtnDisable] = useState(true)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://salty-peak-12518.herokuapp.com/product/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProduct(data)
@@ -62,7 +62,7 @@ const Purchase = () => {
         }
         if (orderProduct && price && orderQuantity && address && phone_number) {
             setErrMsg('')
-            fetch('http://localhost:5000/order', {
+            fetch('https://salty-peak-12518.herokuapp.com/order', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
@@ -142,7 +142,7 @@ const Purchase = () => {
                         <div className='flex gap-4'>
                             <button disabled={orderBtnDisable} type="submit"
                                 class={`${orderBtnDisable ? 'cursor-not-allowed bg-gray-400 hover:bg-gray-400' : 'cursor-pointer bg-yellow-400 hover:bg-yellow-500 '} mt-2 text-left text-white  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-6 py-2.5`}>Order Now</button>
-                            
+
                         </div>
                     </form>
                 </div>

@@ -4,22 +4,23 @@ import auth from '../firebase.init';
 
 const MakeAdminSingleRow = ({ user, index }) => {
     const { _id, name, email, role } = user
-    const [loginUser] = useAuthState(auth) 
+    const [loginUser] = useAuthState(auth)
 
     const handleMakeAdmin = () => {
         console.log(email)
-        if(loginUser){
-            fetch(`http://localhost:5000/makeAdmin/${loginUser?.email}`, {
-            method: 'PUT',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify({ id:_id, email:email, role: 'admin' })
-        })
-            .then(res => res.json())
-            .then(data => {
-                console.log(data);
+        if (loginUser) {
+            fetch(`https://salty-peak-12518.herokuapp.com/makeAdmin/${loginUser?.email}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json',
+                    'authorization': `Bearer ${localStorage.getItem("accessToken")}`
+                },
+                body: JSON.stringify({ id: _id, email: email, role: 'admin' })
             })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                })
         }
     }
 
@@ -38,7 +39,7 @@ const MakeAdminSingleRow = ({ user, index }) => {
             <td class="px-6 py-4 text-right">
                 {role != 'admin' ? <button
                     onClick={() => handleMakeAdmin()}
-                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Make Admin</button> 
+                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Make Admin</button>
                     : ''}
             </td>
         </tr>

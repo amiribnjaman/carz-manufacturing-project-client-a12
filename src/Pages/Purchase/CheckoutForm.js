@@ -20,7 +20,7 @@ const CheckoutForm = ({ product }) => {
 
     useEffect(() => {
         if (price) {
-            fetch('http://localhost:5000/create-payment-intent', {
+            fetch('https://salty-peak-12518.herokuapp.com/create-payment-intent', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -84,7 +84,7 @@ const CheckoutForm = ({ product }) => {
             setReload(!reload)
             setSuccessMsg(<div className='mt-3 text-green-500 text-left text-sm font-semibold'>
                 <p>Your Payment Succeed.</p>
-                
+
             </div>)
 
             // data 
@@ -93,12 +93,12 @@ const CheckoutForm = ({ product }) => {
                 transactionId: paymentIntent.id
             }
 
-            fetch(`http://localhost:5000/order/${_id}`, {
+            fetch(`https://salty-peak-12518.herokuapp.com/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'
                 },
-                body: JSON.stringify({orderId: _id,transactionId: paymentIntent.id})
+                body: JSON.stringify({ orderId: _id, transactionId: paymentIntent.id })
             })
         }
 
