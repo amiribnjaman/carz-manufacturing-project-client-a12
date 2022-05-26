@@ -89,7 +89,7 @@ const Purchase = () => {
     return (
         <div className='w-9/12 mx-auto my-12'>
             <div className='md:flex'>
-                <div className='w-1/2'>
+                <div className='md:w-1/2'>
                     <div class="p-3 mb-4 max-w-md text-left bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 ">
                         <h4 className='font-semibold text-md'>Name: {user?.displayName}</h4>
                         <h5 className='font-semibold text-sm'>Email: {user?.email}</h5>
@@ -114,7 +114,7 @@ const Purchase = () => {
                     </div>
                 </div>
 
-                <div className='w-1/2 mx-12'>
+                <div className='md:w-1/2 mt-8 md:mt-0 md:mx-12'>
                     <form
                         onSubmit={handleOrderForm}
                         className='border p-3 rounded shadow'>
@@ -142,9 +142,7 @@ const Purchase = () => {
                         <div className='flex gap-4'>
                             <button disabled={orderBtnDisable} type="submit"
                                 class={`${orderBtnDisable ? 'cursor-not-allowed bg-gray-400 hover:bg-gray-400' : 'cursor-pointer bg-yellow-400 hover:bg-yellow-500 '} mt-2 text-left text-white  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-6 py-2.5`}>Order Now</button>
-                            <button
-                                onClick={() => navigate(`/payment/${product._id}`)}
-                                type="button" class={`${paymentBtnDisable ? 'cursor-not-allowed bg-gray-400 hover:bg-gray-400' : 'cursor-pointer bg-[#06998f] hover:bg-[#06998f]'} mt-2 text-left text-white focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-6 py-2.5 `} disabled={paymentBtnDisable}>Payment</button>
+                            
                         </div>
                     </form>
                 </div>

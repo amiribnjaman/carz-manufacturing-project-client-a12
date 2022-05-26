@@ -1,45 +1,109 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import toast from 'react-hot-toast';
+import { useQuery } from 'react-query';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyProfile = () => {
     const [user, loading, error] = useAuthState(auth);
+    const navigate = useNavigate()
+    const [showForm, setShowForm] = useState(false)
+    const [useFormDb, setUseFormDb] = useState(false)
+    const { name, email, number, role, location, education, linkedin } = useFormDb
+    useEffect(() => {
+        fetch(`http://localhost:5000/user/${user?.email}`, {
+            method: 'GET',
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                setUseFormDb(data)
+            })
+    }, [user?.email])
+
+    console.log(useFormDb);
+
+
+    const handleUpdateProfile = e => {
+        e.preventDefault()
+        const linkedin = e.target.linkedin.value
+        const education = e.target.education.value
+        const location = e.target.location.value
+        const number = e.target.number.value
+        const data = {
+            linkedin: linkedin,
+            education: education,
+            location: location,
+            number: number,
+        }
+        console.log(linkedin);
+        if (linkedin && education && location && number) {
+            fetch(`http://localhost:5000/updateUser/${user?.email}`, {
+                method: 'PATCH',
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    if (data?.acknowledged) {
+                        toast.success('Profile Updated successfully!')
+                        e.target.reset()
+                    }
+                })
+        }
+    }
 
     return (
-        <div className='w-[90%] border flex justify-between h-[460px] text-left'>
+        <div className='w-[90%] p-4  border flex justify-between h-[460px] text-left'>
             <div className='w-full mt-4 overflow-y-auto'>
-                <div className='p-4 border mx-2'>
+                <div className=' mx-2'>
                     <h3 className='text-xl font-semibold '>General Info</h3>
                     <div className='py-2'>
                         <h3>Name: <span className='font-semibold text-sm'>{user?.displayName}</span></h3>
                         <h4>Email: <span className='font-semibold text-sm'>{user?.email}</span></h4>
-                        <h5>Phone Number: <span className='font-semibold text-sm'>{user?.phoneNumber ? user?.phoneNumber : 'Not set yet!'} </span></h5>
+                        <h5>Phone Number: <span className='font-semibold text-sm'>{user?.phoneNumber ? user?.phoneNumber : number ? number : 'Not set yet!'} </span></h5>
+                        <h5>Your Location <span className='font-semibold text-sm'>{location ? location : 'Not set Yet'} </span></h5>
+                        <h5>Your Education <span className='font-semibold text-sm'>{education ? education : 'Not set Yet'} </span></h5>
+                        <h5> Linkedin account <a target='_blank' href={`https://${linkedin && linkedin}`} className='font-semibold text-sm'>{linkedin ? linkedin : 'Not set Yet'} </a></h5>
                         <div className='mt-4'>
-                            <button type="button" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-10 py-2 text-center mr-2 mb-2 ">Edit</button>
+                            <button
+                                onClick={() => setShowForm(!showForm)}
+                                type="button" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-10 py-2 text-center mr-2 mb-2 ">Edit</button>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className='p4 mt-4 mx-2'>
-                <aside class="w-64" aria-label="Sidebar">
-                    <div class=" py-4 px-3 bg-gray-50 mt-8 rounded dark:bg-gray-800">
-                        <ul class="space-y-2 relative">
-                            <div className='pb-3'>
-                                <img class="absolute z-30 top-[-50px] mb-8 inline-block left-[35%] w-14 h-14 p-1 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src={user?.photoURL} alt="" />
-                            </div>
-                            <li className='mt-8'>
-                                <Link to="#" class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700">
-                                    <span class="ml-3">General Info</span>
-                                </Link>
-                            </li>
-
-                        </ul>
-                    </div>
-                </aside>
 
             </div>
-        </div>
+            <form
+                onSubmit={handleUpdateProfile}
+                className={`${showForm ? 'block' : 'hidden'} w-full ml-10 mt-2 text-left overflow-y-auto`}>
+                <h2 className='text-xl font-semibold mb-2'>Update Profile </h2>
+                <hr />
+
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="text" name="linkedin" class="block py-2.5 px-2 rounded w-full text-sm text-gray-900 bg-transparent border-0 border-gray-300 appearance-none focus:outline-none focus:ring-0 bg-[#eef0f0]" placeholder="Linkedin Link " required="" />
+                </div>
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="text" name="education" class="block  py-2.5 px-2 rounded w-full text-sm text-gray-900 bg-transparent border-0 border-gray-300 appearance-none focus:outline-none focus:ring-0 bg-[#eef0f0]" placeholder="Your Education " required="" />
+                </div>
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="text" name="location" class="block  py-2.5 px-2 rounded w-full text-sm text-gray-900 bg-transparent border-0 border-gray-300 appearance-none focus:outline-none focus:ring-0 bg-[#eef0f0]" placeholder="Location" required="" />
+                </div>
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="text" name="number" class="block  py-2.5 px-2 rounded w-full text-sm text-gray-900 bg-transparent border-0 border-gray-300 appearance-none focus:outline-none focus:ring-0 bg-[#eef0f0]" placeholder="Mobile Number " required="" />
+                </div>
+
+
+                <button type="submit" class="text-white mt-1 bg-blue-600 hover:bg-blue-700 focus:ring-1 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center ">Update</button>
+            </form>
+        </div >
 
     );
 };

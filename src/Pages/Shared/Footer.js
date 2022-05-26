@@ -7,20 +7,20 @@ const Footer = () => {
     const year = date.getFullYear()
 
     return (
-        <footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800">
-            <div class="sm:flex w-11/12 mx-auto sm:items-center sm:justify-between">
-                <Link to="/" class="flex items-center mb-4 sm:mb-0">
+        <footer class="p-4 text-center bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800">
+            <div class="sm:flex md:mx-auto w-10/12 sm:items-center sm:justify-between">
+                <Link to="/" class="md:flex items-center mb-4 sm:mb-0">
                 <span class="self-center LOGO text-xl font-semibold whitespace-nowrap dark:text-white">thecar<span className='text-[#00CCBD]'>Z</span></span>
                 </Link>
-                <ul class="flex flex-wrap items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+                <ul class="flex flex-wrap justify-center md:justify-end items-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
                     <li>
-                        <Link to="#" class="mr-4 hover:underline md:mr-6 ">About</Link>
+                        <Link to="#" class="sm:mr-4 mr-1 hover:underline md:mr-6 ">About</Link>
                     </li>
                     <li>
-                        <Link to="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</Link>
+                        <Link to="#" class="sm:mr-4 mr-1 hover:underline md:mr-6">Privacy Policy</Link>
                     </li>
                     <li>
-                        <Link to="#" class="mr-4 hover:underline md:mr-6 ">Licensing</Link>
+                        <Link to="#" class="sm:mr-4 mr-1 hover:underline md:mr-6 ">Licensing</Link>
                     </li>
                     <li>
                         <Link to="#" class="hover:underline">Contact</Link>

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import './Auth.css';
 import { useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form';
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
+    const [loginErr, setLoginErr] = useState('')
     const [user, loading, error] = useAuthState(auth);
 
     const [signInWithGoogle, googleUser, googleLoading, googleError] = useSignInWithGoogle(auth);
@@ -25,7 +26,6 @@ const Login = () => {
     const handleSignInWithGoogle = () => {
         signInWithGoogle()
     }
-
 
     // Upsert User into database
     if (signinUser || googleUser) {
@@ -50,16 +50,29 @@ const Login = () => {
                     navigate(from, { replace: true });
                 };
             })
+
     }
+
+    //  Custom login error message
+    useEffect(() => {
+        if (signinError) {
+            setLoginErr(<p className='text-[13px] text-center text-red-500 font-semibold'>Email or password is Invalid. Please try again.</p>)
+        } else if (googleError) {
+            setLoginErr(<p className='text-[13px] text-center text-red-500 font-semibold'>Something wrong. Please try again.</p>)
+        }
+    }, [signinError, googleError])
+
+
 
     return (
         <div className='login-page md:pt-14'>
-            <div className='w-11/12 mx-auto flex '>
-                <div className='w-1/2'>
+            <div className='w-11/12 mx-auto md:flex '>
+                <div className='md:w-1/2'>
                 </div>
-                <div className='w-1/2 '>
+                <div className='md:w-1/2 md:pt-0 pt-4'>
                     <div class="p-6 max-w-md grid grid-cols-1 gap-3 bg-white rounded-lg border border-gray-200 shadow-md">
                         <h2 className='text-xl font-semibold'>Login</h2>
+                        {loginErr}
                         <form
                             onSubmit={handleSubmit(onSubmit)}
                             action="" className='grid grid-cols-1 gap-3'>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useSignInWithGoogle, useCreateUserWithEmailAndPassword, useUpdateProfile, useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
@@ -11,6 +11,7 @@ const Signup = () => {
     const [user, loading, error] = useAuthState(auth);
     const [createUserWithEmailAndPassword, creatingUser, creatingLoading, creatingError,] = useCreateUserWithEmailAndPassword(auth);
     const [updateProfile, updating, updatingError] = useUpdateProfile(auth);
+    const [customSignupError, setCustomSignupError] = useState('');
 
 
     //  Create a user using react hook form
@@ -26,9 +27,9 @@ const Signup = () => {
         signInWithGoogle()
     }
 
-    if (googleError) {
-        console.log(googleError);
-    }
+    // if (googleError) {
+    //     console.log(googleError);
+    // }
 
     // Upsert User into database
     if (creatingUser || googleUser) {
@@ -58,15 +59,24 @@ const Signup = () => {
         }, 1000);
     }
 
+    useEffect(() => {
+        if (creatingError?.code === 'auth/email-already-in-use') {
+            setCustomSignupError(<p className='text-[13px] text-center text-red-500 font-semibold'>Email already exist. Please try to login. </p>);
+        }else if (googleError) {
+            setCustomSignupError(<p className='text-[13px] text-center text-red-500 font-semibold'>Something wrong. Please try again.</p>)
+        }
+    }, [creatingError?.code, googleError])
+
 
     return (
         <div className='signup-page md:pt-10'>
-            <div className='w-11/12 mx-auto flex '>
-                <div className='w-1/2'>
+            <div className='w-11/12 mx-auto md:pt-0 pt-4 md:flex '>
+                <div className='md:w-1/2'>
                 </div>
-                <div className='w-1/2 '>
+                <div className='md:w-1/2 '>
                     <div class="p-6 max-w-md grid grid-cols-1 gap-3 bg-white rounded-lg border border-gray-200 shadow-md">
                         <h2 className='text-xl font-semibold'>Signup</h2>
+                        {customSignupError && customSignupError}
                         <form
                             onSubmit={handleSubmit(onSubmit)}
                             className='grid grid-cols-1 gap-3'>

@@ -5,16 +5,16 @@ const ContactUs = () => {
         <div className='contact-section mt-24 mb-10 text-left w-9/12 mx-auto'>
             <h2 className='text-3xl font-semibold font-[Roboto Flex]'>Have You any query?</h2>
             <h2 className='text-3xl font-semibold'>Please Fill free to message.</h2>
-            <div className='grid md:grid-cols-2 gap-3 mt-10'>
-                <form action="">
+            <div className='w-full grid md:grid-cols-2 gap-3 mt-10'>
+                <form className='w-full' action="">
                     <div className='mb-4'>
-                        <input type="text" placeholder='Your Name' className=' w-96 border-0 border-b focus:border-gray-700' />
+                        <input type="text" placeholder='Your Name' className='w-full md:w-96 border-0 border-b focus:border-gray-700' />
                     </div>
                     <div className='mb-4'>
-                        <input type="text" placeholder='Your Email' className=' w-96 border-0 border-b focus:border-gray-700' />
+                        <input type="text" placeholder='Your Email' className='w-full md:w-96 border-0 border-b focus:border-gray-700' />
                     </div>
                     <div>
-                        <textarea name="" id="" cols="10" rows="3" placeholder='Your Message' className=' w-96 border-0 border-b focus:border-gray-700'></textarea>
+                        <textarea name="" id="" cols="10" rows="3" placeholder='Your Message' className='w-full md:w-96 border-0 border-b focus:border-gray-700'></textarea>
                     </div>
                     <div className='mt-3'>
                         <button type="button" class="text-white bg-[#06998f] hover:bg-[#099e94]  focus:ring-blue-300 focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Send Message</button>

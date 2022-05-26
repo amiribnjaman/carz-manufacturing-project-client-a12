@@ -1,60 +1,31 @@
 import React from 'react';
-import { Carousel } from '3d-react-carousal';
-import user1 from '../../Assets/Images/user/user1.jpg'
+import { useQuery } from 'react-query'
+import LoadingSpinner from '../../Components/LoadingSpinner';
 
 const Reviews = () => {
-    let slides = [
-        <div className='comment-container text-black bg-gray-200 w-full'>
-            <div className='mt-4 px-8'>
-                <p><span className='text-4xl font-semibold'>&ldquo;</span> This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. <span className='text-4xl font-semibold -mb-2 inline-block'>&rdquo;</span></p>
-                <div>
+    const { isLoading, error, data: reviews } = useQuery('user', () => fetch('http://localhost:5000/review').then(res => res.json()) )
 
-                    <div className='mt-4 w-14 h-14 text-center mx-auto '>
-                        <img className='w-full h-full rounded-full' src={user1} alt="" />
-                    </div>
-                    <h6>Ratings: 5</h6>
-                    <h5 className=' text-xl font-semibold'>Stephen Hertz</h5>
-                </div>
-            </div>
-        </div>,
-        <div className='comment-container text-black bg-gray-200 w-full'>
-            <div className='mt-4 px-8'>
-                <p><span className='text-4xl font-semibold'>&ldquo;</span> This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. <span className='text-4xl font-semibold -mb-2 inline-block'>&rdquo;</span></p>
-                <div>
-                    <div className='mt-4 w-14 h-14 text-center mx-auto '>
-                        <img className='w-full h-full rounded-full' src={user1} alt="" />
-                    </div>
-                    <h6>Ratings: 5</h6>
-                    <h5 className=' text-xl font-semibold'>Stephen Hertz</h5>
-                </div>
-            </div>
-        </div>,
-        <div className='comment-container text-black bg-gray-200 w-full'>
-            <div className='mt-4 px-8'>
-                <p><span className='text-4xl font-semibold'>&ldquo;</span> This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. This is market best company. <span className='text-4xl font-semibold -mb-2 inline-block'>&rdquo;</span></p>
-                <div>
-
-                    <div className='mt-4 w-14 h-14 text-center mx-auto '>
-                        <img className='w-full h-full rounded-full' src={user1} alt="" />
-                    </div>
-                    <h6>Ratings: 5</h6>
-                    <h5 className=' text-xl font-semibold'>Stephen Hertz</h5>
-                </div>
-            </div>
-        </div>,
-    ];
-
-    const callback = function (index) {
-        // console.log("", index);
+    if (isLoading) {
+        return <LoadingSpinner />
+    } else {
+        console.log(reviews);
     }
-    return (
-        <>
-            <h2 className='text-3xl mb-10 mt-24 font-semibold'>What Our Clients Says?</h2>
-            <div className='w-4/6 mx-auto mb-10'>
-                <Carousel slides={slides} interval={4000} onSlideChange={callback} />
-            </div>
-        </>
 
+
+
+    return (
+        <div className='w-10/12 mx-auto'>
+            <h2 className='text-3xl mb-10 mt-24 font-semibold'>What Our Clients Says?</h2>
+            <div className='grid grid-cols-1 md:grid-cols-3 mx-auto gap-4 text-center'>
+                {
+                    reviews.map(review => <div class="block p-6 mb-2 bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+                        <q> {review.review} </q>
+                        <h3 className='font-semibold text-sm mt-6'>{review.name}</h3>
+                        <p className='text-[13px]'>Ratings: {review.rating}</p>
+                    </div>)
+                }
+            </div>
+        </div>
 
     );
 };

@@ -7,7 +7,7 @@ const InfoSection = () => {
         <div>
             <div className='w-10/12 mx-auto'>
                 {/* bg-[#83CC34] bg-[#00CCBD]*/}
-                <div className=' -mt-20 z-50  bg-[#f7fdfc]  py-20 flex justify-center items-center'>
+                <div className=' md:-mt-20 z-50  bg-[#f7fdfc]  py-20 flex justify-center items-center'>
 
                 </div>
                 {/* <div className='  bg-gradient-to-r from-cyan-500 to-[rgb(20,194,142)]  py-10 flex justify-center items-center'>

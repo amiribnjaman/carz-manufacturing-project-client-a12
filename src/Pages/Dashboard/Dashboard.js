@@ -25,9 +25,8 @@ const Dashboard = () => {
             <div class="drawer drawer-mobile h-[460px] overflow-y-auto">
                 <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content flex flex-col items-start justify-start">
-
+                    <label for="my-drawer-2" class="btn my-3 drawer-button lg:hidden">Menu</label>
                     <Outlet />
-                    <label for="my-drawer-2" class="btn btn-primary drawer-button lg:hidden">Open drawer</label>
                 </div>
                 <div class="drawer-side h-[460px] border mr-2">
                     <label for="my-drawer-2" class="drawer-overlay"></label>

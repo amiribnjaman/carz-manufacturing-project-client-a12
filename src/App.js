@@ -20,6 +20,10 @@ import auth from './firebase.init';
 import { useState, useEffect } from 'react';
 import Purchase from './Pages/Purchase/Purchase';
 import Payment from './Pages/Purchase/Payment';
+import Blogs from './Pages/Blogs/Blogs'
+import MyPortfolio from './Pages/MyPortfolio/MyPortfolio'
+import NotFound from './Pages/NotFound/NotFound';
+
 
 
 function App() {
@@ -47,6 +51,8 @@ function App() {
         <Route path='/home' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/blogs' element={<Blogs />} />
+        <Route path='/myportfolio' element={<MyPortfolio />} />
         <Route path='/dashboard' element={
           <ProtectedRoute>
             <Dashboard />
@@ -72,6 +78,7 @@ function App() {
             <Payment />
           </ProtectedRoute>
         } />
+        <Route path='/*' element={<NotFound />} />
       </Routes>
       <Footer />
       <Toaster />
