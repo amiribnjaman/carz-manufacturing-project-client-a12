@@ -4,7 +4,14 @@ Take a look here [the carZ](https://carz-manufacturing-site-a12.web.app).
 
 ## Site features
 
- - This is a car part manufacturing website where user can purchase a bunch of product, delete and comment and on the other side a admin can add, delete parts and can manage admin and products.
+ - First of all, This is a full stack project where users can purchase a product and payment.
+
+ - To purchase product first of all, users have to login/create an account through email and password and also using Social network google.
+
+ - And an admin can add new product, manage product, and manage orders.
+
+
+ - Further, This is a car part manufacturing website where user can purchase a bunch of product, delete and comment and on the other side a admin can add, delete parts and can manage admin and products.
  
  - Home page:
 - First this site have a Navbar. Here some of menus.
@@ -32,7 +39,7 @@ Take a look here [the carZ](https://carz-manufacturing-site-a12.web.app).
  - payment page 
  - in the payment page user can payment used card
   
-  and he can give a review or feedback and last he/she can edit their profile page
+ - and he can give a review or feedback and last he/she can edit their profile page
 
 - Admin
 - a admin can add a product, manage, delete and also can delete unneccesery order those dosen't payment etc.
