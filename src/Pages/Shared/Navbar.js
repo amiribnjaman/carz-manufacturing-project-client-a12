@@ -12,11 +12,11 @@ const Navbar = () => {
     const [showMenu, setShowMenu] = useState(false)
 
     return (
-        <div className='shadow'>
+        <div className=''>
             <nav class="bg-white w-11/12 z-50 mx-auto h-[90px] border-gray-200 px-2 sm:px-4 flex items-center rounded dark:bg-gray-800">
                 <div class={`${showMenu ? 'relative top-[87px]' : ''} container flex flex-wrap justify-between items-center mx-auto`}>
                     <Link to="/" class="flex items-center">
-                        <span class="self-center LOGO text-xl font-semibold whitespace-nowrap dark:text-white">thecar<span className='text-[#00CCBD]'>Z</span></span>
+                        <span class="self-center LOGO text-xl font-semibold whitespace-nowrap dark:text-white">thecar<span className='text-[#5050ee]'>Z</span></span>
                     </Link >
                     <div class="flex items-center md:order-2 relative">
 

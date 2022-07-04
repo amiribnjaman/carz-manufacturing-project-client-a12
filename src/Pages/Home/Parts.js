@@ -21,7 +21,7 @@ const Parts = () => {
             {
                 parts.length <= 0 ? <LoadingSpinner /> : ''}
 
-            <div style={{ marginTop: '240px' }} className='my-20 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-10'>
+            <div className='my-20 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-10'>
                 {
                     parts.map(part => <>
                         <div className='grid grid-cols-2 gap-4 shadow p-2'>
