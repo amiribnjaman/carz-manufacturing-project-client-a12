@@ -20,7 +20,7 @@ const CheckoutForm = ({ product }) => {
 
     useEffect(() => {
         if (price) {
-            fetch('https://salty-peak-12518.herokuapp.com/create-payment-intent', {
+            fetch('http://localhost:5000/create-payment-intent', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
@@ -93,7 +93,7 @@ const CheckoutForm = ({ product }) => {
                 transactionId: paymentIntent.id
             }
 
-            fetch(`https://salty-peak-12518.herokuapp.com/order/${_id}`, {
+            fetch(`http://localhost:5000/order/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'

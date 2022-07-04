@@ -14,7 +14,7 @@ const ManageOrdersSingleRow = ({ index, order }) => {
     }
     const handleDeleteItem = () => {
         const id = selectedId
-        fetch(`https://salty-peak-12518.herokuapp.com/order/${id}`, {
+        fetch(`http://localhost:5000/order/${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

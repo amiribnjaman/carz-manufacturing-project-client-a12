@@ -30,7 +30,7 @@ const Login = () => {
     // Upsert User into database
     if (signinUser || googleUser) {
         const user = signinUser || googleUser;
-        fetch('https://salty-peak-12518.herokuapp.com/user', {
+        fetch('http://localhost:5000/user', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

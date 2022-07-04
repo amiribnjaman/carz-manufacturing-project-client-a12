@@ -6,7 +6,7 @@ import ManageProductsSingleRow from '../../../Components/ManageProductsSingleRow
 const ManageProducts = () => {
     const [products, setProducts] = useState([])
     // const { data, isLoading, error } = useQuery('products', () => {
-    //     fetch('https://salty-peak-12518.herokuapp.com/product').then(res => res.json())
+    //     fetch('http://localhost:5000/product').then(res => res.json())
     // })
 
     // if (data) {
@@ -18,7 +18,7 @@ const ManageProducts = () => {
     // }
 
     useEffect(() => {
-        fetch('https://salty-peak-12518.herokuapp.com/product', {
+        fetch('http://localhost:5000/product', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

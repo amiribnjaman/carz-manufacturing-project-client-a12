@@ -39,7 +39,7 @@ const AddReview = () => {
 
         if (data.name && data.email && data.review && data.rating) {
             setMsg('')
-            fetch('https://salty-peak-12518.herokuapp.com/review', {
+            fetch('http://localhost:5000/review', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

@@ -7,7 +7,7 @@ const Parts = () => {
     const [parts, setParts] = useState([])
 
     useEffect(() => {
-        fetch('https://salty-peak-12518.herokuapp.com/products/latest')
+        fetch('http://localhost:5000/products/latest')
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])
@@ -21,7 +21,7 @@ const Parts = () => {
             {
                 parts.length <= 0 ? <LoadingSpinner /> : ''}
 
-            <div className='my-20 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-10'>
+            <div style={{ marginTop: '240px' }} className='my-20 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-10'>
                 {
                     parts.map(part => <>
                         <div className='grid grid-cols-2 gap-4 shadow p-2'>

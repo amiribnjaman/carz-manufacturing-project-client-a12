@@ -8,7 +8,7 @@ const Dashboard = () => {
     const [loginUser, loading, error] = useAuthState(auth);
 
     useEffect(() => {
-        fetch(`https://salty-peak-12518.herokuapp.com/user/${loginUser?.email}`, {
+        fetch(`http://localhost:5000/user/${loginUser?.email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem("accessToken")}`
@@ -31,6 +31,7 @@ const Dashboard = () => {
                 <div class="drawer-side h-[460px] border mr-2">
                     <label for="my-drawer-2" class="drawer-overlay"></label>
                     <ul class="menu overflow-y-auto  w-60 text-base-content">
+
                         {/* <!-- Sidebar content here --> */}
                         <aside className=' h-[460px] bg-gray-50' aria-label="Sidebar">
                             <div class="overflow-y-auto px-3 py-4 bg-gray-50 rounded dark:bg-gray-800">

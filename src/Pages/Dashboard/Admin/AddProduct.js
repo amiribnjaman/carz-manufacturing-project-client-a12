@@ -33,7 +33,7 @@ const AddProduct = () => {
         }
 
         if (pro_name && pro_quantity && pro_price && pro_min_order && pro_image && pro_desc) {
-            fetch('https://salty-peak-12518.herokuapp.com/product', {
+            fetch('http://localhost:5000/product', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

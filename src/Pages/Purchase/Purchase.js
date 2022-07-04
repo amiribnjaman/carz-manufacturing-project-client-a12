@@ -18,7 +18,7 @@ const Purchase = () => {
     const [paymentBtnDisable, setPaymentBtnDisable] = useState(true)
 
     useEffect(() => {
-        fetch(`https://salty-peak-12518.herokuapp.com/product/${id}`)
+        fetch(`http://localhost:5000/product/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProduct(data)
@@ -62,7 +62,7 @@ const Purchase = () => {
         }
         if (orderProduct && price && orderQuantity && address && phone_number) {
             setErrMsg('')
-            fetch('https://salty-peak-12518.herokuapp.com/order', {
+            fetch('http://localhost:5000/order', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

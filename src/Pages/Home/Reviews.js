@@ -1,16 +1,22 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { useQuery } from 'react-query'
 import LoadingSpinner from '../../Components/LoadingSpinner';
 
 const Reviews = () => {
-    const { isLoading, error, data: reviews } = useQuery('user', () => fetch('https://salty-peak-12518.herokuapp.com/review').then(res => res.json()))
+    const [reviews, setReviews] = useState([])
+    // const { isLoading, error, data: reviews } = useQuery('user', () => fetch().then(res => res.json()))
 
-    if (isLoading) {
-        return <LoadingSpinner />
-    } else {
-        console.log(reviews);
-    }
+    useEffect(()=> {
+        fetch('http://localhost:5000/review')
+        .then(res => res.json())
+        .then(data => setReviews(data))
+    }, [])
 
+    // if (isLoading) {
+    //     return <LoadingSpinner />
+    // } else {
+    //     console.log(reviews);
+    // }
 
 
     return (

@@ -23,6 +23,7 @@ import Payment from './Pages/Purchase/Payment';
 import Blogs from './Pages/Blogs/Blogs'
 import MyPortfolio from './Pages/MyPortfolio/MyPortfolio'
 import NotFound from './Pages/NotFound/NotFound';
+import TopNav from './Pages/Shared/TopNav';
 
 
 
@@ -31,7 +32,7 @@ function App() {
   const [user, setUser] = useState('')
   const [loginUser, ,] = useAuthState(auth);
   useEffect(() => {
-    fetch(`https://salty-peak-12518.herokuapp.com/user/${loginUser?.email}`, {
+    fetch(`http://localhost:5000/user/${loginUser?.email}`, {
       method: 'GET',
       headers: {
         'authorization': `Bearer ${localStorage.getItem("accessToken")}`
@@ -45,6 +46,7 @@ function App() {
 
   return (
     <div className='App'>
+      <TopNav />
       <Navbar />
       <Routes>
         <Route path='/' element={<Home />} />

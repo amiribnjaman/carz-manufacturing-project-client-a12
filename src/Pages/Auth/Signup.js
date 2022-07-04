@@ -35,7 +35,7 @@ const Signup = () => {
     if (creatingUser || googleUser) {
         const user = creatingUser || googleUser;
         setTimeout(() => {
-            fetch('https://salty-peak-12518.herokuapp.com/user', {
+            fetch('http://localhost:5000/user', {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',

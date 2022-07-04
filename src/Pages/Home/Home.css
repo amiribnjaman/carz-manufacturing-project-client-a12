@@ -1,7 +1,12 @@
 .banner-section {
-    background: linear-gradient(0deg, rgba(49, 63, 71, 0.9), rgba(55, 75, 82, 0.7)), url('../../Assets/Images/banner.jpg');
+    background: radial-gradient(#027971, #03a89d);
+    /*url('../../Assets/Images/banner.jpg');  */
+    /* background: #03a89d; */
     max-width: 100%;
-    height: 100vh;
+    height: 110vh;
+    /* clip-path: ellipse(69% 100% at 50% 0%); */
+    clip-path: ellipse(90% 100% at 49% 0%);
+    box-sizing: border-box;
 }
 
 .banner-image-box {
@@ -11,14 +16,24 @@
     width: 70%;
 }
 
+
 /* Business Section */
 .buniness-section {
     background: linear-gradient(0deg, rgba(49, 63, 71, 0.9), rgba(55, 75, 82, 0.7)), url('../../Assets/Images/business-bg2.jpg');
-    min-height: 70vh;
+    min-height: 65vh;
     width: 100%;
     background-size: cover;
     background-position: center;
 }
+
+
+
+
+
+/* body {
+    background: #333;
+  } */
+
 
 /* Review Carousle */
 .react-3d-carousel {

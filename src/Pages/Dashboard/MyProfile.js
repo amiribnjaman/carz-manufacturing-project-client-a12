@@ -12,7 +12,7 @@ const MyProfile = () => {
     const [useFormDb, setUseFormDb] = useState(false)
     const { name, email, number, role, location, education, linkedin } = useFormDb
     useEffect(() => {
-        fetch(`https://salty-peak-12518.herokuapp.com/user/${user?.email}`, {
+        fetch(`http://localhost:5000/user/${user?.email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -42,7 +42,7 @@ const MyProfile = () => {
         }
         console.log(linkedin);
         if (linkedin && education && location && number) {
-            fetch(`https://salty-peak-12518.herokuapp.com/updateUser/${user?.email}`, {
+            fetch(`http://localhost:5000/updateUser/${user?.email}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'

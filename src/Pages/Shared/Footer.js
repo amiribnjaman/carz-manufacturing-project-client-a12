@@ -1,13 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Navbar.css'
+import './Footer.css'
 
 const Footer = () => {
     const date = new Date()
     const year = date.getFullYear()
 
     return (
-        <footer class="p-4 text-center bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800">
+        <footer class="p-4 text-center bg-white shadow md:px-6 md:py-8 dark:bg-gray-800">
             <div class="sm:flex md:mx-auto w-10/12 sm:items-center sm:justify-between">
                 <Link to="/" class="md:flex items-center mb-4 sm:mb-0">
                 <span class="self-center LOGO text-xl font-semibold whitespace-nowrap dark:text-white">thecar<span className='text-[#00CCBD]'>Z</span></span>
