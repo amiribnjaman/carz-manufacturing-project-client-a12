@@ -9,7 +9,7 @@ const Footer = () => {
 
     return (
         <footer class="px-4 text-center text-white shadow md:px-8 dark:bg-gray-800">
-            <div class="sm:flex md:mx-auto w-10/12 sm:items-center sm:justify-between">
+            <div class="sm:flex md:mx-auto md:w-10/12 sm:items-center sm:justify-between">
                 <Link to="/" class="md:flex items-center mb-4 sm:mb-0">
                 <span class="self-center LOGO text-xl font-semibold whitespace-nowrap dark:text-white">thecar<span className='text-white'>Z</span></span>
                 </Link>

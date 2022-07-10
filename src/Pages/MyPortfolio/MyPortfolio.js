@@ -3,7 +3,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div className='border p-4 md:w-1/2 mx-auto my-10 md:my-20'>
+        <div className='border p-4 md:w-1/2 mx-auto mb-16 my-10 md:my-20'>
             <div className='text-left'>
                 <h3>Name: Amir Hosen</h3>
                 <h3>Email: amiribnjaman@gmail.com</h3>

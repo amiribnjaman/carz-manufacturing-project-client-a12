@@ -17,32 +17,36 @@ const Parts = () => {
     }
 
     return (
-        <>
+        <> 
+            <div className='mt-20 text-3xl font-semibold'>
+            <h2>Best Selling Products</h2>
+            </div>
             {
                 parts.length <= 0 ? <LoadingSpinner /> : ''}
 
-            <div className='my-20 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-x-5 gap-y-10'>
+            <div className='mb-20 mt-10 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-4 gap-x-5 gap-y-10'>
                 {
                     parts.map(part => <>
-                        <div className='grid grid-cols-2 gap-4 shadow p-2'>
-                            <div>
-                                <img src={part.image} alt="" />
+                        <div className='grid shadow-md grid-cols-1 gap-8 rounded-tl-md rounded-tr-md'>
+                            <div className=''>
+                                <img style={{height: '230px', width: '100%'}} className='rounded-tl-md rounded-tr-md' src={part.image} alt="" />
                             </div>
-                            <div className='text-left'>
-                                <h4 className='text-2xl font-semibold'>Name: {part.productName}</h4>
-                                <p>
+                            <div className='text-center py-2'>
+                                <h6 className='w-2/5 mx-auto rounded-full mb-4 text-[11px] bg-blue-200 py-1 px-2 text-dark'>Best Seller</h6>
+                                <h4 className='text-xl font-semibold'>{part.productName}</h4>
+                                {/* <p>
                                     Description: {part.description}
-                                </p>
-                                <h6 className='text-md'>Min Order: {part.minOrder}</h6>
-                                <h6 className='text-md'>Available Quantity: {part.quantity}</h6>
+                                </p> */}
+                                {/* <h6 className='text-md'>Min Order: {part.minOrder}</h6>
+                                <h6 className='text-md'>Available Quantity: {part.quantity}</h6> */}
 
                                 <h5 className='font-semibold'>price: ${part.price}</h5>
-                                <p>Ratings: 5</p>
+                                {/* <p>Ratings: 5</p> */}
                                 <button
                                     onClick={() => {
                                         handleNavigateToPurchase(part._id)
                                     }}
-                                    className=' border rounded-sm border-[#000] px-5 mt-4 py-2 hover:bg-[#000] hover:text-white'>Purchase Now</button>
+                                    className='w-1/2 border rounded-full px-5 mt-4 py-1.5 bg-green-400 text-white'>Buy Now</button>
                             </div>
                         </div>
                     </>

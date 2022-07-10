@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useQuery } from 'react-query'
 import LoadingSpinner from '../../Components/LoadingSpinner';
 
@@ -6,10 +6,10 @@ const Reviews = () => {
     const [reviews, setReviews] = useState([])
     // const { isLoading, error, data: reviews } = useQuery('user', () => fetch().then(res => res.json()))
 
-    useEffect(()=> {
+    useEffect(() => {
         fetch('http://localhost:5000/review')
-        .then(res => res.json())
-        .then(data => setReviews(data))
+            .then(res => res.json())
+            .then(data => setReviews(data))
     }, [])
 
     // if (isLoading) {

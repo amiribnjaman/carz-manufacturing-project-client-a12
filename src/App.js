@@ -31,6 +31,7 @@ function App() {
   // This operation for getting the user role and then set the dashboar default component.
   const [user, setUser] = useState('')
   const [loginUser, ,] = useAuthState(auth);
+
   useEffect(() => {
     fetch(`http://localhost:5000/user/${loginUser?.email}`, {
       method: 'GET',
@@ -41,7 +42,7 @@ function App() {
       .then(res => res.json())
       .then(data => setUser(data))
 
-  }, [loginUser?.email, user])
+  }, [loginUser?.email])
 
 
   return (
