@@ -87,7 +87,7 @@ const Purchase = () => {
     }
 
     return (
-        <div className='w-9/12 mx-auto my-12'>
+        <div className='w-9/12 mx-auto my-12 mb-36'>
             <div className='md:flex'>
                 <div className='md:w-1/2'>
                     <div class="p-3 mb-4 max-w-md text-left bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 ">

@@ -7,6 +7,7 @@ const Parts = () => {
     const [parts, setParts] = useState([])
     const [showDetails, setShowDetails] = useState(false)
     const [detailsId, setDetailsId] = useState(0)
+    const [getProductDetails, setGetProductDetails] = useState(null)
 
     useEffect(() => {
         fetch('http://localhost:5000/products/latest')
@@ -14,6 +15,7 @@ const Parts = () => {
             .then(data => setParts(data))
     }, [])
 
+    console.log(getProductDetails);
     const handleNavigateToPurchase = id => {
         navigate(`/purchase/${id}`)
     }
@@ -22,7 +24,12 @@ const Parts = () => {
     // details
     const handleDetails = (id) => {
         setShowDetails(!showDetails)
-        setDetailsId(id)
+        fetch(`http://localhost:5000/product/${id}`)
+            .then(res => res.json())
+            .then(data => {
+                setGetProductDetails(data)
+            })
+
     }
 
     return (
@@ -61,7 +68,9 @@ const Parts = () => {
                                     <div className='text-right'>
                                         {/* Details Button */}
                                         <button
-                                            onClick={() => handleDetails(part._id)}
+                                            onClick={
+                                                () => handleDetails(part._id)
+                                            }
                                             className=' border rounded-full px-4 py-1 bg-gray-200 text-[13px] text-gray-600 hover:bg-gray-700 hover:text-white' data-modal-toggle="defaultModal">Details</button>
 
                                         {/* <!-- Main modal --> */}
@@ -70,7 +79,7 @@ const Parts = () => {
                                                 {/* <!-- Modal content --> */}
                                                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                                                     {/* <!-- Modal header --> */}
-                                                    <div class="flex justify-between items-start p-4 rounded-t border-b dark:border-gray-600">
+                                                    <div class="flex justify-between items-start px-4 pt-3 pb-2 rounded-t border-b dark:border-gray-600">
                                                         <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
                                                             Product Details
                                                         </h3>
@@ -81,13 +90,16 @@ const Parts = () => {
                                                         </button>
                                                     </div>
                                                     {/* <!-- Modal body --> */}
-                                                    <div class="p-6 space-y-6">
-                                                        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                                            With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                                                    <div class="p-4 space-y-6">
+                                                        <div>
+                                                            <img style={{ width: '100%', height: '250px' }} src={getProductDetails?.image} alt="" />
+                                                        </div>
+                                                        <p class="text-[15px] text-center leading-relaxed text-gray-500 dark:text-gray-400">
+                                                            {getProductDetails?.description}
                                                         </p>
-                                                        <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-                                                            The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
-                                                        </p>
+                                                        <div>
+                                                            
+                                                        </div>
                                                     </div>
                                                     {/* <!-- Modal footer --> */}
                                                     <div class="flex items-center justify-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
