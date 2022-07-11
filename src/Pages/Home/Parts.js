@@ -24,6 +24,7 @@ const Parts = () => {
     // details
     const handleDetails = (id) => {
         setShowDetails(!showDetails)
+        setDetailsId(id)
         fetch(`http://localhost:5000/product/${id}`)
             .then(res => res.json())
             .then(data => {
@@ -74,14 +75,14 @@ const Parts = () => {
                                             className=' border rounded-full px-4 py-1 bg-gray-200 text-[13px] text-gray-600 hover:bg-gray-700 hover:text-white' data-modal-toggle="defaultModal">Details</button>
 
                                         {/* <!-- Main modal --> */}
-                                        <div id="defaultModal" tabindex="-1" aria-hidden="true" class={`${showDetails ? 'block' : 'hidden'} flex justify-center items-center bg-[rgba(237,246,253,.4)] overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full justify-center items-center`}>
-                                            <div class="relative p-4 w-full max-w-2xl h-full md:h-auto">
+                                        <div id="defaultModal" tabindex="-1" aria-hidden="true" class={`${showDetails ? 'block' : 'hidden'} flex justify-center items-center bg-[rgba(237,246,253,.4)] overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 w-full md:inset-0 h-modal md:h-full `}>
+                                            <div class="relative p-4 w-full max-w-2xl h-full">
                                                 {/* <!-- Modal content --> */}
                                                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
                                                     {/* <!-- Modal header --> */}
-                                                    <div class="flex justify-between items-start px-4 pt-3 pb-2 rounded-t border-b dark:border-gray-600">
+                                                    <div class="flex justify-between items-start px-4 pt-3 pb-1 rounded-t border-b dark:border-gray-600">
                                                         <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
-                                                            Product Details
+                                                            {getProductDetails?.productName}
                                                         </h3>
                                                         <button
                                                             onClick={() => setShowDetails(!showDetails)}
@@ -90,22 +91,50 @@ const Parts = () => {
                                                         </button>
                                                     </div>
                                                     {/* <!-- Modal body --> */}
-                                                    <div class="p-4 space-y-6">
+                                                    <div class="p-4 space-y-4">
                                                         <div>
                                                             <img style={{ width: '100%', height: '250px' }} src={getProductDetails?.image} alt="" />
                                                         </div>
-                                                        <p class="text-[15px] text-center leading-relaxed text-gray-500 dark:text-gray-400">
+                                                        <p class="text-[14px] text-center text-gray-500 dark:text-gray-400">
                                                             {getProductDetails?.description}
                                                         </p>
-                                                        <div>
-                                                            
+                                                        <div className='text-left mx-2'>
+                                                            <h3 className='text-xl font-semibold'>{getProductDetails?.productName} <span className='text-[12px] font-normal'>({getProductDetails?.code})</span></h3>
+                                                            <h4 className='flex justify-between font-semibold'>
+                                                                <span>Price: </span>
+                                                                <span>$ {getProductDetails?.price}</span>
+                                                            </h4>
+                                                            <h4 className='flex justify-between text-[15px]'>
+                                                                <span>Minimum Order: </span>
+                                                                <span>{getProductDetails?.minOrder} pics</span>
+                                                            </h4>
+
+                                                            <h4 className='flex justify-between text-[15px]'>
+                                                                <span>Available Products: </span>
+                                                                <span>{getProductDetails?.quantity} pics</span>
+                                                            </h4>
+
+                                                            <h4 className='flex justify-between text-[15px]'>
+                                                                <span>Ratings: </span>
+                                                                <span>
+                                                                    <div class="flex items-center mb-5">
+                                                                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                                                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                                                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                                                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                                                        <svg class="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
+                                                                        <p class="ml-2 text-[13px] font-bold text-gray-900 dark:text-white">(4.95)</p>
+                                                                    </div>
+                                                                </span>
+                                                            </h4>
                                                         </div>
                                                     </div>
+
                                                     {/* <!-- Modal footer --> */}
-                                                    <div class="flex items-center justify-center p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                                                    <div class="flex items-center justify-center px-6 py-3 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
                                                         <button
                                                             onClick={() => handleNavigateToPurchase(detailsId)}
-                                                            data-modal-toggle="defaultModal" type="button" class="rounded-full px-8 py-2 bg-green-400 text-white hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm px-5 py-2.5 text-center">Buy Now</button>
+                                                            data-modal-toggle="defaultModal" type="button" class="rounded-full px-8 py-2 bg-green-400 text-white hover:bg-green-500 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium text-sm text-center">Buy Now</button>
                                                         <button
                                                             onClick={() => setShowDetails(!showDetails)}
                                                             data-modal-toggle="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:outline-none rounded-full border border-gray-200 text-sm font-medium px-8 py-2 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Cancel</button>
@@ -113,8 +142,6 @@ const Parts = () => {
                                                 </div>
                                             </div>
                                         </div>
-
-
 
                                         <div className='mr-2 font-semibold'>${part.price}</div>
                                         <div className='mr-2 flex justify-end'>
