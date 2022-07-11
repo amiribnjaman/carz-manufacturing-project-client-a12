@@ -18,8 +18,9 @@ const Parts = () => {
 
     return (
         <> 
-            <div className='mt-20 text-3xl font-semibold'>
-            <h2>Best Selling Products</h2>
+            <div className='mt-20 w-11/12 mx-auto text-left text-2xl font-semibold flex items-center'>
+            <div className='w-[6px] rounded h-[35px] bg-[#5B72EE] mr-4 mt-1'></div>
+            <h2 className=''>Best Selling Products</h2>
             </div>
             {
                 parts.length <= 0 ? <LoadingSpinner /> : ''}
@@ -32,7 +33,7 @@ const Parts = () => {
                                 <img style={{height: '230px', width: '100%'}} className='rounded-tl-md rounded-tr-md' src={part.image} alt="" />
                             </div>
                             <div className='text-center py-2'>
-                                <h6 className='w-2/5 mx-auto rounded-full mb-4 text-[11px] bg-blue-200 py-1 px-2 text-dark'>Best Seller</h6>
+                                <h6 className='w-2/5 mx-auto rounded-full mb-4 text-[11px] bg-blue-100 py-1 px-2 text-dark'>Best Selling</h6>
                                 <h4 className='text-xl font-semibold'>{part.productName}</h4>
                                 {/* <p>
                                     Description: {part.description}
@@ -40,13 +41,21 @@ const Parts = () => {
                                 {/* <h6 className='text-md'>Min Order: {part.minOrder}</h6>
                                 <h6 className='text-md'>Available Quantity: {part.quantity}</h6> */}
 
-                                <h5 className='font-semibold'>price: ${part.price}</h5>
+                                <h5 className='font-semibold text-[15px]'>price: ${part.price}</h5>
                                 {/* <p>Ratings: 5</p> */}
+                                <div className='mx-auto text-center w-full flex justify-center gap-1 mt-3'>
                                 <button
                                     onClick={() => {
                                         handleNavigateToPurchase(part._id)
                                     }}
-                                    className='w-1/2 border rounded-full px-5 mt-4 py-1.5 bg-green-400 text-white'>Buy Now</button>
+                                    className=' border rounded-full px-5 py-1 bg-green-400 text-white'>Buy Now</button>
+
+                                <button
+                                    onClick={() => {
+                                        handleNavigateToPurchase(part._id)
+                                    }}
+                                    className=' border rounded-full px-5 py-1 bg-blue-500 text-white'>Details</button>
+                                </div>
                             </div>
                         </div>
                     </>
