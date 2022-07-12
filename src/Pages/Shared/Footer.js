@@ -9,27 +9,60 @@ const Footer = () => {
 
     return (
         <footer class="px-4 text-center text-white shadow md:px-8 dark:bg-gray-800">
-            <div class="sm:flex md:mx-auto md:w-10/12 sm:items-center sm:justify-between">
-                <Link to="/" class="md:flex items-center mb-4 sm:mb-0">
-                <span class="self-center LOGO text-xl font-semibold whitespace-nowrap dark:text-white">thecar<span className='text-white'>Z</span></span>
-                </Link>
-                <ul class="flex flex-wrap justify-center md:justify-end items-center mb-6 text-sm text-white sm:mb-0 dark:text-gray-400">
-                    <li>
-                        <Link to="#" class="sm:mr-4 mr-1 hover:underline md:mr-6 ">About</Link>
-                    </li>
-                    <li>
-                        <Link to="#" class="sm:mr-4 mr-1 hover:underline md:mr-6">Privacy Policy</Link>
-                    </li>
-                    <li>
-                        <Link to="#" class="sm:mr-4 mr-1 hover:underline md:mr-6 ">Licensing</Link>
-                    </li>
-                    <li>
-                        <Link to="#" class="hover:underline">Contact</Link>
-                    </li>
-                </ul>
+            <div class="flex justify-between items-start md:mx-auto md:w-10/12 sm:items-center sm:justify-between">
+                <div className='footer-logo'>
+                    <Link to="/" class="md:flex mb-4 sm:mb-0">
+                        <span class="self-center LOGO text-xl font-semibold whitespace-nowrap dark:text-white">thecar<span className='text-green-400'>Z</span></span>
+                    </Link>
+                </div>
+                <div class="grid grid-cols-2 gap-8 py-8 px-6 text-left md:grid-cols-3">
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Company</h2>
+                        <ul class="text-gray-300">
+                            <li class="mb-2">
+                                <Link to="/" class=" hover:underline">About</Link>
+                            </li>
+                            <li class="mb-2">
+                                <Link to="/" class="hover:underline">Careers</Link>
+                            </li>
+                            <li class="mb-2">
+                                <Link to="/" class="hover:underline">Blog</Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Help center</h2>
+                        <ul class="text-gray-300">
+                            <li class="mb-2">
+                                <Link to="/" class="hover:underline">Linkedin</Link>
+                            </li>
+                            <li class="mb-2">
+                                <Link to="/" class="hover:underline">Facebook</Link>
+                            </li>
+                            <li class="mb-2">
+                                <Link to="/" class="hover:underline">Contact Us</Link>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Legal</h2>
+                        <ul class="text-gray-300">
+                            <li class="mb-2">
+                                <Link to="/" class="hover:underline">Privacy Policy</Link>
+                            </li>
+                            <li class="mb-2">
+                                <Link to="/" class="hover:underline">Licensing</Link>
+                            </li>
+                            <li class="mb-2">
+                                <Link to="/" class="hover:underline">Terms &amp; Conditions</Link>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            {/* <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" /> */}
-            <p class="block mt-16 block text-sm text-white sm:text-center dark:text-gray-400"> &copy; {year} <Link to="https://flowbite.com" class="hover:underline">the carZ™</Link>. All Rights Reserved.
+            <p class="mt-6 block text-sm text-gray-200 sm:text-center dark:text-gray-400"> &copy; {year} <Link to="/" class="hover:underline">the carZ</Link>. All Rights Reserved.
             </p>
         </footer>
     );

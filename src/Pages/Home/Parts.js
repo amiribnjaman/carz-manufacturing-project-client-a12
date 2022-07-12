@@ -15,7 +15,6 @@ const Parts = () => {
             .then(data => setParts(data))
     }, [])
 
-    console.log(getProductDetails);
     const handleNavigateToPurchase = id => {
         navigate(`/purchase/${id}`)
     }
@@ -51,7 +50,6 @@ const Parts = () => {
                             </div>
                             <div className='text-center py-2'>
                                 <h6 className='w-2/5 mx-auto rounded-full mb-4 text-[11px] bg-blue-100 py-1 px-2 text-dark'>Best Selling</h6>
-
 
                                 <div className='flex mx-1.5 justify-between'>
                                     <div className='text-left'>
@@ -164,59 +162,6 @@ const Parts = () => {
                     </>
                     )
                 }
-
-
-                {/* <div className='grid grid-cols-2 gap-4 shadow p-2'>
-                <div>
-                    <img src={tier1} alt="" />
-                </div>
-                <div className='text-left'>
-                    <h4 className='text-2xl font-semibold'>Name: Tier</h4>
-                    <p>
-                        Description: This is the market one of the best tier.
-                    </p>
-                    <h6 className='text-md'>Min Order: 100</h6>
-                    <h6 className='text-md'>Available Quantity: 500</h6>
-
-                    <h5 className='font-semibold'>price: $199</h5>
-                    <p>Ratings: 5</p>
-                    <button className=' border rounded-sm border-[#000] px-5 mt-4 py-2 hover:bg-[#000] hover:text-white'>Purchase Now</button>
-                </div>
-            </div>
-            <div className='grid grid-cols-2 gap-4 shadow p-2'>
-                <div>
-                    <img src={tier1} alt="" />
-                </div>
-                <div className='text-left'>
-                    <h4 className='text-2xl font-semibold'>Name: Tier</h4>
-                    <p>
-                        Description: This is the market one of the best tier.
-                    </p>
-                    <h6 className='text-md'>Min Order: 100</h6>
-                    <h6 className='text-md'>Available Quantity: 500</h6>
-
-                    <h5 className='font-semibold'>price: $199</h5>
-                    <p>Ratings: 5</p>
-                    <button className=' border rounded-sm border-[#000] px-5 mt-4 py-2 hover:bg-[#000] hover:text-white'>Purchase Now</button>
-                </div>
-            </div>
-            <div className='grid grid-cols-2 gap-4 shadow p-2'>
-                <div>
-                    <img src={tier1} alt="" />
-                </div>
-                <div className='text-left'>
-                    <h4 className='text-2xl font-semibold'>Name: Tier</h4>
-                    <p>
-                        Description: This is the market one of the best tier.
-                    </p>
-                    <h6 className='text-md'>Min Order: 100</h6>
-                    <h6 className='text-md'>Available Quantity: 500</h6>
-
-                    <h5 className='font-semibold'>price: $199</h5>
-                    <p>Ratings: 5</p>
-                    <button className=' border rounded-sm border-[#000] px-5 mt-4 py-2 hover:bg-[#000] hover:text-white'>Purchase Now</button>
-                </div>
-            </div> */}
 
             </div>
         </>
