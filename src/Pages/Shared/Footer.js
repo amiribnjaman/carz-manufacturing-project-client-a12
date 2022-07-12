@@ -15,6 +15,7 @@ const Footer = () => {
                         <span class="self-center LOGO text-xl font-semibold whitespace-nowrap dark:text-white">thecar<span className='text-green-400'>Z</span></span>
                     </Link>
                 </div>
+                
                 <div class="grid grid-cols-2 gap-8 py-8 px-6 text-left md:grid-cols-3">
                     <div>
                         <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Company</h2>

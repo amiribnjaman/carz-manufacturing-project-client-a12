@@ -24,14 +24,15 @@
 /* Business Section */
 .buniness-section {
     background: linear-gradient(0deg, rgba(45, 46, 53, 0.2), rgba(49, 49, 54, 0.2)), url('../../Assets/Images/business-bg.jpg');
-    
+
     min-height: 65vh;
     background-size: 1266px 610px;
     width: 100%;
     background-position: center;
     background-repeat: no-repeat;
 }
-.buniness-section button{
+
+.buniness-section button {
     cursor: pointer;
 }
 
@@ -40,6 +41,41 @@
     height: 300px !important;
 }
 
+.eWjCzc,
+.eAyARa {
+    background: #eee !important;
+    width: 35px !important;
+    height: 35px !important;
+    min-width: 35px !important;
+    font-size: 1em !important;
+    line-height: 35px !important;
+}
+
+.eWjCzc:hover:enabled,
+.eWjCzc:focus:enabled {
+    color: rgb(40, 40, 40) !important;
+}
+
+.krmNah {
+    background-color: rgba(52, 60, 151, .5);
+    box-shadow: 0 0 1px 3px rgb(52 60 151);
+}
+
+.review-vector {
+    display: flex;
+    justify-content: center;
+    background: #F9FAFB;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: -64px;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid #F9FAFB;
+}
+
+/* 
 .slider-container,
 .slider-single-content,
 .slider-single .active,
@@ -64,7 +100,7 @@
 .react-3d-carousel .slider-container .slider-right div:hover,
 .react-3d-carousel .slider-container .slider-left div:hover {
     background: rgba(49, 63, 71, 0.5) !important;
-}
+} */
 
 .comment-container {
     background: linear-gradient(0deg, rgba(228, 245, 254, 0.9), rgba(223, 246, 253, 0.9)), url('../../Assets/Images/dots.png');
@@ -103,15 +139,17 @@
 }
 
 
-@media only screen and (max-width: 480px){
+@media only screen and (max-width: 480px) {
     .banner-section {
         height: 65vh;
         clip-path: ellipse(150% 100% at 50% 0%);
     }
+
     .banner-image-box {
         top: 50%;
         left: 50%;
     }
+
     .buniness-section {
         min-height: 85vh;
     }
