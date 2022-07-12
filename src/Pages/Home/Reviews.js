@@ -42,7 +42,7 @@ const Reviews = () => {
         <div className='w-10/12 mx-auto'>
             <h2 className='text-2xl md:text-3xl mb-10 mt-24 font-semibold'>What Our Clients Says?</h2>
 
-            {/*Comments For big devices */}
+            {/*Reviews showing in big devices */}
             <div className='hidden md:block'>
             <Carousel itemsToShow={2} enableAutoPlay={true} itemsToScroll={2} showArrows={false} autoPlaySpeed={5000}>
                 {reviews.map(review => <div className=' shadow-lg gap-4 w-11/12 min-h-[250px] rounded-md p-6 mx-4 mb-8 mt-12 bg-gray-50'>
@@ -66,7 +66,7 @@ const Reviews = () => {
             </Carousel>
             </div>
 
-            {/* Comments for mobile devices */}
+            {/* Reviews showing in mobile devices */}
             <div className='block md:hidden'>
             <Carousel itemsToShow={1} enableAutoPlay={true} itemsToScroll={1} showArrows={false} autoPlaySpeed={5000}>
                 {reviews.map(review => <div className=' shadow-lg gap-4 w-11/12 min-h-[250px] rounded-md p-6 mx-4 mb-8 mt-12 bg-gray-50'>
