@@ -9,61 +9,61 @@ const Footer = () => {
 
     return (
         <footer class="px-4 text-center text-white shadow md:px-8 dark:bg-gray-800">
-            <div class="flex justify-between items-start md:mx-auto md:w-10/12 sm:items-center sm:justify-between">
+            <div class="md:flex justify-between items-start md:mx-auto md:w-10/12 sm:items-center sm:justify-between">
                 <div className='footer-logo'>
-                    <Link to="/" class="md:flex mb-4 sm:mb-0">
-                        <span class="self-center LOGO text-xl font-semibold whitespace-nowrap dark:text-white">thecar<span className='text-green-400'>Z</span></span>
+                    <Link to="/" class="md:flex md:mb-4 mb-2 sm:mb-0">
+                        <span class="self-center LOGO text-2xl font-semibold whitespace-nowrap dark:text-white">thecar<span className='text-green-400'>Z</span></span>
                     </Link>
                 </div>
-                
-                <div class="grid grid-cols-2 gap-8 py-8 px-6 text-left md:grid-cols-3">
+
+                <div class="grid grid-cols-1 gap-8 py-8 px-6 text-left md:grid-cols-3">
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Company</h2>
-                        <ul class="text-gray-300">
+                        <h2 class="md:mb-6 mb-2 text-sm font-semibold text-gray-300 uppercase">Company</h2>
+                        <ul class="text-gray-200">
                             <li class="mb-2">
-                                <Link to="/" class=" hover:underline">About</Link>
+                                <Link to="/" class="text-[15px] hover:underline">About</Link>
                             </li>
                             <li class="mb-2">
-                                <Link to="/" class="hover:underline">Careers</Link>
+                                <Link to="/" class="text-[15px] hover:underline">Careers</Link>
                             </li>
                             <li class="mb-2">
-                                <Link to="/" class="hover:underline">Blog</Link>
+                                <Link to="/" class="text-[15px] hover:underline">Blog</Link>
                             </li>
                         </ul>
                     </div>
 
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Help center</h2>
-                        <ul class="text-gray-300">
+                        <h2 class="md:mb-6 mb-2 text-sm font-semibold text-gray-300 uppercase">Help center</h2>
+                        <ul class="text-gray-200">
                             <li class="mb-2">
-                                <Link to="/" class="hover:underline">Linkedin</Link>
+                                <Link to="/" class="hover:underline text-[15px]">Linkedin</Link>
                             </li>
                             <li class="mb-2">
-                                <Link to="/" class="hover:underline">Facebook</Link>
+                                <Link to="/" class="hover:underline text-[15px]">Facebook</Link>
                             </li>
                             <li class="mb-2">
-                                <Link to="/" class="hover:underline">Contact Us</Link>
+                                <Link to="/" class="hover:underline text-[15px]">Contact Us</Link>
                             </li>
                         </ul>
                     </div>
 
                     <div>
-                        <h2 class="mb-6 text-sm font-semibold text-gray-400 uppercase">Legal</h2>
-                        <ul class="text-gray-300">
+                        <h2 class="md:mb-6 mb-2 mb-2 text-sm font-semibold text-gray-300 uppercase">Legal</h2>
+                        <ul class="text-gray-200">
                             <li class="mb-2">
-                                <Link to="/" class="hover:underline">Privacy Policy</Link>
+                                <Link to="/" class="hover:underline text-[15px]">Privacy Policy</Link>
                             </li>
                             <li class="mb-2">
-                                <Link to="/" class="hover:underline">Licensing</Link>
+                                <Link to="/" class="hover:underline text-[15px]">Licensing</Link>
                             </li>
                             <li class="mb-2">
-                                <Link to="/" class="hover:underline">Terms &amp; Conditions</Link>
+                                <Link to="/" class="hover:underline text-[15px]">Terms &amp; Conditions</Link>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <p class="mt-6 block text-sm text-gray-200 sm:text-center dark:text-gray-400"> &copy; {year} <Link to="/" class="hover:underline">the carZ</Link>. All Rights Reserved.
+            <p class="md:mt-6 mt-3 block text-sm text-gray-200 sm:text-center dark:text-gray-400"> &copy; {year} <Link to="/" class="hover:underline">the carZ</Link>. All Rights Reserved.
             </p>
         </footer>
     );

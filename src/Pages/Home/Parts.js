@@ -36,7 +36,7 @@ const Parts = () => {
         <>
             <div className='mt-20 w-11/12 mx-auto text-left text-2xl font-semibold flex items-center'>
                 <div className='w-[6px] rounded h-[35px] bg-[#5B72EE] mr-4 mt-1'></div>
-                <h2 className=''>Best Selling Products</h2>
+                <h2 className='text-2xl md:text-3xl'>Best Selling Products</h2>
             </div>
             {
                 parts.length <= 0 ? <LoadingSpinner /> : ''}

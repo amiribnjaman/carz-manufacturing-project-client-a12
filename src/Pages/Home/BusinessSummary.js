@@ -6,7 +6,7 @@ import './Home.css'
 const BusinessSummary = () => {
     return (
         <div className='my-24 buniness-section w-11/12 mx-auto'>
-            <h3 className='text-[#000] text-3xl pt-12 font-semibold'>Business Statistics</h3>
+            <h3 className='text-[#000] text-2xl md:text-3xl pt-12 font-semibold'>Business Statistics</h3>
             <div className='w-11/12 mb-10 mx-auto grid grid-cols-1 md:grid-cols-4 gap-5 align-items-center text-white mt-16'>
                 <div className='bg-[rgba(152,152,152,0.5)] rounded-md py-7 shadow'>
                     <FontAwesomeIcon className='text-3xl mb-3 text-[#118FD1]' icon={faPeopleCarryBox} />
