@@ -4,7 +4,7 @@ import ManageOrdersSingleRow from '../../../Components/ManageOrdersSingleRow';
 const ManageAllOrders = () => {
     const [orders, setOrders] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/order')
+        fetch('https://carz-manufacturing-project-server-a12.vercel.app/order')
             .then(res => res.json())
             .then(data => {
                 setOrders(data)

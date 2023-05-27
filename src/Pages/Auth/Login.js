@@ -30,7 +30,7 @@ const Login = () => {
     // Upsert User into database
     if (signinUser || googleUser) {
         const user = signinUser || googleUser;
-        fetch('http://localhost:5000/user', {
+        fetch('https://carz-manufacturing-project-server-a12.vercel.app/user', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',

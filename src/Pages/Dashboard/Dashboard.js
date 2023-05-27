@@ -8,7 +8,7 @@ const Dashboard = () => {
     const [loginUser, loading, error] = useAuthState(auth);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${loginUser?.email}`, {
+        fetch(`https://carz-manufacturing-project-server-a12.vercel.app/user/${loginUser?.email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem("accessToken")}`

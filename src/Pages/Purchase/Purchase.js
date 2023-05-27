@@ -18,7 +18,7 @@ const Purchase = () => {
     const [paymentBtnDisable, setPaymentBtnDisable] = useState(true)
 
     useEffect(() => {
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://carz-manufacturing-project-server-a12.vercel.app/product/${id}`)
             .then(res => res.json())
             .then(data => {
                 setProduct(data)
@@ -62,7 +62,7 @@ const Purchase = () => {
         }
         if (orderProduct && price && orderQuantity && address && phone_number) {
             setErrMsg('')
-            fetch('http://localhost:5000/order', {
+            fetch('https://carz-manufacturing-project-server-a12.vercel.app/order', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

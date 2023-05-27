@@ -33,7 +33,7 @@ const AddProduct = () => {
         }
 
         if (pro_name && pro_quantity && pro_price && pro_min_order && pro_image && pro_desc) {
-            fetch('http://localhost:5000/product', {
+            fetch('https://carz-manufacturing-project-server-a12.vercel.app/product', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

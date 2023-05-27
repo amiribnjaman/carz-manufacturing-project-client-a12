@@ -9,7 +9,7 @@ const MakeAdminSingleRow = ({ user, index }) => {
     const handleMakeAdmin = () => {
         console.log(email)
         if (loginUser) {
-            fetch(`http://localhost:5000/makeAdmin/${loginUser?.email}`, {
+            fetch(`https://carz-manufacturing-project-server-a12.vercel.app/makeAdmin/${loginUser?.email}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',

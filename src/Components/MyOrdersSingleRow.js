@@ -14,7 +14,7 @@ const MyOrdersSingleRow = ({ order, index }) => {
     }
     const handleDeleteItem = () => {
         const id = selectedId
-        fetch(`http://localhost:5000//${id}`, {
+        fetch(`https://carz-manufacturing-project-server-a12.vercel.app//${id}`, {
             method: 'DELETE'
         })
             .then(res => res.json())

@@ -4,7 +4,7 @@ import MakeAdminSingleRow from '../../../Components/MakeAdminSingleRow';
 const MakeAdmin = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/user')
+        fetch('https://carz-manufacturing-project-server-a12.vercel.app/user')
             .then(res => res.json())
             .then(data => setUsers(data))
     }, [])

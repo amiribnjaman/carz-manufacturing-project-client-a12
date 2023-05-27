@@ -35,7 +35,7 @@ const Signup = () => {
     if (creatingUser || googleUser) {
         const user = creatingUser || googleUser;
         setTimeout(() => {
-            fetch('http://localhost:5000/user', {
+            fetch('https://carz-manufacturing-project-server-a12.vercel.app/user', {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',

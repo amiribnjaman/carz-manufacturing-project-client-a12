@@ -39,7 +39,7 @@ const AddReview = () => {
 
         if (data.name && data.email && data.review && data.rating) {
             setMsg('')
-            fetch('http://localhost:5000/review', {
+            fetch('https://carz-manufacturing-project-server-a12.vercel.app/review', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

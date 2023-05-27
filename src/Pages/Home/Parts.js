@@ -10,7 +10,7 @@ const Parts = () => {
     const [getProductDetails, setGetProductDetails] = useState(null)
 
     useEffect(() => {
-        fetch('http://localhost:5000/products/latest')
+        fetch('https://carz-manufacturing-project-server-a12.vercel.app/products/latest')
             .then(res => res.json())
             .then(data => setParts(data))
     }, [])
@@ -24,7 +24,7 @@ const Parts = () => {
     const handleDetails = (id) => {
         setShowDetails(!showDetails)
         setDetailsId(id)
-        fetch(`http://localhost:5000/product/${id}`)
+        fetch(`https://carz-manufacturing-project-server-a12.vercel.app/product/${id}`)
             .then(res => res.json())
             .then(data => {
                 setGetProductDetails(data)

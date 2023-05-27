@@ -6,7 +6,7 @@ import ManageProductsSingleRow from '../../../Components/ManageProductsSingleRow
 const ManageProducts = () => {
     const [products, setProducts] = useState([])
     // const { data, isLoading, error } = useQuery('products', () => {
-    //     fetch('http://localhost:5000/product').then(res => res.json())
+    //     fetch('https://carz-manufacturing-project-server-a12.vercel.app/product').then(res => res.json())
     // })
 
     // if (data) {
@@ -18,7 +18,7 @@ const ManageProducts = () => {
     // }
 
     useEffect(() => {
-        fetch('http://localhost:5000/product', {
+        fetch('https://carz-manufacturing-project-server-a12.vercel.app/product', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',

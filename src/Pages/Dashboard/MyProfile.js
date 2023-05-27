@@ -12,7 +12,7 @@ const MyProfile = () => {
     const [useFormDb, setUseFormDb] = useState(false)
     const { name, email, number, role, location, education, linkedin } = useFormDb
     useEffect(() => {
-        fetch(`http://localhost:5000/user/${user?.email}`, {
+        fetch(`https://carz-manufacturing-project-server-a12.vercel.app/user/${user?.email}`, {
             method: 'GET',
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -42,7 +42,7 @@ const MyProfile = () => {
         }
         console.log(linkedin);
         if (linkedin && education && location && number) {
-            fetch(`http://localhost:5000/updateUser/${user?.email}`, {
+            fetch(`https://carz-manufacturing-project-server-a12.vercel.app/updateUser/${user?.email}`, {
                 method: 'PATCH',
                 headers: {
                     'content-type': 'application/json'
