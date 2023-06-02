@@ -22,7 +22,6 @@ const Reviews = () => {
     // } else {
     //     console.log(reviews);
     // }
-    console.log(reviews)
 
 
     const reviewStar = {
