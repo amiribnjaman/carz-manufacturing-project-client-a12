@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import LoadingSpinner from '../../Components/LoadingSpinner';
+import ComponentLoading from '../../Components/componentLoading';
 
 const Parts = () => {
     const navigate = useNavigate()
@@ -38,8 +38,7 @@ const Parts = () => {
                 <div className='w-[6px] rounded h-[35px] bg-[#5B72EE] mr-4 mt-1'></div>
                 <h2 className='text-2xl md:text-3xl'>Best Selling Products</h2>
             </div>
-            {
-                parts.length <= 0 ? <LoadingSpinner /> : ''}
+            { parts.length <= 0 ? <ComponentLoading /> : ''}
 
             <div className='mb-20 mt-10 w-11/12 mx-auto grid grid-cols-1 md:grid-cols-4 gap-x-5 gap-y-10'>
                 {
