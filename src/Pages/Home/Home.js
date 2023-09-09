@@ -11,8 +11,8 @@ import ComponentLoading from '../../Components/componentLoading'
 import './Home.css'
 import LoadingSpinner from '../../Components/LoadingSpinner';
 
-const Parts = lazy (() => customDealay(import('./Parts')))
-const Reviews = lazy (() => customDealay(import('./Reviews')))
+const Parts = lazy (() => customDelay(import('./Parts')))
+const Reviews = lazy (() => customDelay(import('./Reviews')))
 
 const Home = () => {
     return (
@@ -36,7 +36,7 @@ const Home = () => {
     )
 };
 
-const customDealay = (promise) => {
+const customDelay = (promise) => {
     return new Promise(resolve => {
       setTimeout(resolve, 3000);
     }).then(() => promise);
