@@ -12,7 +12,7 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className="">
+    <div className="py-2">
       <nav class="bg-white w-10/12 z-50 mx-auto h-[90px] border-gray-200 md:px-10 sm:px-4 flex items-center rounded dark:bg-gray-800">
         <div
           class={`${
@@ -20,29 +20,110 @@ const Navbar = () => {
           } container flex flex-wrap justify-between items-center mx-auto`}
         >
           <Link to="/" class="flex items-center">
-            <span class="self-center LOGO text-2xl font-semibold whitespace-nowrap dark:text-white">
+            <span class="self-center LOGO text-3xl font-semibold whitespace-nowrap dark:text-white">
               thecar<span className="text-green-400">Z</span>
             </span>
           </Link>
-          <div class="flex items-center md:order-2 relative">
+                  <div class="flex items-center md:order-2 relative">
+                      
+                      {/* Navbar mid section */}
+            <div className="flex mr-12 -mt-[10px] gap-5 text-[13px] items-center">
+              <div className=" gap-2 mr-4 items-center">
+                <div className="flex items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1"
+                    stroke="currentColor"
+                    class="w-4 h-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
+                    />
+                  </svg>
+                  <h5 className="text-left text-[12px] font-normal">Call Us</h5>
+                </div>
+                <div className="">
+                  <span className="text-[13px] font-semibold">
+                    +88 013456789
+                  </span>
+                </div>
+              </div>
+              <div className=" gap-2 items-center">
+                <div className="flex gap-1 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1"
+                    stroke="currentColor"
+                    class="w-4 h-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
+                    />
+                  </svg>
+
+                  <h5 className="text-left text-[12px] font-normal">Mail Us</h5>
+                </div>
+                <div className="">
+                  <span className="text-[13px] font-semibold">
+                    carz@mail.com
+                  </span>
+                </div>
+              </div>
+              <div className=" gap-2 items-center">
+                <div className="flex gap-1 items-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1"
+                    stroke="currentColor"
+                    class="w-4 h-4"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                    />
+                  </svg>
+
+                  <h5 className="text-left text-[12px] font-normal">
+                    Opening Time
+                  </h5>
+                </div>
+
+                <div className="">
+                  <span className="text-[13px] font-semibold">
+                  At 10:00AM - 10:00PM
+                  </span>
+                </div>
+              </div>
+            </div>
             <ul class="flex mt-3 flex-col md:flex-row md:space-x-6 md:mt-0 md:text-sm md:font-medium">
-              <li>
+              {/* <li>
                 <a
                   href="#"
                   class="block text-[12px] py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Products
                 </a>
-              </li>
-              <li>
+              </li>*/}
+              <li className="ml-[22px]">
                 <a
                   href="#"
-                  class="block text-[12px] py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  class="block text-[12px] py-2 pr-1 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Wishlist
                 </a>
-              </li>
-              <li>
+              </li> 
+              {/* <li>
                 <Link
                   to="#"
                   class="flex py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 hover:text-blue-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
@@ -61,7 +142,7 @@ const Navbar = () => {
                     0
                   </sup>
                 </Link>
-              </li>
+              </li> */}
 
               <li>
                 {!user ? (
@@ -70,7 +151,7 @@ const Navbar = () => {
                     class="block py-2 pr-4 pl-3 text-black rounded md:bg-transparent  md:p-0 dark:text-white"
                     aria-current="page"
                   >
-                    Login
+                    <span id='navbar-login-btn' className="r">Login</span>
                   </CustomLink>
                 ) : user?.photoURL ? (
                   <>
