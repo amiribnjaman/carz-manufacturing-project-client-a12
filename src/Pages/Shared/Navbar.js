@@ -2,9 +2,11 @@ import { signOut } from "firebase/auth";
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import MainMenu from './MainMenu'
 import CustomLink from "../../Components/CustomLink";
 import auth from "../../firebase.init";
 import "./Navbar.css";
+
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -12,8 +14,8 @@ const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className="py-2">
-      <nav class="bg-white w-10/12 z-50 mx-auto h-[90px] border-gray-200 md:px-10 sm:px-4 flex items-center rounded dark:bg-gray-800">
+    <div className="py-7 relative">
+      <nav class="bg-white pb-2 w-10/12 z-50 mx-auto h-[90px] border-gray-200 md:px-10 sm:px-4 flex items-center rounded dark:bg-gray-800">
         <div
           class={`${
             showMenu ? "relative top-[90px]" : ""
@@ -24,10 +26,9 @@ const Navbar = () => {
               thecar<span className="text-green-400">Z</span>
             </span>
           </Link>
-                  <div class="flex items-center md:order-2 relative">
-                      
-                      {/* Navbar mid section */}
-            <div className="flex mr-12 -mt-[10px] gap-5 text-[13px] items-center">
+          <div class="flex items-center md:order-2 relative">
+            {/* Navbar mid section */}
+            <div className="flex mr-20 -mt-[10px] gap-5 text-[13px] items-center">
               <div className=" gap-2 mr-4 items-center">
                 <div className="flex items-center">
                   <svg
@@ -101,7 +102,7 @@ const Navbar = () => {
 
                 <div className="">
                   <span className="text-[13px] font-semibold">
-                  At 10:00AM - 10:00PM
+                    At 10:00AM - 10:00PM
                   </span>
                 </div>
               </div>
@@ -122,7 +123,7 @@ const Navbar = () => {
                 >
                   Wishlist
                 </a>
-              </li> 
+              </li>
               {/* <li>
                 <Link
                   to="#"
@@ -151,7 +152,9 @@ const Navbar = () => {
                     class="block py-2 pr-4 pl-3 text-black rounded md:bg-transparent  md:p-0 dark:text-white"
                     aria-current="page"
                   >
-                    <span id='navbar-login-btn' className="r">Login</span>
+                    <span id="navbar-login-btn" className="r">
+                      Login
+                    </span>
                   </CustomLink>
                 ) : user?.photoURL ? (
                   <>
@@ -287,6 +290,11 @@ const Navbar = () => {
                     </div> */}
         </div>
       </nav>
+
+          {/* MAIN NAVBAR/MENU */}
+          <div className="absolute w-[79%] mx-auto bottom-[-40px] left-[10%]">
+          <MainMenu />
+          </div>
     </div>
   );
 };
