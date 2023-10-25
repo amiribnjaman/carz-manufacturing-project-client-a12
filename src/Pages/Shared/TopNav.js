@@ -25,7 +25,7 @@ const TopNav = () => {
                 <li>
                   <a
                     href="#"
-                    class="block py-2 pr-4 pl-3 md:text-white hover:text-blue-700 rounded md:bg-transparent  md:p-0 dark:text-white"
+                    class="block py-2 pr-4 pl-3 md:text-white hover:text-blue-600 rounded md:bg-transparent md:p-0 dark:text-white"
                     aria-current="page"
                   >
                     <svg
@@ -43,7 +43,7 @@ const TopNav = () => {
                 <li>
                   <a
                     href="#"
-                    class="block py-2 pr-4 pl-3 hover:text-green-700 border-b border-gray-100 text-white  md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    class="block py-2 pr-4 pl-3 hover:text-green-600 hover:border-gray-100 text-white md:hover:bg-transparent md:border-0  md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ const TopNav = () => {
                 <li>
                   <a
                     href="#"
-                    class="block py-2 pr-4 pl-3 text-white hover:text-orange-500 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-orange-500  md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ const TopNav = () => {
                 <li>
                   <a
                     href="#"
-                    class="block py-2 pr-4 pl-3 text-white hover:text-blue-500 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    class="block py-2 pr-4 pl-3 text-white border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0  hover:text-blue-500 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"

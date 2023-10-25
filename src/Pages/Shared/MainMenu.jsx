@@ -117,7 +117,7 @@ const MainMenu = () => {
           </div>
 
           {/* SEARCH BUTTON */}
-          <div className="mt-[6px] -mr-2">
+          <div className="search-btn mt-[6px] hover:tooltip-open -mr-2 cursor-pointer rounded-full" >
             <button>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -134,6 +134,10 @@ const MainMenu = () => {
                 />
               </svg>
             </button>
+            {/* CUSTOM TOOLTIP */}
+            {/* <div className="search-tooltip">
+              <p>Search</p>
+            </div> */}
           </div>
         </div>
       </nav>

@@ -8,7 +8,7 @@ import Img5 from "./../../Assets/Images/cars/img-5.jpg";
 const Banner = () => {
   return (
     <div className="bg-gradient-to-r from-[#e2effb] to-[#fafffd]">
-      <div className="md:pt-28">
+      <div className="md:pt-[115px]">
         {/* BANNER SECTION HEADING */}
         <div className="md:w-[80%] mx-auto flex justify-between px-3">
           <div className="flex gap-3 items-center">
