@@ -2,9 +2,10 @@ import React from "react";
 
 const Banner = () => {
   return (
-    <div className="md:mt-28">
+    <div className="bg-gradient-to-r from-[#e2effb] to-[#fafffd]">
+      <div className="md:pt-28">
       {/* BANNER SECTION HEADING */}
-      <div className="md:w-[80%] mx-auto flex justify-between">
+      <div className="md:w-[80%] mx-auto flex justify-between px-3">
         <div className="flex gap-3 items-center">
           <h1 className="text-left text-[21px] font-semibold flex gap-2 items-center">
             Our objective is to provide the best Quality Product.
@@ -34,7 +35,7 @@ const Banner = () => {
             viewBox="0 0 24 24"
             stroke-width="1"
             stroke="currentColor"
-            class="w-[20px] h-[20px] mt-[4px]"
+            class="w-[19px] h-[19px] mt-[4px]"
           >
             <path
               stroke-linecap="round"
@@ -43,9 +44,27 @@ const Banner = () => {
             />
           </svg>
 
-          <span className="underline hover:text-[#014E9C] hover:decoration-[#014E9C]">Explore More</span>
+          <span className="underline hover:text-[#014E9C] hover:decoration-[#014E9C]">
+            Explore More
+          </span>
         </button>
       </div>
+
+      {/* BANNER SECTION BODY */}
+      <div className="md:mt-8 w-[80%] mx-auto ">
+        <div className="w-full grid grid-cols-4 grid-rows-2 gap-4 px-4">
+          <div className="bg-gray-100 col-span-2 row-span-1">ddd</div>
+          <div className="col-span-1 grid grid-rows-2 gap-4 ">
+            <div className="bg-gray-100 ">ddd</div>
+            <div className="bg-gray-100 ">ddd</div>
+          </div>
+          <div className="col-span-1 row-span-1 grid grid-rows-2 gap-4 ">
+            <div className="bg-gray-100 ">ddd</div>
+            <div className="bg-gray-100 ">ddd</div>
+          </div>
+        </div>
+      </div>
+    </div>
     </div>
 
     // <div className=''>

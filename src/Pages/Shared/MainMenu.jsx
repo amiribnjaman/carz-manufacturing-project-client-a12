@@ -12,7 +12,7 @@ const MainMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <div className="">
+    <div className="pl-3">
       <nav class="bg-white w-full shadow shadow-md border border-[1px] z-50 mx-auto h-[50px] py-9 border-gray-200 md:px-10 sm:px-4 flex items-center rounded dark:bg-gray-800">
         <div
           class={`${
