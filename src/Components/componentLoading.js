@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function componentLoading() {
   return (
-    <div className='mt-20 w-11/12 mx-auto flex justify-between gap-4'> 
+    <div className='mt-20 w-11/12 mx-auto flex justify-between gap-5'> 
         <div role="status" class="w-[25%] rounded shadow-sm animate-pulse dark:border-gray-700">
             <div class="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700">
                 <svg class="w-10 h-10 text-gray-200 dark:text-gray-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 20">

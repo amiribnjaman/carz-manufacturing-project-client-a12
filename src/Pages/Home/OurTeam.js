@@ -6,7 +6,7 @@ import user5 from '../../Assets/Images/user/user5.jpg'
 
 const OurTeam = () => {
     return (
-        <div className='w-10/12 expert-section mx-auto mt-24 mb-8'>
+        <div className='w-11/12 expert-section gap-5 mx-auto mt-24 mb-8'>
             <h2 className='text-2xl md:text-3xl font-semibold'>Meet Our Experts</h2>
             <p className='w-4/5 md:w-3/6 mx-auto text-center text-sm'>We have a bunch of talented & expert team whom always doing hard work for ensure the best services. </p>
             <div className='grid md:grid-cols-4 h-[90%] gap-4 w-full mt-12'>
@@ -15,7 +15,7 @@ const OurTeam = () => {
                     <div className='expert-details flex items-center text-center justify-center font-semibold text-black'>
                         <div>
                             <h3 className='text-white text-xl'>Steven Marks</h3>
-                            <h5 className='text-[#00CCBD] '>Enginner</h5>
+                            <h5 className='text-[#00CCBD] '>Engineer</h5>
                             <h6 className='text-[13px]'>Team Leader, the carZ</h6>
                             <button className='mt-2 underline text-[12px]'>Know More</button>
                         </div>
@@ -37,7 +37,7 @@ const OurTeam = () => {
                     <div className='expert-details flex items-center text-center justify-center font-semibold text-black'>
                         <div>
                             <h3 className='text-white text-xl'>Rock Holland</h3>
-                            <h5 className='text-[#00CCBD] '>Desinger</h5>
+                            <h5 className='text-[#00CCBD] '>Designer</h5>
                             <h6 className='text-[13px]'>Design Expert, the carZ</h6>
                             <button className='mt-2 underline text-[12px]'>Know More</button>
                         </div>

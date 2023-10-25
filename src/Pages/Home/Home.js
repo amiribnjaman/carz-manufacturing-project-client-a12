@@ -38,7 +38,7 @@ const Home = () => {
 
 const customDelay = (promise) => {
     return new Promise(resolve => {
-      setTimeout(resolve, 3000);
+      setTimeout(resolve, 2000);
     }).then(() => promise);
   }
 

@@ -3,3 +3,13 @@
     /* font-family: 'Pacifico', cursive; */
     font-family: 'Satisfy', cursive;
 }
+
+#top-navbar{
+    clip-path: polygon(7% 120%, 100% 100%, calc(105% - 30px) 0%, 0% 0%, calc(100% - 32px) 0%, 0% 0%)
+}
+
+#navbar-login-btn{
+    /* clip-path: polygon(7% 120%, 100% 100%, calc(105% - 30px) 0%, 0% 0%, calc(100% - 32px) 0%, 0% 0%) */
+    /* background-color: red;
+    clip-path: polygon(0 0, 100% 0%, calc(100% - 22px) 100%, 0% 100%); */
+}
