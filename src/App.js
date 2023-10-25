@@ -17,7 +17,7 @@ import ManageProducts from './Pages/Dashboard/Admin/ManageProducts';
 import { Toaster } from 'react-hot-toast';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from './firebase.init';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, createContext } from 'react';
 import Purchase from './Pages/Purchase/Purchase';
 import Payment from './Pages/Purchase/Payment';
 import Blogs from './Pages/Blogs/Blogs'
@@ -25,9 +25,11 @@ import MyPortfolio from './Pages/MyPortfolio/MyPortfolio'
 import NotFound from './Pages/NotFound/NotFound';
 import TopNav from './Pages/Shared/TopNav';
 
-
+// const OrderContext = createContext([])
 
 function App() {
+  
+  const [myOrders, setMyOrders] = useState([])
   // This operation for getting the user role and then set the dashboar default component.
   const [user, setUser] = useState('')
   const [loginUser, ,] = useAuthState(auth);
@@ -45,8 +47,14 @@ function App() {
   }, [loginUser?.email])
 
 
+  // const order = {
+  //   myOrders,
+  //   setMyOrders
+  // }
+
   return (
-    <div className='App'>
+    // <OrderContext.provider value={order}>
+      <div className='App'>
       <TopNav />
       <Navbar />
       <Routes>
@@ -55,7 +63,7 @@ function App() {
         <Route path='/login' element={<Login />} />
         <Route path='/signup' element={<Signup />} />
         <Route path='/blogs' element={<Blogs />} />
-        <Route path='/myportfolio' element={<MyPortfolio />} />
+        {/* <Route path='/myportfolio' element={<MyPortfolio />} /> */}
         <Route path='/dashboard' element={
           <ProtectedRoute>
             <Dashboard />
@@ -86,6 +94,7 @@ function App() {
       <Footer />
       <Toaster />
     </div>
+    // </OrderContext.provider>
   );
 }
 

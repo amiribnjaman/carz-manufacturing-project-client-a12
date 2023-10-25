@@ -13,7 +13,7 @@ const Parts = () => {
         fetch('https://carz-manufacturing-project-server-a12.vercel.app/products/latest')
             .then(res => res.json())
             .then(data => setParts(data))
-    }, [])
+    }, [parts])
 
     const handleNavigateToPurchase = id => {
         navigate(`/purchase/${id}`)
