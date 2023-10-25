@@ -2,11 +2,10 @@ import { signOut } from "firebase/auth";
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
-import MainMenu from './MainMenu'
+import MainMenu from "./MainMenu";
 import CustomLink from "../../Components/CustomLink";
 import auth from "../../firebase.init";
 import "./Navbar.css";
-
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -15,17 +14,20 @@ const Navbar = () => {
 
   return (
     <div className="py-7 relative">
-      <nav class="bg-white pb-2 w-10/12 z-50 mx-auto h-[90px] border-gray-200 md:px-10 sm:px-4 flex items-center rounded dark:bg-gray-800">
+      <nav class="bg-white pb-2 w-10/12 z-50 mx-auto h-[90px] border-gray-200 md:px-10 sm:px-4 flex items-center rounded rounded-full dark:bg-gray-800">
         <div
           class={`${
             showMenu ? "relative top-[90px]" : ""
           } container flex flex-wrap justify-between items-center mx-auto`}
         >
-          <Link to="/" class="flex items-center">
-            <span class="self-center LOGO text-3xl font-semibold whitespace-nowrap dark:text-white">
-              thecar<span className="text-green-400">Z</span>
-            </span>
-          </Link>
+          <div className="">
+            <Link to="/" class="flex items-center">
+              <span class="self-center LOGO text-3xl font-semibold whitespace-nowrap dark:text-white">
+                thecar<span className="text-green-400">Z</span>
+              </span>
+            </Link>
+            <p className="text-[11px]">The product you dream for!</p>
+          </div>
           <div class="flex items-center md:order-2 relative">
             {/* Navbar mid section */}
             <div className="flex mr-20 -mt-[10px] gap-5 text-[13px] items-center">
@@ -291,10 +293,10 @@ const Navbar = () => {
         </div>
       </nav>
 
-          {/* MAIN NAVBAR/MENU */}
-          <div className="absolute w-[79%] mx-auto bottom-[-40px] left-[10%]">
-          <MainMenu />
-          </div>
+      {/* MAIN NAVBAR/MENU */}
+      <div className="absolute w-[79%] mx-auto bottom-[-40px] left-[10%]">
+        <MainMenu />
+      </div>
     </div>
   );
 };
