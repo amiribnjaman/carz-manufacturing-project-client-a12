@@ -11,7 +11,7 @@ import ComponentLoading from '../../Components/componentLoading'
 import './Home.css'
 import LoadingSpinner from '../../Components/LoadingSpinner';
 
-const Parts = lazy (() => customDelay(import('./Parts')))
+const Parts = lazy (() => customDelay(import('./BestSelling')))
 const Reviews = lazy (() => customDelay(import('./Reviews')))
 const ProductCategory = lazy (() => customDelay(import('./ProductCategory')))
 
