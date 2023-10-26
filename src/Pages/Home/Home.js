@@ -13,6 +13,7 @@ import LoadingSpinner from '../../Components/LoadingSpinner';
 
 const Parts = lazy (() => customDelay(import('./Parts')))
 const Reviews = lazy (() => customDelay(import('./Reviews')))
+const ProductCategory = lazy (() => customDelay(import('./ProductCategory')))
 
 const Home = () => {
     return (
@@ -20,7 +21,9 @@ const Home = () => {
             <Banner />
             {/* <InfoSection /> */}
             {/* <Parts /> */}
-
+            <Suspense fallback={<ComponentLoading/>}>
+                <ProductCategory />
+            </Suspense>
             {/* Lazy loading parts section */}
             <Suspense fallback={<ComponentLoading/>}>
                 <Parts />
