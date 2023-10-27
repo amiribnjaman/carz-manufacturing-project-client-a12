@@ -10,7 +10,8 @@ export default function ProductCategory() {
       <div className="col-span-9 grid grid-cols-2 gap-3">
         <div className="col-span-1">
           <div>
-            <div className="bg-[#E1EFFE] grid grid-cols-2 w-full rounded flex gap-1">
+            {/*E1EFFE*/}
+            <div className="bg-[#8d9bab] grid grid-cols-2 w-full rounded flex gap-1">
               <div className="col-span-1">
                 <img
                   className="h-[180px] opacity-90 rounded-tl-lg rounded-bl-lg"
@@ -19,7 +20,7 @@ export default function ProductCategory() {
                   alt=""
                 />
               </div>
-              <div className="p-4 text-justify text-black text-[12px] font-[500]">
+              <div className="p-4 text-justify text-white text-[12px] font-[500]">
                 <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
                   minus eveniet nemo odio,.
@@ -71,8 +72,8 @@ export default function ProductCategory() {
         <div className="col-span-1">
           <div>
             {/* 7c8793 */}
-            <div className="bg-[#E1EFFE] grid grid-cols-2 w-full rounded flex gap-1">
-              <div className="p-4 text-justify text-black text-[12px] font-[500]">
+            <div className="bg-[#8d9bab] grid grid-cols-2 w-full rounded flex gap-1">
+              <div className="p-4 text-justify text-white text-[12px] font-[500]">
                 <p>
                   Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure
                   minus eveniet nemo odio,.
