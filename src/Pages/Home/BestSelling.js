@@ -40,7 +40,7 @@ const BestSelling = () => {
       <>
           {/* SECTION DIVIDER */}
           {/* <SectionDivider /> */}
-      <div className="md:mt-28 md:w-[80%] mx-auto gap-5 px-3">
+      <div className="md:mt-28 mt-16 md:w-[80%] mx-auto gap-5 px-3">
         {/* Best selling Heading */}
         <div className="flex justify-between text-left">
           <div>
@@ -61,7 +61,7 @@ const BestSelling = () => {
           </div> */}
           </div>
           <div>
-            <button className=" underline hover:text-[#014E9C] hover:underline-[#014E9C]  mt-4 py-[6px] text-[14px] px-[15px] font-semibold">
+            <button className=" underline hover:text-[#014E9C] hover:underline-[#014E9C] mt-4 py-[6px] text-[14px] px-[15px] font-semibold">
               See More
             </button>
           </div>
@@ -87,7 +87,7 @@ const BestSelling = () => {
                 </h6> */}
 
                   <div className="flex mx-1.5 justify-between">
-                    <div className="text-left">
+                    <div className="text-left w-full md:pr-0 pr-2">
                       {/* -----------Product name and rating */}
                       <div className="flex justify-between">
                         <h4 className="text-[15px] font-semibold">

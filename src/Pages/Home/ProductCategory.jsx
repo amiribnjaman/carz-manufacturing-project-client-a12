@@ -6,8 +6,8 @@ import Cat4 from "../../Assets/Images/cars/cat-4.jpg";
 
 export default function ProductCategory() {
   return (
-    <div className="md:mt-16 px-3 md:mb-12 md:w-[80%] mx-auto grid grid-cols-12 gap-5">
-      <div className="col-span-9 grid grid-cols-2 gap-3">
+    <div className="mt-16 px-3 md:mb-12 md:w-[80%] mx-auto grid md:grid-cols-12 gap-5">
+      <div className="md:col-span-9 order-2 md:order-1 grid md:grid-cols-2 gap-y-4 md:gap-3">
         <div className="col-span-1">
           <div>
             {/*E1EFFE*/}
@@ -93,17 +93,17 @@ export default function ProductCategory() {
       </div>
 
       {/* Category heading */}
-      <div className="col-span-3">
-        <h2 className="text-[22px] font-[600]">Products Categories</h2>
+      <div className="md:order-2 order-1 md:col-span-3">
+        <h2 className="text-[22px] md:text-right text-left font-[600]">Products Categories</h2>
         {/* Divider */}
-        <div className="flex float-right jusify-between gap-2 ml-auto mt-2 ">
+        <div className="flex md:float-right jusify-between gap-2 ml-auto mt-2 ">
           <span className="w-[8px] rounded-full h-[8px] bg-[#e9f4ff] "></span>
           <span className="w-[8px] rounded-full h-[8px] bg-[#d7ebff] "></span>
           <span className="w-[8px] rounded-full h-[8px] bg-[#a9c4df] "></span>
           <span className="w-[8px] rounded-full h-[8px] bg-[#769fcb] "></span>
           <span className="w-[8px] rounded-full h-[8px] bg-[#014E9C] "></span>
         </div>
-        <div className="text-right text-sm mt-10 w-[80%] ml-auto">
+        <div className="md:text-right text-left text-sm mt-4 md:mt-10 w-[80%] md:ml-auto">
           <h4>
             We manufacturing and providing bounch of types products those we
             provide to our clites for a long time.

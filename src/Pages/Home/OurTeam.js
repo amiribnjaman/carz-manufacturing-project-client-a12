@@ -6,7 +6,7 @@ import user5 from "../../Assets/Images/user/user5.jpg";
 
 const OurTeam = () => {
   return (
-    <div className="w-[80%] px-3 md:grid grid-cols-12 expert-section gap-5 mx-auto mt-24 mb-8">
+    <div className="md:w-[80%] px-3 md:grid grid-cols-12 expert-section gap-5 mx-auto mt-24 mb-8">
       {/* Meet Our Experts */}
       <div className="col-span-3 text-left">
         <h2 className="text-[22px] font-[600] text-left">Meet Our Experts</h2>

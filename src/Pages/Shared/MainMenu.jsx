@@ -6,40 +6,37 @@ import CustomLink from "../../Components/CustomLink";
 import auth from "../../firebase.init";
 import "./Navbar.css";
 
-const MainMenu = () => {
+const MainMenu = ({showMenu}) => {
   const [user, loading, error] = useAuthState(auth);
   const [showLogout, setShowLogout] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
+  // const [showMenu, setShowMenu] = useState(false);
+
+  console.log(showMenu)
 
   return (
     <div className="pl-3">
-      <nav class="bg-white w-full shadow shadow-md border border-[1px] z-50 mx-auto h-[50px] py-9 border-gray-200 md:px-10 sm:px-4 flex items-center rounded dark:bg-gray-800">
+      <nav class={`${showMenu ? 'block' : 'hidden'} bg-white w-full shadow shadow-md border border-[1px] z-50 mx-auto md:h-[50px] md:py-9 border-gray-200 md:px-10 sm:px-4  md:flex items-center rounded dark:bg-gray-800`}>
         <div
           class={`${
-            showMenu ? "relative items-center top-[90px]" : ""
-          } container flex flex-wrap justify-between items-center mx-auto`}
+            showMenu ? "relative items-center md:top-[90px]" : ""
+          } container flex flex-wrap md:justify-between items-center mx-auto`}
         >
           {/* MAIN MENU */}
           <div
-            class={`${
-              showMenu
-                ? "block shadow bg-[rgba(237,246,253,.9)] z-40"
-              : "hidden"
-              // md:order-1
-            } justify-between items-center w-full md:flex md:w-auto`}
+            class={`justify-between items-center w-full md:flex md:w-auto`}
             id="mobile-menu-2"
           >
             <ul class="flex -ml-2 flex-col mt-4 md:flex-row md:space-x-7 md:mt-0 md:text-sm md:font-medium">
-              <li>
+              <li className="ml-[7px]">
                 <CustomLink
                   to="/"
-                  class="block py-2 pr-4 pl-3 text-[#03a89d] rounded md:bg-transparent md:hover:text-[#03a89d] md:text-black md:p-0 dark:text-white"
+                  class="block py-2 pr-4 pl-3 text-[#03a89d] border-b md:border-0 border-gray-100 rounded md:bg-transparent md:hover:text-[#03a89d] md:text-black md:p-0 dark:text-white"
                   aria-current="page"
                 >
                   Home
                 </CustomLink>
               </li>
-              <li>
+              <li className="ml-[7px]">
                 <CustomLink
                   to="/blogs"
                   class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
@@ -47,7 +44,7 @@ const MainMenu = () => {
                   About
                 </CustomLink>
               </li>
-              <li>
+              <li className="ml-[7px]">
                 <CustomLink
                   to="/blogs"
                   class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
@@ -55,7 +52,7 @@ const MainMenu = () => {
                   Products
                 </CustomLink>
               </li>
-              <li>
+              <li className="ml-[7px]">
                 <CustomLink
                   to="/blogs"
                   class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
@@ -63,7 +60,7 @@ const MainMenu = () => {
                   Team Collaboration
                 </CustomLink>
               </li>
-              <li>
+              <li className="ml-[7px]">
                 <CustomLink
                   to="/blogs"
                   class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
@@ -71,7 +68,7 @@ const MainMenu = () => {
                   Features
                 </CustomLink>
               </li>
-              <li>
+              <li className="ml-[7px]">
                 <CustomLink
                   to="/blogs"
                   class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
@@ -79,7 +76,7 @@ const MainMenu = () => {
                   Services
                 </CustomLink>
               </li>
-              <li>
+              <li className="ml-[7px]">
                 <CustomLink
                   to="/blogs"
                   class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
@@ -87,7 +84,7 @@ const MainMenu = () => {
                   Shop
                 </CustomLink>
               </li>
-              <li>
+              <li className="ml-[7px]">
                 <CustomLink
                   to="/blogs"
                   class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
@@ -96,10 +93,10 @@ const MainMenu = () => {
                 </CustomLink>
               </li>
 
-              <li>
+              <li className="ml-[7px]">
                 <CustomLink
                   to="/blogs"
-                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  class="block py-2 pr-4 pl-4 text-gray-700 border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Blogs
                 </CustomLink>
@@ -116,9 +113,9 @@ const MainMenu = () => {
             </ul>
           </div>
 
-          {/* SEARCH BUTTON */}
-          <div className="search-btn mt-[6px] hover:tooltip-open -mr-2 cursor-pointer rounded-full" >
-            <button>
+          {/*------------------------ SEARCH BUTTON */}
+          <div className="search-btn mt-[5px] hidden text-center md:flex hover:tooltip-open -mr-2 cursor-pointer rounded-full" >
+            <button className="justify-self-center mb-3 md:mb-0">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

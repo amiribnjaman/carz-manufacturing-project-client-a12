@@ -88,10 +88,261 @@ const Reviews = () => {
     //     </div>
     // </div>
 
-    <div className="md:mt-32 px-3 md:mb-12 md:w-[80%] mx-auto grid grid-cols-8 gap-4">
+    // <div className="md:mt-32 px-3 md:mb-12 md:w-[80%] mx-auto grid grid-cols-8 gap-4">
+    //     {/*------------------REVIEW LEFT SECTION------------------- */}
+    //   <div className="order-1 col-span-3 md:mr-6 gap-y-6">
+    //     {/* Review single card */}
+    //     <div className="mt-5">
+    //       <div>
+    //         {/* Review Top */}
+    //         <div className="flex gap-4">
+    //           <img
+    //             src=""
+    //             className="w-[40px] h-[40px] bg-[#ddd] rounded-full"
+    //             alt=""
+    //           />
+    //           <div>
+    //             <h3 className="text-left text-[14px] font-semibold">
+    //               Andres H.
+    //             </h3>
+    //             <h5 className="text-[12px]">Houston, Germany</h5>
+    //           </div>
+    //         </div>
+    //       </div>
+    //       {/* Review body */}
+    //       <div className="mt-3">
+    //         <div className="text-left">
+    //           <span className="text-[11px] font-semibold">review</span>.
+    //           <span className="text-[11px] font-semibold">10 September</span>
+    //         </div>
+    //         <div>
+    //           <p className="text-[12px] font-semibold text-left">
+    //             We manufacturing and providing bounch of types products those we
+    //             provide to our clites for a long time.
+    //           </p>
+    //         </div>
+    //       </div>
+    //           </div>
+    //           {/* Review single card */}
+    //     <div className="mt-5">
+    //       <div>
+    //         {/* Review Top */}
+    //         <div className="flex gap-4">
+    //           <img
+    //             src=""
+    //             className="w-[40px] h-[40px] bg-[#ddd] rounded-full"
+    //             alt=""
+    //           />
+    //           <div>
+    //             <h3 className="text-left text-[14px] font-semibold">
+    //               Andres H.
+    //             </h3>
+    //             <h5 className="text-[12px]">Houston, Germany</h5>
+    //           </div>
+    //         </div>
+    //       </div>
+    //       {/* Review body */}
+    //       <div className="mt-3">
+    //         <div className="text-left">
+    //           <span className="text-[11px] font-semibold">review</span>.
+    //           <span className="text-[11px] font-semibold">10 September</span>
+    //         </div>
+    //         <div>
+    //           <p className="text-[12px] font-semibold text-left">
+    //             We manufacturing and providing bounch of types products those we
+    //             provide to our clites for a long time.
+    //           </p>
+    //         </div>
+    //       </div>
+    //           </div>
+    //           {/* Review single card */}
+    //     <div className="mt-5">
+    //       <div>
+    //         {/* Review Top */}
+    //         <div className="flex gap-4">
+    //           <img
+    //             src=""
+    //             className="w-[40px] h-[40px] bg-[#ddd] rounded-full"
+    //             alt=""
+    //           />
+    //           <div>
+    //             <h3 className="text-left text-[14px] font-semibold">
+    //               Andres H.
+    //             </h3>
+    //             <h5 className="text-[12px]">Houston, Germany</h5>
+    //           </div>
+    //         </div>
+    //       </div>
+    //       {/* Review body */}
+    //       <div className="mt-3">
+    //         <div className="text-left">
+    //           <span className="text-[11px] font-semibold">review</span>.
+    //           <span className="text-[11px] font-semibold">10 September</span>
+    //         </div>
+    //         <div>
+    //           <p className="text-[12px] font-semibold text-left">
+    //             We manufacturing and providing bounch of types products those we
+    //             provide to our clites for a long time.
+    //           </p>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
 
-        {/*------------------REVIEW LEFT SECTION------------------- */}
-      <div className="order-1 col-span-3 md:mr-6 gap-y-6">
+    //   {/*---------------------- Review right section-------------- */}
+    //   <div className="order-3 col-span-3 md:ml-6 gap-y-6">
+    //     {/* Review single card */}
+    //     <div className="mt-5 ml-auto">
+    //       <div>
+    //         {/* Review Top */}
+    //         <div className="flex gap-4 ml-auto">
+
+    //           <div className="ml-auto">
+    //             <h3 className="text-right text-[14px] font-semibold">
+    //               Andres H.
+    //             </h3>
+    //             <h5 className="text-[12px]">Houston, Germany</h5>
+    //                       </div>
+    //                       <img
+    //             src=""
+    //             className="w-[40px] h-[40px] bg-[#ddd] rounded-full"
+    //             alt=""
+    //           />
+    //         </div>
+    //       </div>
+    //       {/* Review body */}
+    //       <div className="mt-3">
+    //         <div className="text-right">
+    //           <span className="text-[11px] font-semibold">review</span>.
+    //           <span className="text-[11px] font-semibold">10 September</span>
+    //         </div>
+    //         <div>
+    //           <p className="text-[12px] font-semibold text-right">
+    //             We manufacturing and providing bounch of types products those we
+    //             provide to our clites for a long time.
+    //           </p>
+    //         </div>
+    //       </div>
+    //     </div>
+    //     {/* Review single card */}
+    //     <div className="mt-5 ml-auto">
+    //       <div>
+    //         {/* Review Top */}
+    //         <div className="flex gap-4 ml-auto">
+
+    //           <div className="ml-auto">
+    //             <h3 className="text-right text-[14px] font-semibold">
+    //               Andres H.
+    //             </h3>
+    //             <h5 className="text-[12px]">Houston, Germany</h5>
+    //                       </div>
+    //                       <img
+    //             src=""
+    //             className="w-[40px] h-[40px] bg-[#ddd] rounded-full"
+    //             alt=""
+    //           />
+    //         </div>
+    //       </div>
+    //       {/* Review body */}
+    //       <div className="mt-3">
+    //         <div className="text-right">
+    //           <span className="text-[11px] font-semibold">review</span>.
+    //           <span className="text-[11px] font-semibold">10 September</span>
+    //         </div>
+    //         <div>
+    //           <p className="text-[12px] font-semibold text-right">
+    //             We manufacturing and providing bounch of types products those we
+    //             provide to our clites for a long time.
+    //           </p>
+    //         </div>
+    //       </div>
+    //     </div>
+    //     {/* Review single card */}
+    //     <div className="mt-5 ml-auto">
+    //       <div>
+    //         {/* Review Top */}
+    //         <div className="flex gap-4 ml-auto">
+
+    //           <div className="ml-auto">
+    //             <h3 className="text-right text-[14px] font-semibold">
+    //               Andres H.
+    //             </h3>
+    //             <h5 className="text-[12px]">Houston, Germany</h5>
+    //                       </div>
+    //                       <img
+    //             src=""
+    //             className="w-[40px] h-[40px] bg-[#ddd] rounded-full"
+    //             alt=""
+    //           />
+    //         </div>
+    //       </div>
+    //       {/* Review body */}
+    //       <div className="mt-3">
+    //         <div className="text-right">
+    //           <span className="text-[11px] font-semibold">review</span>.
+    //           <span className="text-[11px] font-semibold">10 September</span>
+    //         </div>
+    //         <div>
+    //           <p className="text-[12px] font-semibold text-right">
+    //             We manufacturing and providing bounch of types products those we
+    //             provide to our clites for a long time.
+    //           </p>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </div>
+
+    //   {/*---------------------------- Reveiw heading ----------------------------- */}
+    //   <div className="order-2 col-span-2">
+    //     <h2 className="text-[22px] font-[600]">Clients Testimonial</h2>
+    //     {/* Divider */}
+    //     <div className="flex justify-center">
+    //       <div className="flex mx-auto jusify-between gap-2 mt-2 ">
+    //         <span className="w-[8px] rounded-full h-[8px] bg-[#e9f4ff] "></span>
+    //         <span className="w-[8px] rounded-full h-[8px] bg-[#d7ebff] "></span>
+    //         <span className="w-[8px] rounded-full h-[8px] bg-[#014E9C] "></span>
+    //         <span className="w-[8px] rounded-full h-[8px] bg-[#a9c4df] "></span>
+    //         {/* <span className="w-[8px] rounded-full h-[8px] bg-[#769fcb] "></span> */}
+    //         <span className="w-[8px] rounded-full h-[8px] bg-[#e9f4ff] "></span>
+    //       </div>
+    //     </div>
+    //     <div className="text-justify w-[80%] mx-auto text-sm mt-10 ">
+    //       <h4>
+    //         We manufacturing and providing bounch of types products those we
+    //         provide to our clites for a long time.
+    //       </h4>
+    //               <div className="text-center">
+    //               <button className="text-center hover:bg-[#014E9C] hover:text-white hover:bg-right inline-block mt-4 py-[6px] px-[25px] border border-[#014E9C]">
+    //         See All Reviews
+    //       </button>
+    //       </div>
+    //     </div>
+    //   </div>
+    //   {/* <div className="order-2 col-span-2">
+    //     <h2 className="text-[22px] font-[600]">Products Categories</h2>
+    //     {/* Divider *
+    //     <div className="flex float-right jusify-between gap-2 ml-auto mt-2 ">
+    //       <span className="w-[8px] rounded-full h-[8px] bg-[#e9f4ff] "></span>
+    //       <span className="w-[8px] rounded-full h-[8px] bg-[#d7ebff] "></span>
+    //       <span className="w-[8px] rounded-full h-[8px] bg-[#a9c4df] "></span>
+    //       <span className="w-[8px] rounded-full h-[8px] bg-[#769fcb] "></span>
+    //       <span className="w-[8px] rounded-full h-[8px] bg-[#014E9C] "></span>
+    //     </div>
+    //     <div className="text-right text-sm mt-10 w-[80%] ml-auto">
+    //       <h4>
+    //         We manufacturing and providing bounch of types products those we
+    //         provide to our clites for a long time.
+    //       </h4>
+    //       <button className="ml-auto hover:bg-[#014E9C] hover:text-white hover:bg-right inline-block mt-4 py-[6px] px-[15px] border border-[#014E9C]">
+    //         See All Categories
+    //       </button>
+    //     </div>
+    //   </div> */}
+    // </div>
+    <div className="md:mt-32 mt-16 px-3 md:mb-12 md:w-[80%] mx-auto grid md:grid-cols-8 gap-4">
+      {/*------------------REVIEW LEFT SECTION------------------- */}
+      <div className='md:order-1 order-2 md:col-span-6'>
+      <div className="gap-5 grid md:grid-cols-2 md:mr-6 gap-y-6">
         {/* Review single card */}
         <div className="mt-5">
           <div>
@@ -123,40 +374,8 @@ const Reviews = () => {
               </p>
             </div>
           </div>
-              </div>
-              {/* Review single card */}
-        <div className="mt-5">
-          <div>
-            {/* Review Top */}
-            <div className="flex gap-4">
-              <img
-                src=""
-                className="w-[40px] h-[40px] bg-[#ddd] rounded-full"
-                alt=""
-              />
-              <div>
-                <h3 className="text-left text-[14px] font-semibold">
-                  Andres H.
-                </h3>
-                <h5 className="text-[12px]">Houston, Germany</h5>
-              </div>
-            </div>
-          </div>
-          {/* Review body */}
-          <div className="mt-3">
-            <div className="text-left">
-              <span className="text-[11px] font-semibold">review</span>.
-              <span className="text-[11px] font-semibold">10 September</span>
-            </div>
-            <div>
-              <p className="text-[12px] font-semibold text-left">
-                We manufacturing and providing bounch of types products those we
-                provide to our clites for a long time.
-              </p>
-            </div>
-          </div>
-              </div>
-              {/* Review single card */}
+        </div>
+        {/* Review single card */}
         <div className="mt-5">
           <div>
             {/* Review Top */}
@@ -188,132 +407,165 @@ const Reviews = () => {
             </div>
           </div>
         </div>
+        {/* Review single card */}
+        <div className="mt-5">
+          <div>
+            {/* Review Top */}
+            <div className="flex gap-4">
+              <img
+                src=""
+                className="w-[40px] h-[40px] bg-[#ddd] rounded-full"
+                alt=""
+              />
+              <div>
+                <h3 className="text-left text-[14px] font-semibold">
+                  Andres H.
+                </h3>
+                <h5 className="text-[12px]">Houston, Germany</h5>
+              </div>
+            </div>
+          </div>
+          {/* Review body */}
+          <div className="mt-3">
+            <div className="text-left">
+              <span className="text-[11px] font-semibold">review</span>.
+              <span className="text-[11px] font-semibold">10 September</span>
+            </div>
+            <div>
+              <p className="text-[12px] font-semibold text-left">
+                We manufacturing and providing bounch of types products those we
+                provide to our clites for a long time.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* Review single card */}
+        <div className="mt-5">
+          <div>
+            {/* Review Top */}
+            <div className="flex gap-4">
+              <img
+                src=""
+                className="w-[40px] h-[40px] bg-[#ddd] rounded-full"
+                alt=""
+              />
+              <div>
+                <h3 className="text-left text-[14px] font-semibold">
+                  Andres H.
+                </h3>
+                <h5 className="text-[12px]">Houston, Germany</h5>
+              </div>
+            </div>
+          </div>
+          {/* Review body */}
+          <div className="mt-3">
+            <div className="text-left">
+              <span className="text-[11px] font-semibold">review</span>.
+              <span className="text-[11px] font-semibold">10 September</span>
+            </div>
+            <div>
+              <p className="text-[12px] font-semibold text-left">
+                We manufacturing and providing bounch of types products those we
+                provide to our clites for a long time.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* Review single card */}
+        <div className="mt-5">
+          <div>
+            {/* Review Top */}
+            <div className="flex gap-4">
+              <img
+                src=""
+                className="w-[40px] h-[40px] bg-[#ddd] rounded-full"
+                alt=""
+              />
+              <div>
+                <h3 className="text-left text-[14px] font-semibold">
+                  Andres H.
+                </h3>
+                <h5 className="text-[12px]">Houston, Germany</h5>
+              </div>
+            </div>
+          </div>
+          {/* Review body */}
+          <div className="mt-3">
+            <div className="text-left">
+              <span className="text-[11px] font-semibold">review</span>.
+              <span className="text-[11px] font-semibold">10 September</span>
+            </div>
+            <div>
+              <p className="text-[12px] font-semibold text-left">
+                We manufacturing and providing bounch of types products those we
+                provide to our clites for a long time.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* Review single card */}
+        <div className="mt-5">
+          <div>
+            {/* Review Top */}
+            <div className="flex gap-4">
+              <img
+                src=""
+                className="w-[40px] h-[40px] bg-[#ddd] rounded-full"
+                alt=""
+              />
+              <div>
+                <h3 className="text-left text-[14px] font-semibold">
+                  Andres H.
+                </h3>
+                <h5 className="text-[12px]">Houston, Germany</h5>
+              </div>
+            </div>
+          </div>
+          {/* Review body */}
+          <div className="mt-3">
+            <div className="text-left">
+              <span className="text-[11px] font-semibold">review</span>.
+              <span className="text-[11px] font-semibold">10 September</span>
+            </div>
+            <div>
+              <p className="text-[12px] font-semibold text-left">
+                We manufacturing and providing bounch of types products those we
+                provide to our clites for a long time.
+              </p>
+            </div>
+          </div>
+        </div>
+        {/* </div> */}
+
+        {/*---------------------- Review right section-------------- */}
+        {/* <div className="order-2 col-span-3 md:ml-6 gap-y-6"> */}
+        {/* Review single card */}
+        </div>
+        
+        {/* Expand Button */}
+        {/* <div className="mt-8">
+          <button>Expand</button>
+        </div> */}
       </div>
 
-      {/*---------------------- Review right section-------------- */}
-      <div className="order-3 col-span-3 md:ml-6 gap-y-6">
-        {/* Review single card */}
-        <div className="mt-5 ml-auto">
-          <div>
-            {/* Review Top */}
-            <div className="flex gap-4 ml-auto">
-              
-              <div className="ml-auto">
-                <h3 className="text-right text-[14px] font-semibold">
-                  Andres H.
-                </h3>
-                <h5 className="text-[12px]">Houston, Germany</h5>
-                          </div>
-                          <img
-                src=""
-                className="w-[40px] h-[40px] bg-[#ddd] rounded-full"
-                alt=""
-              />
-            </div>
-          </div>
-          {/* Review body */}
-          <div className="mt-3">
-            <div className="text-right">
-              <span className="text-[11px] font-semibold">review</span>.
-              <span className="text-[11px] font-semibold">10 September</span>
-            </div>
-            <div>
-              <p className="text-[12px] font-semibold text-right">
-                We manufacturing and providing bounch of types products those we
-                provide to our clites for a long time.
-              </p>
-            </div>
-          </div>
-        </div>
-        {/* Review single card */}
-        <div className="mt-5 ml-auto">
-          <div>
-            {/* Review Top */}
-            <div className="flex gap-4 ml-auto">
-              
-              <div className="ml-auto">
-                <h3 className="text-right text-[14px] font-semibold">
-                  Andres H.
-                </h3>
-                <h5 className="text-[12px]">Houston, Germany</h5>
-                          </div>
-                          <img
-                src=""
-                className="w-[40px] h-[40px] bg-[#ddd] rounded-full"
-                alt=""
-              />
-            </div>
-          </div>
-          {/* Review body */}
-          <div className="mt-3">
-            <div className="text-right">
-              <span className="text-[11px] font-semibold">review</span>.
-              <span className="text-[11px] font-semibold">10 September</span>
-            </div>
-            <div>
-              <p className="text-[12px] font-semibold text-right">
-                We manufacturing and providing bounch of types products those we
-                provide to our clites for a long time.
-              </p>
-            </div>
-          </div>
-        </div>
-        {/* Review single card */}
-        <div className="mt-5 ml-auto">
-          <div>
-            {/* Review Top */}
-            <div className="flex gap-4 ml-auto">
-              
-              <div className="ml-auto">
-                <h3 className="text-right text-[14px] font-semibold">
-                  Andres H.
-                </h3>
-                <h5 className="text-[12px]">Houston, Germany</h5>
-                          </div>
-                          <img
-                src=""
-                className="w-[40px] h-[40px] bg-[#ddd] rounded-full"
-                alt=""
-              />
-            </div>
-          </div>
-          {/* Review body */}
-          <div className="mt-3">
-            <div className="text-right">
-              <span className="text-[11px] font-semibold">review</span>.
-              <span className="text-[11px] font-semibold">10 September</span>
-            </div>
-            <div>
-              <p className="text-[12px] font-semibold text-right">
-                We manufacturing and providing bounch of types products those we
-                provide to our clites for a long time.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Category heading */}
-      <div className="order-2 col-span-2">
-        <h2 className="text-[22px] font-[600]">Clients Testimonial</h2>
+      {/*---------------------------- Reveiw heading ----------------------------- */}
+      <div className="md:order-2 order-1 md:col-span-2">
+        <h2 className="text-[22px] text-left md:text-right font-[600]">Testimonial</h2>
         {/* Divider */}
-        <div className="flex justify-center">
-          <div className="flex mx-auto jusify-between gap-2 mt-2 ">
-            <span className="w-[8px] rounded-full h-[8px] bg-[#e9f4ff] "></span>
-            <span className="w-[8px] rounded-full h-[8px] bg-[#d7ebff] "></span>
-            <span className="w-[8px] rounded-full h-[8px] bg-[#014E9C] "></span>
-            <span className="w-[8px] rounded-full h-[8px] bg-[#a9c4df] "></span>
-            {/* <span className="w-[8px] rounded-full h-[8px] bg-[#769fcb] "></span> */}
-            <span className="w-[8px] rounded-full h-[8px] bg-[#e9f4ff] "></span>
-          </div>
+        <div className="flex md:float-right jusify-between gap-2 ml-auto mt-2 ">
+          <span className="w-[8px] rounded-full h-[8px] bg-[#e9f4ff] "></span>
+          <span className="w-[8px] rounded-full h-[8px] bg-[#d7ebff] "></span>
+          <span className="w-[8px] rounded-full h-[8px] bg-[#a9c4df] "></span>
+          <span className="w-[8px] rounded-full h-[8px] bg-[#769fcb] "></span>
+          <span className="w-[8px] rounded-full h-[8px] bg-[#014E9C] "></span>
         </div>
-        <div className="text-justify w-[80%] mx-auto text-sm mt-10 ">
+        <div className="md:text-right text-left text-sm mt-4 md:mt-10 w-[80%] md:ml-auto">
           <h4>
             We manufacturing and providing bounch of types products those we
             provide to our clites for a long time.
           </h4>
-          <button className="text-center hover:bg-[#014E9C] hover:text-white hover:bg-right inline-block mt-4 py-[6px] px-[15px] border border-[#014E9C]">
-            See All Categories
+          <button className="ml-auto hover:bg-[#014E9C] hover:text-white hover:bg-right inline-block mt-4 py-[6px] px-[20px] border border-[#014E9C]">
+            See All Comments
           </button>
         </div>
       </div>
