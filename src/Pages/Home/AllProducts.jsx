@@ -1,15 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ComponentLoading from "../../Components/componentLoading";
-import SectionDivider from "../Shared/SectionDivider";
 
-const BestSelling = () => {
+const AllProducts = () => {
   const navigate = useNavigate();
   const [parts, setParts] = useState([]);
   const [showDetails, setShowDetails] = useState(false);
   const [detailsId, setDetailsId] = useState(0);
-    const [getProductDetails, setGetProductDetails] = useState(null);
-    
+  const [getProductDetails, setGetProductDetails] = useState(null);
 
   useEffect(() => {
     fetch(
@@ -37,14 +35,11 @@ const BestSelling = () => {
   };
 
   return (
-      <>
-          {/* SECTION DIVIDER */}
-          {/* <SectionDivider /> */}
-      <div className="md:mt-28 mt-16 md:w-[80%] mx-auto gap-5 px-3">
+    <div className="md:mt-28 mt-16 md:w-[80%] mx-auto gap-5 px-3">
         {/* Best selling Heading */}
         <div className="flex justify-between text-left">
           <div>
-            <h2 className="text-[22px] font-[600] text-left">Best Selling</h2>
+            <h2 className="text-[22px] font-[600] text-left">Products</h2>
             {/* Divider */}
             <div className="flex float-left mt-1 block jusify-between gap-2  mb-4">
               <span className="w-[8px] rounded-full h-[8px] bg-[#014E9C] "></span>
@@ -263,8 +258,7 @@ const BestSelling = () => {
           ))}
         </div>
       </div>
-    </>
   );
 };
 
-export default BestSelling;
+export default AllProducts;

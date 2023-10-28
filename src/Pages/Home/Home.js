@@ -11,7 +11,9 @@ import ComponentLoading from '../../Components/componentLoading'
 import './Home.css'
 import LoadingSpinner from '../../Components/LoadingSpinner';
 
-const Parts = lazy (() => customDelay(import('./BestSelling')))
+const BestSelling = lazy (() => customDelay(import('./BestSelling')))
+const LatestProduct = lazy (() => customDelay(import('./LatestProduct')))
+const Products = lazy (() => customDelay(import('./AllProducts')))
 const Reviews = lazy (() => customDelay(import('./Reviews')))
 const ProductCategory = lazy (() => customDelay(import('./ProductCategory')))
 
@@ -26,7 +28,13 @@ const Home = () => {
             </Suspense>
             {/* Lazy loading parts section */}
             <Suspense fallback={<ComponentLoading/>}>
-                <Parts />
+                <LatestProduct />
+            </Suspense>
+            <Suspense fallback={<ComponentLoading/>}>
+                <BestSelling />
+            </Suspense>
+            <Suspense fallback={<ComponentLoading/>}>
+                <Products />
             </Suspense>
             <OurTeam />
             {/* Lazy loading parts section */}
