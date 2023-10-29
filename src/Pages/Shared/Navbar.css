@@ -13,3 +13,7 @@
     /* background-color: red;
     clip-path: polygon(0 0, 100% 0%, calc(100% - 22px) 100%, 0% 100%); */
 }
+
+.search-btn .search-tooltip{
+    display: 'none'
+}
