@@ -41,7 +41,7 @@ const Home = () => {
             <Suspense fallback={<LoadingSpinner />}>
                 <Reviews />
             </Suspense>
-            <BusinessSummary />
+            {/* <BusinessSummary /> */}
             <ContactUs />
         </>
     )

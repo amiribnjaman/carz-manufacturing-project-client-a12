@@ -13,7 +13,7 @@ const Footer = () => {
     return (
         <footer class="px-4 md:py-4 text-center text-black md:px-8 dark:bg-gray-800">
             <div class="md:flex justify-between items-start md:mx-auto md:w-[80%] sm:items-center sm:justify-between">
-                <div className='footer-logo items-self-start md:mb-0 md:mt-24px mb-2'>
+                <div className='footer-logo md:pt-7 self-start md:mb-0 md:mt-24px mb-2'>
                     <Link to="/" class="md:flex sm:mb-0">
                         <span class="self-center LOGO text-2xl font-semibold whitespace-nowrap dark:text-white">thecar<span className='text-green-400'>Z</span></span>
                     </Link>
@@ -96,17 +96,26 @@ const Footer = () => {
                                 <Link to="/" class="mt-3 hover:underline text-[13px] flex gap-2">
                                     {/* <span className='text-[11px]'>Powered by: </span> */}
                                     {/* CARDS */}
-               <img src={VisaCard} alt='' className='w-[40px] rounded h[8px] px-[4px] bg-[#eee]'/> 
-               <img src={MasterCard} alt='' className='w-[40px] rounded h[7px] px-[4px] bg-[#eee]'/> 
-               <img src={AmericanExpress} alt='' className='w-[40px] rounded h[7px] px-[4px] bg-[#eee]' /> 
+               
                                 </Link>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
+
+            {/* Footer bottom */}
+            <div className='md:w-[80%] -mt-3 mb-5 mx-auto md:flex justify-between'>
             <p class="md:mt-6 mt-3 block text-[12px] font-semibold text-gray-800 sm:text-center dark:text-gray-400"> &copy; {year} <Link to="/" class="hover:underline">the carZ</Link>. All Rights Reserved.
             </p>
+            <div className='flex gap-2 items-center'>
+            <p className='text-[11px] font-semibold'>Payment Partner: </p>
+            <img src={VisaCard} alt='' className='w-[50px] p-[2px] h-[30px] rounded bg-[#fff]'/> 
+               <img src={MasterCard} alt='' className='w-[50px] p-1.5 h-[30px] rounded  bg-[#fff]'/> 
+               <img src={AmericanExpress} alt='' className='w-[50px] p-[2px] rounded h-[30px] bg-[#fff]' /> 
+            </div>
+            
+            </div>
         </footer>
     );
 };

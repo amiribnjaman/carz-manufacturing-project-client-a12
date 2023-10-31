@@ -4,8 +4,10 @@ import Img2 from "./../../Assets/Images/cars/img-2.jpg";
 import Img3 from "./../../Assets/Images/cars/img-3.jpg";
 import Img4 from "./../../Assets/Images/cars/img-4.jpg";
 import Img5 from "./../../Assets/Images/cars/img-5.jpg";
+import { useState } from "react";
 
 const Banner = () => {
+  const [like, setLike] = useState(false)
   return (
     <div className="bg-gradient-to-r from-[#e2effb] to-[#fafffd]">
       <div className="md:pt-[115px]">
@@ -33,26 +35,48 @@ const Banner = () => {
               <span className="font-normal">4.9</span>
             </h6>
           </div>
-          <button className="flex items-center gap-3 ">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke-width="1"
-              stroke="currentColor"
-              class="w-[19px] h-[19px] mt-[4px]"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
-              />
-            </svg>
 
-            <span className="underline hover:text-[#014E9C] hover:decoration-[#014E9C]">
-              Explore More
-            </span>
-          </button>
+          <div className="flex gap-3">
+            <div className="flex gap-1 items-center mt-[4px]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#000"
+                viewBox="0 0 24 24"
+                stroke-width="1"
+                stroke="currentColor"
+                class="w-[15px] h-[15px] mt-[1px]"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                />
+              </svg>
+              <span className="text-[11px] font-semibold">{like ? '271' : '270' } Likes</span>
+            </div>
+            <span>.</span>
+            <button className="flex items-center gap-2 ">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill={`${like ? '#EF2360' : 'none'}`}
+                viewBox="0 0 24 24"
+                stroke-width="1"
+                stroke="currentColor"
+                class={`w-[19px] h-[19px] mt-[4px] ${like ? 'text-[#EF2360]' : ''}`}
+                onClick={()=> setLike(!like)}
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                />
+              </svg>
+
+              <span className="underline hover:text-[#014E9C] hover:decoration-[#014E9C]">
+                Explore More
+              </span>
+            </button>
+          </div>
         </div>
 
         {/* BANNER SECTION BODY */}
@@ -60,24 +84,44 @@ const Banner = () => {
           <div className="w-full grid grid-cols-4 grid-rows-1 gap-4 px-4">
             <div className="col-span-2 row-span-1">
               <div className="row-span-1">
-                <img className="cursor-pointer hover:opacity-90 h-[390px] w-full rounded-tl-[13px] rounded-bl-[13px]" src={Img1} alt="" />
+                <img
+                  className="cursor-pointer hover:opacity-90 h-[390px] w-full rounded-tl-[13px] rounded-bl-[13px]"
+                  src={Img1}
+                  alt=""
+                />
               </div>
             </div>
             <div className="col-span-1 row-span-1 grid grid-rows-2 gap-4 ">
               <div className=" ">
-                <img className="cursor-pointer hover:opacity-80 h-[186px] w-full " src={Img2} alt="" />
+                <img
+                  className="cursor-pointer hover:opacity-80 h-[186px] w-full "
+                  src={Img2}
+                  alt=""
+                />
               </div>
               <div className=" ">
-                <img className="cursor-pointer hover:opacity-80 h-[186px] w-full" src={Img3} alt="" />
+                <img
+                  className="cursor-pointer hover:opacity-80 h-[186px] w-full"
+                  src={Img3}
+                  alt=""
+                />
               </div>
             </div>
 
             <div className="col-span-1 row-span-1 grid grid-rows-2 gap-4 ">
               <div className=" ">
-                <img className="cursor-pointer hover:opacity-80 h-[186px] w-full rounded-tr-[13px]" src={Img4} alt="" />
+                <img
+                  className="cursor-pointer hover:opacity-80 h-[186px] w-full rounded-tr-[13px]"
+                  src={Img4}
+                  alt=""
+                />
               </div>
               <div className=" ">
-                <img className="cursor-pointer hover:opacity-80 h-[186px] w-full rounded-br-[13px] " src={Img5} alt="" />
+                <img
+                  className="cursor-pointer hover:opacity-80 h-[186px] w-full rounded-br-[13px] "
+                  src={Img5}
+                  alt=""
+                />
               </div>
             </div>
           </div>

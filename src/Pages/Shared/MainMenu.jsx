@@ -9,9 +9,9 @@ import "./Navbar.css";
 const MainMenu = ({showMenu}) => {
   const [user, loading, error] = useAuthState(auth);
   const [showLogout, setShowLogout] = useState(false);
-  // const [showMenu, setShowMenu] = useState(false);
+  const [showFilterCard, setShowFilterCard] = useState(false);
+  
 
-  console.log(showMenu)
 
   return (
     <div className="pl-3">
@@ -115,7 +115,7 @@ const MainMenu = ({showMenu}) => {
 
           {/*------------------------ SEARCH BUTTON */}
           <div className="search-btn mt-[5px] hidden text-center md:flex hover:tooltip-open -mr-2 cursor-pointer rounded-full" >
-            <button className="justify-self-center mb-3 md:mb-0">
+            <button className="justify-self-center mb-3 md:mb-0" onClick={()=> setShowFilterCard(!showFilterCard)}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -135,6 +135,11 @@ const MainMenu = ({showMenu}) => {
             {/* <div className="search-tooltip">
               <p>Search</p>
             </div> */}
+          </div>
+
+          {/*----------------FILTER CARD---------------- */}
+          <div className={`${showFilterCard ? 'block' : 'hidden'} border absolute top-[65px] right-[5px] bg-white shadow px-6 py-4 w-[280px] text-left`}>
+            <h3 className="text-[12px] font-semibold">Filter Search:</h3>
           </div>
         </div>
       </nav>
