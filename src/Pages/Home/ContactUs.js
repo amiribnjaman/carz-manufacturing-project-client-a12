@@ -28,7 +28,7 @@ const ContactUs = () => {
         //     </div>
         // </div>
 
-        <div className='bg-[#fcfcfc] pt-6 pb-10'>
+        <div className='bg-[#fcfcfc] pt-[5px] pb-10 mt-4'>
             <div className="md:w-[80%] md:mt-24 px-3 md:grid grid-cols-12 expert-section gap-5 mx-auto mt-24 mb-8 md:mb-14">
             {/*--------------CONTACT US HEADER------------ */}
       <div className="col-span-4 text-left">
@@ -66,7 +66,7 @@ const ContactUs = () => {
                      <textarea name="" id="" cols="10" rows="3" placeholder='Your Message' className='w-full md:w-[80%] border-0 border-b focus:border-gray-700 ml-auto'></textarea>
                  </div>
                  <div className='mt-3 md:w-[80%] ml-auto flex'>
-                     <button type="button" class="text-white bg-[#014E9C] hover:bg-[#0358ae] focus:ring-blue-[#0358ae] focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Send Message</button>
+                     <button type="button" class="text-black bg-gradient-to-r from-[#e2effb] to-[#fafffd] border border-[#014E9C] hover:bg-[#0358ae] focus:ring-blue-[#0358ae] focus:ring-2 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 focus:outline-none">Send Message</button>
                  </div>
              </form>
       </div>
