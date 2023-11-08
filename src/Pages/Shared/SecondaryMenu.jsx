@@ -2,33 +2,43 @@ import { signOut } from "firebase/auth";
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import MainMenu from "./MainMenu";
 import CustomLink from "../../Components/CustomLink";
 import auth from "../../firebase.init";
 import "./Navbar.css";
 
-const MainMenu = ({ showMenu }) => {
+const SecondaryMenu = () => {
   const [user, loading, error] = useAuthState(auth);
   const [showLogout, setShowLogout] = useState(false);
-  const [showFilterCard, setShowFilterCard] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+
+  // Handle menu toggle
+  // const handleShowMenu = () => {
+  //   setShowLogout(!showMenu)
+  // }
 
   return (
-    <div className="pl-3">
-      <nav
-        class={`${
-          showMenu ? "block" : "hidden"
-        } bg-white w-full shadow shadow-md border border-[1px] z-50 mx-auto md:h-[50px] md:py-9 border-gray-200 md:px-10 sm:px-4  md:flex items-center rounded dark:bg-gray-800`}
-      >
+    <div className="py-2 md:py-1 shadow fixed w-full z-50 top-0 left-0 bg-white">
+      <nav class="bg-white pb-2 w-10/12 z-50 mx-auto h-[90px] border-gray-200 md:px-10 sm:px-4 flex items-center justify-between dark:bg-gray-800">
         <div
           class={`${
-            showMenu ? "relative items-center md:top-[90px]" : ""
-          } container flex flex-wrap md:justify-between items-center mx-auto`}
+            showMenu ? "relative" : ""
+          } container flex justify-between items-center mx-auto`}
         >
+          <div className="">
+            <Link to="/" class="flex">
+              <span class="self-center LOGO text-3xl font-semibold whitespace-nowrap dark:text-white">
+                thecar<span className="text-green-400">Z</span>
+              </span>
+            </Link>
+            <p className="text-[11px] text-left">The product you dream for!</p>
+          </div>
           {/* MAIN MENU */}
           <div
             class={`justify-between items-center w-full md:flex md:w-auto`}
             id="mobile-menu-2"
           >
-            <ul class="flex -ml-2 flex-col mt-4 md:flex-row md:space-x-7 md:mt-0 md:text-sm md:font-medium">
+            <ul class="flex -ml-2 flex-col mt-4 md:flex-row justify-center items-center md:space-x-7 md:mt-0 md:text-sm md:font-medium">
               <li className="ml-[7px]">
                 <CustomLink
                   to="/"
@@ -52,22 +62,6 @@ const MainMenu = ({ showMenu }) => {
                   class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Products
-                </CustomLink>
-              </li>
-              <li className="ml-[7px]">
-                <CustomLink
-                  to="/blogs"
-                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Team Collaboration
-                </CustomLink>
-              </li>
-              <li className="ml-[7px]">
-                <CustomLink
-                  to="/blogs"
-                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Features
                 </CustomLink>
               </li>
               <li className="ml-[7px]">
@@ -115,6 +109,55 @@ const MainMenu = ({ showMenu }) => {
               ) : (
                 ""
               )}
+
+              <li>
+                {!user ? (
+                  <CustomLink
+                    to="/login"
+                    class="block py-2 pr-4 pl-3 text-black rounded md:bg-transparent  md:p-0 dark:text-white"
+                    aria-current="page"
+                  >
+                    <span id="navbar-login-btn" className="r">
+                      Login
+                    </span>
+                  </CustomLink>
+                ) : user?.photoURL ? (
+                  <>
+                    <img
+                      onClick={() => setShowLogout(!showLogout)}
+                      class="w-8 h-8 rounded-full cursor-pointer inline-block mt-3"
+                      src={user?.photoURL}
+                      alt={user.displayName}
+                    />
+                    <p>
+                      <small>{user?.displayName?.split(" ")[0]}</small>
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <div
+                      onClick={() => setShowLogout(!showLogout)}
+                      class="relative w-10 h-10 overflow-hidden cursor-pointer bg-gray-100 rounded-full "
+                    >
+                      <svg
+                        class="absolute w-12 h-12 text-gray-400 -left-1"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                    </div>
+                    <p>
+                      <small>{user?.displayName?.split(" ")[0]}</small>
+                    </p>
+                  </>
+                )}
+              </li>
               {/* <li>
                                 <CustomLink to="myportfolio" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">My Portfolio</CustomLink >
                             </li> 
@@ -127,45 +170,60 @@ const MainMenu = ({ showMenu }) => {
             </ul>
           </div>
 
-          {/*------------------------ SEARCH BUTTON */}
-          <div className="search-btn mt-[5px] hidden text-center md:flex hover:tooltip-open -mr-2 cursor-pointer rounded-full">
-            <button
-              className="justify-self-center mb-3 md:mb-0"
-              onClick={() => setShowFilterCard(!showFilterCard)}
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1"
-                stroke="currentColor"
-                class="w-6 h-6 text-[#C5C5C5]"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                />
-              </svg>
-            </button>
-            {/* CUSTOM TOOLTIP */}
-            {/* <div className="search-tooltip">
-              <p>Search</p>
-            </div> */}
-          </div>
+          {/* MAIN MENU */}
 
-          {/*----------------FILTER CARD---------------- */}
-          <div
-            className={`${
-              showFilterCard ? "block" : "hidden"
-            } border absolute top-[65px] right-[5px] bg-white shadow px-6 py-4 w-[280px] text-left`}
+          {/* <div
+            class={`${
+              showMenu
+                ? "block shadow bg-[rgba(237,246,253,.9)] z-40"
+                : "hidden"
+            } justify-between items-center w-full md:flex md:w-auto md:order-1`}
+            id="mobile-menu-2"
           >
-            <h3 className="text-[12px] font-semibold">Filter Search:</h3>
-          </div>
+            <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
+              <li>
+                <CustomLink
+                  to="/"
+                  class="block py-2 pr-4 pl-3 text-[#03a89d] rounded md:bg-transparent md:hover:text-[#03a89d] md:text-black md:p-0 dark:text-white"
+                  aria-current="page"
+                >
+                  Home
+                </CustomLink>
+              </li>
+              <li>
+                <CustomLink
+                  to="/blogs"
+                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >
+                  Blogs
+                </CustomLink>
+              </li>
+              <li>
+                <CustomLink
+                  to="myportfolio"
+                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >
+                  My Portfolio
+                </CustomLink>
+              </li>
+              {user ? (
+                <li>
+                  <CustomLink
+                    to="/dashboard"
+                    class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >
+                    Dashboard
+                  </CustomLink>
+                </li>
+              ) : (
+                ""
+              )}
+            </ul>
+          </div> */}
         </div>
       </nav>
     </div>
   );
 };
 
-export default MainMenu;
+export default SecondaryMenu;

@@ -11,7 +11,7 @@ const Footer = () => {
   const year = date.getFullYear();
 
   return (
-    <footer class="md:py-4 text-center text-black dark:bg-gray-800">
+    <footer class=" text-center text-black dark:bg-gray-800">
       {/*------------------- FOOTER TOPPER SECTION---------------- */}
       <div className="bg-[#014E9C] ">
         <div class="md:flex py-2 justify-between items-start md:mx-auto md:w-[80%] sm:items-center sm:justify-between">

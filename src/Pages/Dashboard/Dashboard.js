@@ -21,7 +21,7 @@ const Dashboard = () => {
     }, [loginUser?.email, user])
 
     return (
-        <div className='w-[95%] mx-auto mt-4 mb-32'>
+        <div className='w-[80%] mx-auto md:mt-[120px] mb-32'>
             <div class="drawer drawer-mobile h-[460px] overflow-y-auto">
                 <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
                 <div class="drawer-content flex flex-col items-start justify-start">
