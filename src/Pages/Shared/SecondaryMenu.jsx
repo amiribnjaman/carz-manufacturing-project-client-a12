@@ -19,7 +19,7 @@ const SecondaryMenu = () => {
 
   return (
     <div className="py-2 md:py-1 shadow fixed w-full z-50 top-0 left-0 bg-white">
-      <nav class="bg-white pb-2 w-10/12 z-50 mx-auto h-[90px] border-gray-200 md:px-10 sm:px-4 flex items-center justify-between dark:bg-gray-800">
+      <nav class="bg-white py-2 w-10/12 z-50 mx-auto h-[65px] border-gray-200 md:px-10 sm:px-4 flex items-center justify-between dark:bg-gray-800">
         <div
           class={`${
             showMenu ? "relative" : ""

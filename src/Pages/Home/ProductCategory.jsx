@@ -43,7 +43,7 @@ export default function ProductCategory() {
               </div>
               <div className="p-4 text-justify text-white  font-[500]">
                 <h4 className="text-[14px] hover:underline">
-                  # Customize car.
+                  # Customize car
                 </h4>
                 <p className="text-[11px] mt-2 text-[#eeeeee]">
                   If you have your own choice car design we will customized and

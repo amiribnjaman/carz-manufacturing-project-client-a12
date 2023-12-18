@@ -1,10 +1,68 @@
 .login-page, .signup-page {
-    background-repeat: no-repeat;
-    background-size: cover;
+    /* background-repeat: no-repeat; */
     width: 100%;
     height: 100vh;
     /* padding: 90px 0px; */
+    margin-top: 70px;
     background-size: cover;
     background-repeat: no-repeat;
-    background: linear-gradient(0deg, rgba(5, 39, 50, 0.7), rgba(45, 72, 81, 0.7)), url('../../Assets/Images/banner.jpg');
+    background: url('../../Assets/Images/auth-bg.svg');
+    /* background: linear-gradient(0deg, rgba(5, 39, 50, 0.7), rgba(45, 72, 81, 0.7)), url('../../Assets/Images/banner.jpg'); */
 }
+
+/* .curve {
+    position: absolute;
+    height: 250px;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+} */
+
+/* .login-page::before, .signup-page::before {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    transform: translate(85%, 60%);
+    background-color: hsl(216, 21%, 16%);
+}
+
+.login-page::after,
+.signup-page::after {
+    content: '';
+    display: block;
+    position: absolute;
+    border-radius: 100% 50%;
+    width: 55%;
+    height: 100%;
+    background-color: #3c31dd;
+    transform: translate(-4%, 40%);
+    z-index: -1;
+} */
+/* 
+.custom-shape-divider-bottom-1702885480 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+    /* z-index: 5; *
+    bottom: -95px;
+}
+
+.custom-shape-divider-bottom-1702885480 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 400px;
+    transform: rotateY(180deg);
+    z-index: -5;
+}
+
+.custom-shape-divider-bottom-1702885480 .shape-fill {
+    fill: #FFFFFF;
+} */

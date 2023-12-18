@@ -110,7 +110,7 @@ const Navbar = () => {
 
                 <div className="">
                   <span className="text-[13px] font-semibold">
-                    At 10:00AM - 10:00PM
+                    At 10:00AM - 8:00PM
                   </span>
                 </div>
               </div>
