@@ -29,7 +29,7 @@ const Navbar = () => {
           <div className="">
             <Link to="/" class="flex items-center">
               <span class="self-center LOGO text-3xl font-semibold whitespace-nowrap dark:text-white">
-                thecar<span className="text-green-400">Z</span>
+                thecar<span className="text-[#014E9C]">Z</span>
               </span>
             </Link>
             <p className="text-[11px]">The product you dream for!</p>
@@ -240,10 +240,25 @@ const Navbar = () => {
             </div> */}
 
             {/*-----------------------MOBILE MENU HUMBERGER ICON-------------- */}
-            <div className="md:hidden p-2 mt-[-2px] gap-2 flex flex-col" onClick={()=> setShowMenu(!showMenu)}>
-              <span className={`${showMenu ? 'rotate-45':''} h-[1.5px] w-[29px] bg-[#000] block`}></span>
-              <span className={`${showMenu ? 'hidden' : ''} h-[1.5px] w-[23px] bg-[#000] `}></span>
-              <span className={`${showMenu ? '-rotate-45 -mt-[9px]' : ''} h-[1.5px] w-[29px] bg-[#000]` }></span>
+            <div
+              className="md:hidden p-2 mt-[-2px] gap-2 flex flex-col"
+              onClick={() => setShowMenu(!showMenu)}
+            >
+              <span
+                className={`${
+                  showMenu ? "rotate-45" : ""
+                } h-[1.5px] w-[29px] bg-[#000] block`}
+              ></span>
+              <span
+                className={`${
+                  showMenu ? "hidden" : ""
+                } h-[1.5px] w-[23px] bg-[#000] `}
+              ></span>
+              <span
+                className={`${
+                  showMenu ? "-rotate-45 -mt-[9px]" : ""
+                } h-[1.5px] w-[29px] bg-[#000]`}
+              ></span>
             </div>
           </div>
 
@@ -302,7 +317,7 @@ const Navbar = () => {
 
       {/* MAIN NAVBAR/MENU */}
       <div className="absolute w-[79%] mx-auto md:bottom-[-40px] md:left-[10%] left-[21%] ">
-        <MainMenu showMenu={showMenu}/>
+        <MainMenu showMenu={showMenu} />
       </div>
     </div>
   );

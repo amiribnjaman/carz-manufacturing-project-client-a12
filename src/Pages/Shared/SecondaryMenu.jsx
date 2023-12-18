@@ -28,7 +28,7 @@ const SecondaryMenu = () => {
           <div className="">
             <Link to="/" class="flex">
               <span class="self-center LOGO text-3xl font-semibold whitespace-nowrap dark:text-white">
-                thecar<span className="text-green-400">Z</span>
+                thecar<span className="text-[#014E9C]">Z</span>
               </span>
             </Link>
             <p className="text-[11px] text-left">The product you dream for!</p>
