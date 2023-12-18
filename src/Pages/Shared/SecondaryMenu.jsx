@@ -1,7 +1,7 @@
 import { signOut } from "firebase/auth";
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import MainMenu from "./MainMenu";
 import CustomLink from "../../Components/CustomLink";
 import auth from "../../firebase.init";
@@ -11,11 +11,7 @@ const SecondaryMenu = () => {
   const [user, loading, error] = useAuthState(auth);
   const [showLogout, setShowLogout] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-
-  // Handle menu toggle
-  // const handleShowMenu = () => {
-  //   setShowLogout(!showMenu)
-  // }
+  const location = useLocation();
 
   return (
     <div className="py-2 md:py-1 shadow fixed w-full z-50 top-0 left-0 bg-white">
@@ -33,12 +29,12 @@ const SecondaryMenu = () => {
             </Link>
             <p className="text-[11px] text-left">The product you dream for!</p>
           </div>
-          {/* MAIN MENU */}
+          {/*============ MENU ITEMS ==============*/}
           <div
-            class={`justify-between items-center w-full md:flex md:w-auto`}
+            class={`justify-between items-center w-full md:flex md:w-auto justify-between`}
             id="mobile-menu-2"
           >
-            <ul class="flex -ml-2 flex-col mt-4 md:flex-row justify-center items-center md:space-x-7 md:mt-0 md:text-sm md:font-medium">
+            <ul class="flex -ml-2 flex-col mt-4 md:flex-row justify-center items-center md:space-x-6 md:mt-0 md:text-sm md:font-medium">
               <li className="ml-[7px]">
                 <CustomLink
                   to="/"
@@ -50,7 +46,7 @@ const SecondaryMenu = () => {
               </li>
               <li className="ml-[7px]">
                 <CustomLink
-                  to="/blogs"
+                  to="/about"
                   class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#014E9C] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   About
@@ -58,7 +54,7 @@ const SecondaryMenu = () => {
               </li>
               <li className="ml-[7px]">
                 <CustomLink
-                  to="/blogs"
+                  to="products"
                   class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#014E9C] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Products
@@ -66,7 +62,7 @@ const SecondaryMenu = () => {
               </li>
               <li className="ml-[7px]">
                 <CustomLink
-                  to="/blogs"
+                  to="services"
                   class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#014E9C] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Services
@@ -74,7 +70,7 @@ const SecondaryMenu = () => {
               </li>
               <li className="ml-[7px]">
                 <CustomLink
-                  to="/blogs"
+                  to="shop"
                   class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#014E9C] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   Shop
@@ -82,8 +78,8 @@ const SecondaryMenu = () => {
               </li>
               <li className="ml-[7px]">
                 <CustomLink
-                  to="/blogs"
-                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#014E9C] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  to="contact"
+                  className={`block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#014E9C] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
                 >
                   Contact
                 </CustomLink>
@@ -109,12 +105,30 @@ const SecondaryMenu = () => {
               ) : (
                 ""
               )}
+              {/* <li>
+                                <CustomLink to="myportfolio" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">My Portfolio</CustomLink >
+                            </li> 
+                            {user ?
+                                <li>
+                                    <CustomLink to="/dashboard" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Dashboard</CustomLink >
+                                </li>
+                                : ''
+                            //*/}
+            </ul>
+          </div>
 
+          {/*=============== LOGIN BUTTON============= */}
+          <div>
+            <ul>
               <li>
                 {!user ? (
                   <CustomLink
                     to="/login"
-                    class="block py-2 pr-4 pl-3 text-black rounded md:bg-transparent  md:p-0 dark:text-white"
+                    class={`${
+                      location.pathname == "/login"
+                        ? "bg-[#f4faff]"
+                        : "bg-[#fafafa] font-semibold"
+                    } block py-2 pr-5 pl-3 rounded text-[#000] px-[20px] py-[8px] dark:text-white`}
                     aria-current="page"
                   >
                     <span id="navbar-login-btn" className="r">
@@ -158,15 +172,6 @@ const SecondaryMenu = () => {
                   </>
                 )}
               </li>
-              {/* <li>
-                                <CustomLink to="myportfolio" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">My Portfolio</CustomLink >
-                            </li> 
-                            {user ?
-                                <li>
-                                    <CustomLink to="/dashboard" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Dashboard</CustomLink >
-                                </li>
-                                : ''
-                            //*/}
             </ul>
           </div>
 

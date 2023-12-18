@@ -26,6 +26,7 @@ import NotFound from "./Pages/NotFound/NotFound";
 import TopNav from "./Pages/Shared/TopNav";
 import { useHistory, useLocation } from "react-router-dom";
 import SecondaryMenu from "./Pages/Shared/SecondaryMenu.jsx";
+import { useMemo } from "react";
 // const OrderContext = createContext([])
 
 function App() {
@@ -36,6 +37,40 @@ function App() {
   const location = useLocation();
   const path = location.pathname;
 
+  const [showSecondaryNav, setShowSecondaryNav] = useState(false);
+
+  // Handle menu toggle
+  // const handleShowMenu = () => {
+  //   setShowLogout(!showMenu)
+  // }
+
+  {
+    /*
+     **
+     ** HANDLER FUNCTION TO SHOWING SECONDARY MENU USEING USER SCROLLING
+     **
+     */
+  }
+  const handleMenuScroll = () => {
+    // Secondary toggle
+    if (window.scrollY > 270) {
+      setShowSecondaryNav(true);
+    } else {
+      setShowSecondaryNav(false);
+    }
+  };
+
+  useMemo(() => {
+    document.addEventListener("scroll", handleMenuScroll);
+  }, [showSecondaryNav]);
+
+  {
+    /*
+     **
+     ** FETCHING USER INFO THROUGH USER EMAIL
+     **
+     */
+  }
   useEffect(() => {
     fetch(
       `https://carz-manufacturing-project-server-a12.vercel.app/user/${loginUser?.email}`,
@@ -62,6 +97,7 @@ function App() {
         <>
           <TopNav />
           <Navbar />
+          {showSecondaryNav && <SecondaryMenu />}
         </>
       ) : (
         <SecondaryMenu />
