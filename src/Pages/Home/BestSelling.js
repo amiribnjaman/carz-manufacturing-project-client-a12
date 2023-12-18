@@ -44,7 +44,7 @@ const BestSelling = () => {
         {/* Best selling Heading */}
         <div className="flex justify-between text-left">
           <div>
-            <h2 className="text-[22px] font-[600] text-left">Best Selling</h2>
+            <h2 className="text-[22px] font-[600] text-left">Best Selling Products</h2>
             {/* Divider */}
             <div className="flex float-left mt-1 block jusify-between gap-2  mb-4">
               <span className="w-[8px] rounded-full h-[8px] bg-[#014E9C] "></span>

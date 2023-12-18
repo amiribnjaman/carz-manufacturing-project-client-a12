@@ -11,7 +11,7 @@ const Footer = () => {
   const year = date.getFullYear();
 
   return (
-    <footer class=" text-center text-black dark:bg-gray-800">
+    <footer class="text-center text-black dark:bg-gray-800">
       {/*------------------- FOOTER TOPPER SECTION---------------- */}
       <div className="bg-[#014E9C] ">
         <div class="md:flex py-2 justify-between items-start md:mx-auto md:w-[80%] sm:items-center sm:justify-between">
@@ -24,10 +24,10 @@ const Footer = () => {
             <p className="text-[11px] text-white">The product you dream for!</p>
           </div>
 
-          <div className="flex gap-3 items-center">
+          <div className="flex w-[400px] gap-3 items-center">
             <input
-              placeholder="Place your email address"
-              className=" py-[8px] rounded text-[15px] px-4"
+              placeholder="Place your email for update"
+              className=" py-[8px] focus:outline-none focus:border-1 focus:border-[#014E9C] w-[310px] rounded text-[15px] px-4"
             />
             <button className="rounded bg-[#0e62b7] text-white py-[8px] px-3">
               Subscribe
@@ -39,6 +39,7 @@ const Footer = () => {
       {/*-------------------FOOTER BOTTOM SECTION-------------------- */}
       <div>
         <div class="md:w-[80%] mx-auto mt-4 grid grid-cols-1 gap-8 py-8 text-left md:grid-cols-4">
+          {/*------------------- COMPANY ---------------- */}
           <div>
             <h2 className="md:mb-6 mb-2 text-[13px] font-bold text-gray-800 uppercase">
               Company
@@ -51,7 +52,7 @@ const Footer = () => {
               </li>
               <li class="mb-2">
                 <Link to="/" class="text-[13px] hover:underline">
-                  Careers
+                  Career
                 </Link>
               </li>
               <li class="mb-2">
@@ -59,14 +60,25 @@ const Footer = () => {
                   Blog
                 </Link>
               </li>
+              <li class="mb-2">
+                <Link to="/" class="text-[13px] hover:underline">
+                  Teams
+                </Link>
+              </li>
             </ul>
           </div>
 
+          {/*------------------- HELP CENTER ---------------- */}
           <div>
             <h2 className="md:mb-6 mb-2 text-[13px] font-bold text-gray-800 uppercase">
               Help center
             </h2>
             <ul class="text-gray-800">
+              <li class="mb-2">
+                <Link to="/" class="hover:underline text-[13px]">
+                  X <span className="text-[11px]">(twiter)</span>
+                </Link>
+              </li>
               <li class="mb-2">
                 <Link to="/" class="hover:underline text-[13px]">
                   Linkedin
@@ -85,6 +97,7 @@ const Footer = () => {
             </ul>
           </div>
 
+          {/*------------------- LEGAL ---------------- */}
           <div>
             <h2 className="md:mb-6 mb-2 text-[13px] font-bold text-gray-800 uppercase">
               Legal
@@ -107,27 +120,68 @@ const Footer = () => {
               </li>
               <li class="mb-2">
                 <Link to="/" class="hover:underline text-[13px]">
-                  Licensing
+                  User manual
                 </Link>
               </li>
               <li class="mb-2">
                 <Link to="/" class="hover:underline text-[13px]">
-                  Terms &amp; Conditions
+                  Free cost Services
                 </Link>
               </li>
             </ul>
           </div>
+
+          {/*------------------- OUTLETS ---------------- */}
           <div>
             <h2 className="md:mb-6 mb-2 text-[13px] font-bold text-gray-800 uppercase">
-              Legal
+              Outlets
             </h2>
             <ul class="text-gray-800">
-              <li class="mb-2">
-                <Link to="/" class="hover:underline text-[13px]">
-                  Privacy Policy
-                </Link>
-              </li>
-              <li class="mb-2">
+              <div>
+                <li class="mb-1">
+                  <Link
+                    to="#"
+                    class="hover:underline text-[13px] font-semibold"
+                  >
+                    Dhaka, Bandladesh
+                  </Link>
+                </li>
+                <div className="text-[12px]">
+                  <p>Gulshan-8, #sector-x, Dhaka</p>
+                  <p>Contact: +880 1314151161</p>
+                </div>
+              </div>
+
+              <div className="mt-3">
+                <li class="mb-1">
+                  <Link
+                    to="#"
+                    class="hover:underline text-[13px] font-semibold"
+                  >
+                    Dubai, UAE
+                  </Link>
+                </li>
+                <div className="text-[12px]">
+                  <p>Road-x, #shop-y, Dubai</p>
+                  <p>Contact: +971 13141511621</p>
+                </div>
+              </div>
+
+              <div className="mt-3">
+                <li class="mb-1">
+                  <Link
+                    to="#"
+                    class="hover:underline text-[13px] font-semibold"
+                  >
+                    Berlin, Germany
+                  </Link>
+                </li>
+                <div className="text-[12px]">
+                  <p>City-x, #area-y, Berlin</p>
+                  <p>Contact: +49 987777707</p>
+                </div>
+              </div>
+              {/* <li class="mb-2">
                 <Link to="/" class="hover:underline text-[13px]">
                   Licensing
                 </Link>
@@ -158,17 +212,16 @@ const Footer = () => {
                   class="mt-3 hover:underline text-[13px] flex gap-2"
                 >
                   {/* <span className='text-[11px]'>Powered by: </span> */}
-                  {/* CARDS */}
+              {/* CARDS *
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
         {/* Footer bottom */}
-        <div className="md:w-[80%] -mt-3 mb-5 mx-auto md:flex justify-between">
+        <div className="md:w-[80%] -mt-3 pb-6 mx-auto md:flex justify-between">
           <p class="md:mt-6 mt-3 block text-[12px] font-semibold text-gray-800 sm:text-center dark:text-gray-400">
-            {" "}
-            &copy; {year}{" "}
+            &copy; {year}
             <Link to="/" class="hover:underline">
               the carZ
             </Link>

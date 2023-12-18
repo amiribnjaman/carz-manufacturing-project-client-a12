@@ -23,7 +23,7 @@ const MainMenu = ({ showMenu }) => {
             showMenu ? "relative items-center md:top-[90px]" : ""
           } container flex flex-wrap md:justify-between items-center mx-auto`}
         >
-          {/* MAIN MENU */}
+          {/*=================MAIN MENU===================*/}
           <div
             class={`justify-between items-center w-full md:flex md:w-auto`}
             id="mobile-menu-2"
@@ -127,7 +127,7 @@ const MainMenu = ({ showMenu }) => {
             </ul>
           </div>
 
-          {/*------------------------ SEARCH BUTTON */}
+          {/*================= SEARCH BUTTON =====================*/}
           <div className="search-btn mt-[5px] hidden text-center md:flex hover:tooltip-open -mr-2 cursor-pointer rounded-full">
             <button
               className="justify-self-center mb-3 md:mb-0"
@@ -154,7 +154,7 @@ const MainMenu = ({ showMenu }) => {
             </div> */}
           </div>
 
-          {/*----------------FILTER CARD---------------- */}
+          {/*================== FILTER CARD =====================*/}
           <div
             className={`${
               showFilterCard ? "block" : "hidden"
