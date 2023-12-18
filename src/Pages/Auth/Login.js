@@ -73,7 +73,7 @@ const Login = () => {
               Welcome Back
             </h2>
             <p className="text-[#eeeeee] text-[11px] w-[75%] mx-auto">
-              To countine to your beloved thecarZ, please Login now and get the best one.
+              To countine into your beloved thecarZ, please Login now and get the best one.
             </p>
           </div>
           <div className="md:w-1/2 md:pt-0 pt-4">
