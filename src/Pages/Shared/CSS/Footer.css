@@ -15,7 +15,7 @@ footer{
 } */
 @media only screen and (max-width: 480px){
     footer{
-        height: 95vh;
+        /* height: 95vh; */
         margin-top: 0;
         text-align: center;
         /* clip-path: ellipse(120% 100% at 50% 100%); */

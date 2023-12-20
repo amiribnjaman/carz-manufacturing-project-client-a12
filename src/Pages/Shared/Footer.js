@@ -24,12 +24,12 @@ const Footer = () => {
             <p className="text-[11px] text-white">The product you dream for!</p>
           </div>
 
-          <div className="flex w-[350px] mx-auto md:mx-0 md:w-[400px] gap-3 items-center">
+          <div className="flex w-[95%] mx-auto md:mx-0 md:w-[400px] gap-1 md:gap-3 items-center">
             <input
               placeholder="Place your email for update"
-              className=" py-[8px] focus:outline-none focus:border-1 focus:border-[#014E9C] w-[310px] rounded text-[15px] px-4"
+              className=" py-[8px] focus:outline-none focus:border-1 focus:border-[#014E9C] w-[90%] md:w-[310px] rounded text-[15px] px-4"
             />
-            <button className="rounded bg-[#0e62b7] text-white py-[8px] px-3">
+            <button className="rounded ml-[2px] md:ml-0 bg-[#0e62b7] text-white py-[8px] px-1 md:px-3">
               Subscribe
             </button>
           </div>
@@ -38,7 +38,7 @@ const Footer = () => {
 
       {/*-------------------FOOTER BOTTOM SECTION-------------------- */}
       <div>
-        <div class="md:w-[80%] px-6 md:px-0 mx-auto mt-4 grid grid-cols-1 gap-8 py-8 text-left md:grid-cols-4">
+        <div class="md:w-[80%] px-5 md:px-0 mx-auto mt-4 grid grid-cols-1 gap-8 py-8 text-left md:grid-cols-4">
           {/*------------------- COMPANY ---------------- */}
           <div>
             <h2 className="md:mb-6 mb-2 text-[13px] font-bold text-gray-800 uppercase">
@@ -219,7 +219,7 @@ const Footer = () => {
           </div>
         </div>
         {/* Footer bottom */}
-        <div className="md:w-[80%] -mt-3 pb-6 mx-auto md:flex justify-between">
+        <div className="md:w-[80%] -mt-3 pb-6 mx-auto flex md:flex-row flex-col md:justify-between">
           <p class="md:mt-6 mt-3 block text-[12px] font-semibold text-gray-800 sm:text-center dark:text-gray-400">
             &copy; {year}
             <Link to="/" class="hover:underline">
@@ -227,7 +227,7 @@ const Footer = () => {
             </Link>
             . All Rights Reserved.
           </p>
-          <div className="flex gap-2 items-center">
+          <div className="flex gap-2 mx-auto md:mx-0 items-center ">
             <p className="text-[11px] font-semibold">Payment Partner: </p>
             <img
               src={VisaCard}
