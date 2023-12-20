@@ -6,6 +6,8 @@
     margin-top: 70px;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url('../../Assets/Images/auth-bg.svg');
+    background-image: url('../../../Assets/Images/auth-bg.svg');
     /* background: linear-gradient(0deg, rgba(5, 39, 50, 0.7), rgba(45, 72, 81, 0.7)), url('../../Assets/Images/banner.jpg'); */
+
+    clip-path: polygon(0% 120%, 100% 100%, calc(105% - 30px) 0%, 0% 0%, calc(100% - 32px) 0%, 0% 0%)
 }

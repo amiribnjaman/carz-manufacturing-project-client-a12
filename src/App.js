@@ -53,7 +53,7 @@ function App() {
   }
   const handleMenuScroll = () => {
     // Secondary toggle
-    if (window.scrollY > 270) {
+    if (window.scrollY > 250) {
       setShowSecondaryNav(true);
     } else {
       setShowSecondaryNav(false);

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
-import "./Footer.css";
+import "./CSS/Navbar.css";
+import "./CSS/Footer.css";
 import VisaCard from "./../../../src/Assets/Images/cards/visa.png";
 import MasterCard from "./../../../src/Assets/Images/cards/card.png";
 import AmericanExpress from "./../../../src/Assets/Images/cards/american-express.png";

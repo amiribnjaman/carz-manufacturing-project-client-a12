@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 import MainMenu from "./MainMenu";
 import CustomLink from "../../Components/CustomLink";
 import auth from "../../firebase.init";
-import "./Navbar.css";
+import "./CSS/Navbar.css";
 
 const SecondaryMenu = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -15,7 +15,7 @@ const SecondaryMenu = () => {
 
   return (
     <div className="py-2 md:py-1 shadow fixed w-full z-50 top-0 left-0 bg-white">
-      <nav class="bg-white py-2 w-10/12 z-50 mx-auto h-[65px] border-gray-200 md:px-10 sm:px-4 flex items-center justify-between dark:bg-gray-800">
+      <nav class="bg-white py-2 w-10/12 z-50 mx-auto h-[65px] border-gray-200 md:px-9 sm:px-4 flex items-center justify-between dark:bg-gray-800">
         <div
           class={`${
             showMenu ? "relative" : ""
@@ -105,15 +105,7 @@ const SecondaryMenu = () => {
               ) : (
                 ""
               )}
-              {/* <li>
-                                <CustomLink to="myportfolio" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">My Portfolio</CustomLink >
-                            </li> 
-                            {user ?
-                                <li>
-                                    <CustomLink to="/dashboard" class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Dashboard</CustomLink >
-                                </li>
-                                : ''
-                            //*/}
+              
             </ul>
           </div>
 
@@ -174,57 +166,7 @@ const SecondaryMenu = () => {
               </li>
             </ul>
           </div>
-
-          {/* MAIN MENU */}
-
-          {/* <div
-            class={`${
-              showMenu
-                ? "block shadow bg-[rgba(237,246,253,.9)] z-40"
-                : "hidden"
-            } justify-between items-center w-full md:flex md:w-auto md:order-1`}
-            id="mobile-menu-2"
-          >
-            <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-              <li>
-                <CustomLink
-                  to="/"
-                  class="block py-2 pr-4 pl-3 text-[#03a89d] rounded md:bg-transparent md:hover:text-[#03a89d] md:text-black md:p-0 dark:text-white"
-                  aria-current="page"
-                >
-                  Home
-                </CustomLink>
-              </li>
-              <li>
-                <CustomLink
-                  to="/blogs"
-                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Blogs
-                </CustomLink>
-              </li>
-              <li>
-                <CustomLink
-                  to="myportfolio"
-                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  My Portfolio
-                </CustomLink>
-              </li>
-              {user ? (
-                <li>
-                  <CustomLink
-                    to="/dashboard"
-                    class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  >
-                    Dashboard
-                  </CustomLink>
-                </li>
-              ) : (
-                ""
-              )}
-            </ul>
-          </div> */}
+          
         </div>
       </nav>
     </div>

@@ -8,7 +8,7 @@ import ComponentLoading from '../../Components/componentLoading'
 // import Parts from './Parts';
 // import Reviews from './Reviews';
 
-import './Home.css'
+import './CSS/Home.css'
 import LoadingSpinner from '../../Components/LoadingSpinner';
 
 const BestSelling = lazy (() => customDelay(import('./BestSelling')))
