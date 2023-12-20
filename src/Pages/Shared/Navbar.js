@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <div className="md:pt-6 md:pb-5 py-2 shadow relative">
-      <nav class="bg-white pb-2 w-10/12 z-50 mx-auto h-[90px] border-gray-200 md:px-10 sm:px-4 flex items-center rounded rounded-full dark:bg-gray-800">
+      <nav class="bg-white md:pb-2 w-10/12 z-50 mx-auto h-[90px] border-gray-200 md:px-10 sm:px-4 flex items-center rounded rounded-full dark:bg-gray-800">
         <div
           class={`${
             showMenu ? "relative" : ""
@@ -34,7 +34,14 @@ const Navbar = () => {
               </Link>
               <p className="text-[11px]">The product you dream for!</p>
             </div>
-            <div>
+            {/*
+          /*
+          /*
+          /*NAVBAR ITEMS FOR DESKTOP DEVICES
+          /*
+          /*
+          */}
+            <div className="hidden md:block">
               <ul class="flex -ml-2 flex-col mt-4 md:flex-row md:space-x-7 md:mt-0 md:text-sm md:font-medium">
                 <li className="">
                   <CustomLink
@@ -94,7 +101,29 @@ const Navbar = () => {
               </ul>
             </div>
           </div>
-          <div class="flex items-center md:order-2 relative">
+
+          {/*
+          /*
+          /*
+          /*NAVBAR HUMBERGER ICON FOR MOBILE DEVICES
+          /*
+          /*
+          */}
+
+          <div className="grid md:hidden gap-1.5 cursor-pointer">
+            <div className="w-[18px] h-[2px] bg-black rounded"></div>
+            <div className="w-[30px] h-[1.5px] bg-black rounded"></div>
+            <div className="w-[18px] h-[2px] bg-black rounded justify-self-end"></div>
+          </div>
+
+          {/*
+          /*
+          /*
+          /*NAVBAR FOR DESKTOP DEVICES
+          /*
+          /*
+          */}
+          <div class="hidden md:flex items-center md:order-2 relative">
             {/* Navbar mid section */}
             <div className="hidden md:flex mr-20 -mt-[10px] gap-5 text-[13px] items-center"></div>
             <ul class="hidden items-center md:flex mt-3 flex-col md:flex-row md:space-x-5 md:mt-0 md:text-sm md:font-medium">
@@ -227,37 +256,13 @@ const Navbar = () => {
                 </ul>
               </div>
             </ul>
-
-            {/*-----------------------MOBILE MENU HUMBERGER ICON-------------- */}
-            <div
-              className="md:hidden p-2 mt-[-2px] gap-2 flex flex-col"
-              onClick={() => setShowMenu(!showMenu)}
-            >
-              <span
-                className={`${
-                  showMenu ? "rotate-45" : ""
-                } h-[1.5px] w-[29px] bg-[#000] block`}
-              ></span>
-              <span
-                className={`${
-                  showMenu ? "hidden" : ""
-                } h-[1.5px] w-[23px] bg-[#000] `}
-              ></span>
-              <span
-                className={`${
-                  showMenu ? "-rotate-45 -mt-[9px]" : ""
-                } h-[1.5px] w-[29px] bg-[#000]`}
-              ></span>
-            </div>
           </div>
-
-          {/* MAIN MENU */}
         </div>
       </nav>
 
       {/* MAIN NAVBAR/MENU */}
       {/* absolute w-[79%] mx-auto md:bottom-[-40px] md:left-[10%] left-[21%]  */}
-      <div className="w-10/12  mx-auto ">
+      <div className="w-10/12 md:block hidden  mx-auto ">
         <MainMenu showMenu={showMenu} />
       </div>
     </div>

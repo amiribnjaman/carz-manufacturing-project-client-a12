@@ -3,7 +3,7 @@ import React from "react";
 export default function ShortDescription() {
   return (
     <div>
-      <div className="flex w-[80%] mx-auto justify-between py-6">
+      <div className="flex flex-col md:flex-row w-[80%] gap-3 md:gap-0 mx-auto justify-between py-6">
         <div className="gap-2 mr-4 items-center flex">
           <svg
             xmlns="http://www.w3.org/2000/svg"

@@ -12,11 +12,10 @@ const SecondaryMenu = () => {
   const [showLogout, setShowLogout] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
-  console.log(user?.photoURL);
 
   return (
-    <div className="py-2 md:py-1 shadow fixed w-full z-50 top-0 left-0 bg-white">
-      <nav class="bg-white py-2 w-10/12 z-50 mx-auto h-[65px] border-gray-200 md:px-9 sm:px-4 flex items-center justify-between dark:bg-gray-800">
+    <div className="py-4 md:py-1 shadow fixed w-full z-50 top-0 left-0 bg-white">
+      <nav class="bg-white py-2 mb-1 md:mb-0 md:py-2 w-10/12 z-50 mx-auto h-[65px] border-gray-200 md:px-9 sm:px-4 flex flex-wrap items-center justify-between dark:bg-gray-800">
         <div
           class={`${
             showMenu ? "relative" : ""
@@ -32,9 +31,16 @@ const SecondaryMenu = () => {
           </div>
           {/*============ MENU ITEMS ==============*/}
           <div
-            class={`justify-between items-center w-full md:flex md:w-auto justify-between`}
+            class={`justify-between hidden items-center w-full md:flex md:w-auto justify-between`}
             id="mobile-menu-2"
           >
+            {/*
+          /*
+          /*
+          /*NAVBAR ITEMS FOR DESKTOP DEVICES
+          /*
+          /*
+          */}
             <ul class="flex -ml-2 flex-col mt-4 md:flex-row justify-center items-center md:space-x-6 md:mt-0 md:text-sm md:font-medium">
               <li className="ml-[7px]">
                 <CustomLink
@@ -101,8 +107,21 @@ const SecondaryMenu = () => {
             </ul>
           </div>
 
+          {/*
+          /*
+          /*
+          /*NAVBAR HUMBERGER ICON FOR MOBILE DEVICES
+          /*
+          /*
+          */}
+          <div className="grid md:hidden gap-1.5 cursor-pointer">
+            <div className="w-[18px] h-[2px] bg-black rounded"></div>
+            <div className="w-[30px] h-[1.5px] bg-black rounded"></div>
+            <div className="w-[18px] h-[2px] bg-black rounded justify-self-end"></div>
+          </div>
+
           {/*=============== LOGIN BUTTON============= */}
-          <div>
+          <div className="hidden md:block">
             <ul>
               <li>
                 {!user ? (

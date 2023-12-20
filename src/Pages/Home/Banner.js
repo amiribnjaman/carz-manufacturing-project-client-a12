@@ -12,12 +12,12 @@ const Banner = () => {
     <div className="bg-gradient-to-r from-[#e2effb] to-[#fafffd]">
       <div className="md:pt-[90px]">
         {/* BANNER SECTION HEADING */}
-        <div className="md:w-[80%] mx-auto flex justify-between px-3">
-          <div className="gap-3 items-center md:w-[80%]">
-            <h1 className="text-left text-[23px] font-semibold flex gap-2 items-center">
+        <div className="md:w-[80%] mb-4 md:mb-0 mx-auto flex md:flex-row flex-col justify-between px-3">
+          <div className="gap-3 mt-4 md:mt-0 items-center md:w-[80%]">
+            <h1 className="text-left text-[18px] md:text-[23px] font-semibold flex gap-2 items-center">
               Our objective is to provide the best Quality Product.
             </h1>
-            <p className="text-[14px] w-[60%] text-left">
+            <p className="text-[12px] hidden md:block md:text-[14px] w-[60%] text-left">
               We manufacturing automobiles for more than 10+ years with client
               satisfaction priority. Latest & customizeable design and development team
               always doing hard work for insure the best product.
@@ -97,7 +97,7 @@ const Banner = () => {
             </div>
           </div>
 
-          <div className="flex gap-3 h-[35px]">
+          <div className="flex gap-3 h-[35px] mt-2 md:mt-0">
             <span className="underline hover:text-[#014E9C] hover:decoration-[#014E9C] cursor-pointer">
               Explore More
             </span>

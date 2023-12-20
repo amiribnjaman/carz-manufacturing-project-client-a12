@@ -14,7 +14,7 @@ const Footer = () => {
     <footer class="text-center text-black dark:bg-gray-800">
       {/*------------------- FOOTER TOPPER SECTION---------------- */}
       <div className="bg-[#014E9C] ">
-        <div class="md:flex py-2 justify-between items-start md:mx-auto md:w-[80%] sm:items-center sm:justify-between">
+        <div class="md:flex py-2 pb-4 md:pb-0 justify-between items-start md:mx-auto md:w-[80%] sm:items-center sm:justify-between">
           <div className="footer-logo md:pt-7 md:pb-4 self-start md:mb-0 md:mt-24px mb-2">
             <Link to="/" class="md:flex sm:mb-0">
               <span class="self-center text-white LOGO text-2xl font-semibold whitespace-nowrap dark:text-white">
@@ -24,7 +24,7 @@ const Footer = () => {
             <p className="text-[11px] text-white">The product you dream for!</p>
           </div>
 
-          <div className="flex w-[400px] gap-3 items-center">
+          <div className="flex w-[350px] mx-auto md:mx-0 md:w-[400px] gap-3 items-center">
             <input
               placeholder="Place your email for update"
               className=" py-[8px] focus:outline-none focus:border-1 focus:border-[#014E9C] w-[310px] rounded text-[15px] px-4"
@@ -38,7 +38,7 @@ const Footer = () => {
 
       {/*-------------------FOOTER BOTTOM SECTION-------------------- */}
       <div>
-        <div class="md:w-[80%] mx-auto mt-4 grid grid-cols-1 gap-8 py-8 text-left md:grid-cols-4">
+        <div class="md:w-[80%] px-6 md:px-0 mx-auto mt-4 grid grid-cols-1 gap-8 py-8 text-left md:grid-cols-4">
           {/*------------------- COMPANY ---------------- */}
           <div>
             <h2 className="md:mb-6 mb-2 text-[13px] font-bold text-gray-800 uppercase">
