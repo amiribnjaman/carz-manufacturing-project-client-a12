@@ -2,7 +2,8 @@ import React, { Suspense, lazy }  from 'react';
 import Banner from './Banner';
 import BusinessSummary from './BusinessSummary';
 import ContactUs from './ContactUs';
-import ShortDescription from "./shortDescription";
+// import ShortDescription from "./ShortDescription";
+import ShortDescription from './ShortDescription';
 import InfoSection from './InfoSection';
 import OurTeam from './OurTeam';
 import ComponentLoading from '../../Components/componentLoading'

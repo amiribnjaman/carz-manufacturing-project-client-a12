@@ -35,7 +35,7 @@ const AllProducts = () => {
   };
 
   return (
-    <div className="md:mt-28 mt-16 md:w-[80%] mx-auto gap-5 px-3">
+    <div className="md:mt-12 mt-16 md:w-[80%] mx-auto gap-5 px-3">
         {/* Best selling Heading */}
         <div className="flex justify-between text-left">
           <div>

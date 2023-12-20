@@ -341,7 +341,7 @@ const Reviews = () => {
     //     </div>
     //   </div> */}
     // </div>
-    <div className="md:mt-24 mt-16 px-3 md:mb-12 md:w-[80%] mx-auto grid md:grid-cols-8 gap-4">
+    <div className="md:mt-20 mt-16 px-3 md:mb-12 md:w-[80%] mx-auto grid md:grid-cols-8 gap-4">
       {/*------------------REVIEW LEFT SECTION------------------- */}
       <div className="md:order-1 order-2 md:col-span-6">
         <div className="gap-6 grid md:grid-cols-2 md:mr-6 gap-y-6">

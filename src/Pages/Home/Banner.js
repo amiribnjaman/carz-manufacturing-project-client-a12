@@ -13,11 +13,16 @@ const Banner = () => {
       <div className="md:pt-[90px]">
         {/* BANNER SECTION HEADING */}
         <div className="md:w-[80%] mx-auto flex justify-between px-3">
-          <div className="gap-3 items-center">
-            <h1 className="text-left text-[21px] font-semibold flex gap-2 items-center">
+          <div className="gap-3 items-center md:w-[80%]">
+            <h1 className="text-left text-[23px] font-semibold flex gap-2 items-center">
               Our objective is to provide the best Quality Product.
             </h1>
-            <div className="flex items-center gap-4 mt-2">
+            <p className="text-[14px] w-[60%] text-left">
+              We manufacturing automobiles for more than 10+ years with client
+              satisfaction priority. Latest & customizeable design and development team
+              always doing hard work for insure the best product.
+            </p>
+            <div className="flex items-center gap-4 mt-3">
               <div className="flex gap-2 items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -92,8 +97,8 @@ const Banner = () => {
             </div>
           </div>
 
-          <div className="flex gap-3">
-            <span className="underline hover:text-[#014E9C] hover:decoration-[#014E9C]">
+          <div className="flex gap-3 h-[35px]">
+            <span className="underline hover:text-[#014E9C] hover:decoration-[#014E9C] cursor-pointer">
               Explore More
             </span>
           </div>
@@ -147,11 +152,7 @@ const Banner = () => {
           </div>
         </div>
       </div>
-
-      
     </div>
-
-    
   );
 };
 

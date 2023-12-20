@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function shortDescription() {
+export default function ShortDescription() {
   return (
     <div>
       <div className="flex w-[80%] mx-auto justify-between py-6">
@@ -70,7 +70,7 @@ export default function shortDescription() {
           <div>
             <div className="flex gap-1 items-center">
               <h5 className="text-left text-[12px] font-normal">
-                Opening Time
+                Opening Hour
               </h5>
             </div>
             <div className="">

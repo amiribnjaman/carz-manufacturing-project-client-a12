@@ -27,6 +27,7 @@ import TopNav from "./Pages/Shared/TopNav";
 import { useHistory, useLocation } from "react-router-dom";
 import SecondaryMenu from "./Pages/Shared/SecondaryMenu.jsx";
 import { useMemo } from "react";
+import MyShopCard from "./Pages/Shared/MyShopCard.jsx";
 // const OrderContext = createContext([])
 
 function App() {
@@ -93,6 +94,7 @@ function App() {
   return (
     // <OrderContext.provider value={order}>
     <div className="App">
+      <MyShopCard />
       {path == "/" ? (
         <>
           <TopNav />
@@ -110,7 +112,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />} />
         {/* <Route path='/myportfolio' element={<MyPortfolio />} /> */}
         <Route
-          path="/dashboard"
+          path="/my-shop"
           element={
             <ProtectedRoute>
               <Dashboard />

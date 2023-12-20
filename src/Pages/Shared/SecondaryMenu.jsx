@@ -12,6 +12,7 @@ const SecondaryMenu = () => {
   const [showLogout, setShowLogout] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const location = useLocation();
+  console.log(user?.photoURL);
 
   return (
     <div className="py-2 md:py-1 shadow fixed w-full z-50 top-0 left-0 bg-white">
@@ -70,14 +71,6 @@ const SecondaryMenu = () => {
               </li>
               <li className="ml-[7px]">
                 <CustomLink
-                  to="shop"
-                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#014E9C] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Shop
-                </CustomLink>
-              </li>
-              <li className="ml-[7px]">
-                <CustomLink
                   to="contact"
                   className={`block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#014E9C] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700`}
                 >
@@ -96,16 +89,15 @@ const SecondaryMenu = () => {
               {user ? (
                 <li>
                   <CustomLink
-                    to="/dashboard"
-                    class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    to="/my-shop"
+                    class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#014E9C] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                   >
-                    Dashboard
+                    Shop
                   </CustomLink>
                 </li>
               ) : (
                 ""
               )}
-              
             </ul>
           </div>
 
@@ -131,13 +123,13 @@ const SecondaryMenu = () => {
                   <>
                     <img
                       onClick={() => setShowLogout(!showLogout)}
-                      class="w-8 h-8 rounded-full cursor-pointer inline-block mt-3"
+                      class="w-8 h-8 rounded-full cursor-pointer inline-block "
                       src={user?.photoURL}
                       alt={user.displayName}
                     />
-                    <p>
+                    {/* <p>
                       <small>{user?.displayName?.split(" ")[0]}</small>
-                    </p>
+                    </p> */}
                   </>
                 ) : (
                   <>
@@ -166,7 +158,6 @@ const SecondaryMenu = () => {
               </li>
             </ul>
           </div>
-          
         </div>
       </nav>
     </div>

@@ -29,7 +29,7 @@ const ContactUs = () => {
       // </div>
 
       <div className="bg-[#fcfcfc] pt-[5px] pb-10 mt-4">
-        <div className="md:w-[80%] md:mt-24 px-3 md:grid grid-cols-12 expert-section gap-5 mx-auto mt-24 mb-8 md:mb-14">
+        <div className="md:w-[80%] md:mt-20 px-3 md:grid grid-cols-12 expert-section gap-5 mx-auto mt-24 mb-8 md:mb-14">
           {/*--------------CONTACT US HEADER------------ */}
           <div className="col-span-4 text-left">
             <h2 className="text-[22px] font-[600] text-left">Contact Us</h2>
