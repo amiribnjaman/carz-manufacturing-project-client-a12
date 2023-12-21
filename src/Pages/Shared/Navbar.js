@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 import MainMenu from "./MainMenu";
 import CustomLink from "../../Components/CustomLink";
 import auth from "../../firebase.init";
-import "./Navbar.css";
+import "./CSS/Navbar.css";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
   const [showLogout, setShowLogout] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
-
 
   // Handle menu toggle
   // const handleShowMenu = () => {
@@ -19,145 +18,168 @@ const Navbar = () => {
   // }
 
   return (
-    <div className="md:py-8 py-2 shadow relative">
-      <nav class="bg-white pb-2 w-10/12 z-50 mx-auto h-[90px] border-gray-200 md:px-10 sm:px-4 flex items-center rounded rounded-full dark:bg-gray-800">
+    <div className="md:pt-6 md:pb-5 py-2 shadow relative">
+      <nav class="bg-white md:pb-2 w-10/12 z-50 mx-auto h-[90px] border-gray-200 md:px-10 sm:px-4 flex items-center rounded rounded-full dark:bg-gray-800">
         <div
           class={`${
             showMenu ? "relative" : ""
           } container flex flex-wrap justify-between items-center mx-auto`}
         >
-          <div className="">
-            <Link to="/" class="flex items-center">
-              <span class="self-center LOGO text-3xl font-semibold whitespace-nowrap dark:text-white">
-                thecar<span className="text-green-400">Z</span>
-              </span>
-            </Link>
-            <p className="text-[11px]">The product you dream for!</p>
-          </div>
-          <div class="flex items-center md:order-2 relative">
-            {/* Navbar mid section */}
-            <div className="hidden md:flex mr-20 -mt-[10px] gap-5 text-[13px] items-center">
-              <div className=" gap-2 mr-4 items-center">
-                <div className="flex items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1"
-                    stroke="currentColor"
-                    class="w-4 h-4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"
-                    />
-                  </svg>
-                  <h5 className="text-left text-[12px] font-normal">Call Us</h5>
-                </div>
-                <div className="">
-                  <span className="text-[13px] font-semibold">
-                    +88 013456789
-                  </span>
-                </div>
-              </div>
-              <div className=" gap-2 items-center">
-                <div className="flex gap-1 items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1"
-                    stroke="currentColor"
-                    class="w-4 h-4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"
-                    />
-                  </svg>
-
-                  <h5 className="text-left text-[12px] font-normal">Mail Us</h5>
-                </div>
-                <div className="">
-                  <span className="text-[13px] font-semibold">
-                    carz@mail.com
-                  </span>
-                </div>
-              </div>
-              <div className=" gap-2 items-center">
-                <div className="flex gap-1 items-center">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke-width="1"
-                    stroke="currentColor"
-                    class="w-4 h-4"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
-                    />
-                  </svg>
-
-                  <h5 className="text-left text-[12px] font-normal">
-                    Opening Time
-                  </h5>
-                </div>
-
-                <div className="">
-                  <span className="text-[13px] font-semibold">
-                    At 10:00AM - 10:00PM
-                  </span>
-                </div>
-              </div>
+          <div className="flex items-center gap-20">
+            <div>
+              <Link to="/" class="flex items-center">
+                <span class="self-center LOGO text-3xl font-semibold whitespace-nowrap dark:text-white">
+                  thecar<span className="text-[#014E9C]">Z</span>
+                </span>
+              </Link>
+              <p className="text-[11px]">The product you dream for!</p>
             </div>
-            <ul class="hidden md:flex mt-3 flex-col md:flex-row md:space-x-6 md:mt-0 md:text-sm md:font-medium">
-              {/* <li>
-                <a
-                  href="#"
-                  class="block text-[12px] py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Products
-                </a>
-              </li>*/}
+            {/*
+          /*
+          /*
+          /*NAVBAR ITEMS FOR DESKTOP DEVICES
+          /*
+          /*
+          */}
+            <div className="hidden md:block">
+              <ul class="flex -ml-2 flex-col mt-4 md:flex-row md:space-x-7 md:mt-0 md:text-sm md:font-medium">
+                <li className="">
+                  <CustomLink
+                    to="/"
+                    className="block py-2 pr-4 pl-3 border-b md:border-0 border-gray-100 rounded md:bg-transparent hover:text-[#014E9C] md:text-black md:p-0 dark:text-white"
+                    aria-current="page"
+                  >
+                    Home
+                  </CustomLink>
+                </li>
+                <li className="ml-[7px]">
+                  <CustomLink
+                    to="/about"
+                    class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#014E9C] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >
+                    About
+                  </CustomLink>
+                </li>
+                <li className="ml-[7px]">
+                  <CustomLink
+                    to="/products"
+                    class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#014E9C] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >
+                    Products
+                  </CustomLink>
+                </li>
+
+                <li className="ml-[7px]">
+                  <CustomLink
+                    to="/blogs"
+                    class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#014E9C] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >
+                    Contact
+                  </CustomLink>
+                </li>
+                <li className="ml-[7px]">
+                  <CustomLink
+                    to="/blogs"
+                    class="block py-2 pr-4 pl-4 text-gray-700 border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#014E9C] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  >
+                    Blogs
+                  </CustomLink>
+                </li>
+                {/*===============SHOP MY SHOP PAGE IF USER LOGEDIN=============== */}
+                {user ? (
+                  <li>
+                    <CustomLink
+                      to="/my-shop"
+                      class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 hover:text-[#014E9C] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                    >
+                      Shop
+                    </CustomLink>
+                  </li>
+                ) : (
+                  ""
+                )}
+              </ul>
+            </div>
+          </div>
+
+          {/*
+          /*
+          /*
+          /*NAVBAR HUMBERGER ICON FOR MOBILE DEVICES
+          /*
+          /*
+          */}
+
+          <div className="grid md:hidden gap-1.5 cursor-pointer">
+            <div className="w-[18px] h-[2px] bg-black rounded"></div>
+            <div className="w-[30px] h-[1.5px] bg-black rounded"></div>
+            <div className="w-[18px] h-[2px] bg-black rounded justify-self-end"></div>
+          </div>
+
+          {/*
+          /*
+          /*
+          /*NAVBAR FOR DESKTOP DEVICES
+          /*
+          /*
+          */}
+          <div class="hidden md:flex items-center md:order-2 relative">
+            {/* Navbar mid section */}
+            <div className="hidden md:flex mr-20 -mt-[10px] gap-5 text-[13px] items-center"></div>
+            <ul class="hidden items-center md:flex mt-3 flex-col md:flex-row md:space-x-5 md:mt-0 md:text-sm md:font-medium">
               <li className="ml-[22px]">
                 <a
                   href="#"
-                  class="block text-[12px] py-2 pr-1 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Wishlist
-                </a>
-              </li>
-              {/* <li>
-                <Link
-                  to="#"
-                  class="flex py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 hover:text-blue-700 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                  class="flex gap-1 text-[12px] py-2 pr-1 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="15"
-                    height="15"
-                    fill="currentColor"
-                    class="bi bi-basket"
-                    viewBox="0 0 16 16"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1"
+                    stroke="currentColor"
+                    data-slot="icon"
+                    class="w-[24px] h-[24px]"
                   >
-                    <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z" />
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z"
+                    />
                   </svg>
-                  <sup className="text-sm text-white bg-[#31C48D] -ml-[4px] shadow rounded-full px-[4px] z-5">
-                    0
-                  </sup>
-                </Link>
-              </li> */}
+                  <span className="text-[11px] mt-1.5">Wishlist </span>
+                </a>
+              </li>
+              <li className="ml-[22px] flex gap-1">
+                <a
+                  href="#"
+                  class="flex gap-1 text-[12px] py-2 pr-1 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1"
+                    stroke="currentColor"
+                    data-slot="icon"
+                    class="w-6 h-6"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                  </svg>
+
+                  <span className="text-[11px] mt-1.5">Cart </span>
+                </a>
+              </li>
 
               <li>
                 {!user ? (
                   <CustomLink
                     to="/login"
-                    class="block py-2 pr-4 pl-3 text-black rounded md:bg-transparent  md:p-0 dark:text-white"
+                    class="block py-2 pr-4 pl-3 text-black rounded md:p-0 dark:text-white"
                     aria-current="page"
                   >
                     <span id="navbar-login-btn" className="r">
@@ -168,13 +190,13 @@ const Navbar = () => {
                   <>
                     <img
                       onClick={() => setShowLogout(!showLogout)}
-                      class="w-8 h-8 rounded-full cursor-pointer inline-block mt-3"
+                      class="w-8 h-8 rounded-full cursor-pointer inline-block"
                       src={user?.photoURL}
                       alt={user.displayName}
                     />
-                    <p>
+                    {/* <p>
                       <small>{user?.displayName?.split(" ")[0]}</small>
-                    </p>
+                    </p> */}
                   </>
                 ) : (
                   <>
@@ -234,75 +256,14 @@ const Navbar = () => {
                 </ul>
               </div>
             </ul>
-
-            {/* <div>
-              <ul class="flex flex-col items-center mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium text-[12px]"></ul>
-            </div> */}
-
-            {/*-----------------------MOBILE MENU HUMBERGER ICON-------------- */}
-            <div className="md:hidden p-2 mt-[-2px] gap-2 flex flex-col" onClick={()=> setShowMenu(!showMenu)}>
-              <span className={`${showMenu ? 'rotate-45':''} h-[1.5px] w-[29px] bg-[#000] block`}></span>
-              <span className={`${showMenu ? 'hidden' : ''} h-[1.5px] w-[23px] bg-[#000] `}></span>
-              <span className={`${showMenu ? '-rotate-45 -mt-[9px]' : ''} h-[1.5px] w-[29px] bg-[#000]` }></span>
-            </div>
           </div>
-
-          {/* MAIN MENU */}
-
-          {/* <div
-            class={`${
-              showMenu
-                ? "block shadow bg-[rgba(237,246,253,.9)] z-40"
-                : "hidden"
-            } justify-between items-center w-full md:flex md:w-auto md:order-1`}
-            id="mobile-menu-2"
-          >
-            <ul class="flex flex-col mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-              <li>
-                <CustomLink
-                  to="/"
-                  class="block py-2 pr-4 pl-3 text-[#03a89d] rounded md:bg-transparent md:hover:text-[#03a89d] md:text-black md:p-0 dark:text-white"
-                  aria-current="page"
-                >
-                  Home
-                </CustomLink>
-              </li>
-              <li>
-                <CustomLink
-                  to="/blogs"
-                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  Blogs
-                </CustomLink>
-              </li>
-              <li>
-                <CustomLink
-                  to="myportfolio"
-                  class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                >
-                  My Portfolio
-                </CustomLink>
-              </li>
-              {user ? (
-                <li>
-                  <CustomLink
-                    to="/dashboard"
-                    class="block py-2 pr-4 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-[#03a89d] md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
-                  >
-                    Dashboard
-                  </CustomLink>
-                </li>
-              ) : (
-                ""
-              )}
-            </ul>
-          </div> */}
         </div>
       </nav>
 
       {/* MAIN NAVBAR/MENU */}
-      <div className="absolute w-[79%] mx-auto md:bottom-[-40px] md:left-[10%] left-[21%] ">
-        <MainMenu showMenu={showMenu}/>
+      {/* absolute w-[79%] mx-auto md:bottom-[-40px] md:left-[10%] left-[21%]  */}
+      <div className="w-10/12 md:block hidden  mx-auto ">
+        <MainMenu showMenu={showMenu} />
       </div>
     </div>
   );

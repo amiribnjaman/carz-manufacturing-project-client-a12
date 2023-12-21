@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import "./CSS/Navbar.css";
 
 const TopNav = () => {
   return (
@@ -14,7 +14,7 @@ const TopNav = () => {
           <div class="container pl-8 pr-32 flex flex-wrap justify-between items-center mx-auto">
             <div>
               <h6 className="text-xs">
-                Connect with us - We are now on social media's
+                Connect with us - We are now on social media
               </h6>
             </div>
             <div

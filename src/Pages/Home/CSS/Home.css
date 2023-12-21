@@ -1,7 +1,7 @@
 .banner-section {
     /* background: #343C97; */
     /* background: #03a89d; */
-    background: url('../../Assets/Images/bg.jpg');
+    background: url('../../../Assets/Images/bg.jpg');
     background-position: center;
     background-size: cover;
     max-width: 100%;
@@ -21,7 +21,7 @@
 
 /* Business Section */
 .buniness-section {
-    background: linear-gradient(0deg, rgba(45, 46, 53, 0.2), rgba(49, 49, 54, 0.2)), url('../../Assets/Images/business-bg.jpg');
+    background: linear-gradient(0deg, rgba(45, 46, 53, 0.2), rgba(49, 49, 54, 0.2)), url('../../../Assets/Images/business-bg.jpg');
 
     min-height: 65vh;
     background-size: 1266px 610px;
@@ -73,7 +73,7 @@
 .expert-details {
     position: absolute;
     top: 0;
-    left: -500px;
+    left: -600px;
     color: #fff;
 }
 
@@ -83,7 +83,7 @@
     width: 85%;
     height: 82%;
     background-color: rgba(89, 100, 106, 0.7);
-    margin: 34px 19px;
+    margin: 24px 13px;
     border-radius: 5px;
 }
 

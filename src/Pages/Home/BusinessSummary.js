@@ -1,7 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartColumn, faBoxesPacking, faPeopleCarryBox, faHandshakeAngle } from '@fortawesome/free-solid-svg-icons';
-import './Home.css'
+import './CSS/Home.css'
 
 const BusinessSummary = () => {
     return (
