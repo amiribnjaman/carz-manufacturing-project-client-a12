@@ -65,7 +65,7 @@ const Login = () => {
 
 
     return (
-      <div className="login-page md:pt-14">
+      <div className="login-page md:pt-14 pt-20">
         <div className="w-11/12 mx-auto md:flex ">
           {/*==================== WELCOME MESSAGE========== */}
           <div className="md:w-1/2  md:mt-28 flex justify-start flex-col">

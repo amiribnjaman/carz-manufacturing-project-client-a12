@@ -91,7 +91,7 @@ const Signup = () => {
   }, [creatingError?.code, googleError]);
 
   return (
-    <div className="signup-page md:pt-10">
+    <div className="signup-page md:pt-10 pt-20">
       {/*  */}
       {/* <div class="custom-shape-divider-bottom-1702885480">
           <svg
