@@ -11,7 +11,7 @@ const AllProducts = () => {
 
   useEffect(() => {
     fetch(
-      "https://carz-manufacturing-project-server-a12.vercel.app/products/latest"
+      "https://carz-manufacturing-project-server-a12.vercel.app/products/all"
     )
       .then((res) => res.json())
       .then((data) => setParts(data));
