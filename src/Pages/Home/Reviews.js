@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { useQuery } from "react-query";
-import LoadingSpinner from "../../Components/LoadingSpinner";
-import Carousel from "react-elastic-carousel";
-import { faStar, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import ReactStars from "react-rating-stars-component";
-import vector1 from '../../Assets/Images/user/vector1.jpg'
+// import { useQuery } from "react-query";
+// import LoadingSpinner from "../../Components/LoadingSpinner";
+// import Carousel from "react-elastic-carousel";
+// import { faStar, faStarHalfStroke } from "@fortawesome/free-solid-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import vector1 from '../../Assets/Images/user/vector1.jpg'
 import user1 from '../../Assets/Images/user/user1.jpg'
 
 const Reviews = () => {
-  const [reviews, setReviews] = useState([]);
+  // const [reviews, setReviews] = useState([]);
   // const { isLoading, error, data: reviews } = useQuery('user', () => fetch('https://carz-manufacturing-project-server-a12.vercel.app/review').then(res => res.json()))
 
   // useEffect(() => {
@@ -24,18 +23,18 @@ const Reviews = () => {
   //     console.log(reviews);
   // }
 
-  const reviewStar = {
-    size: 15,
-    count: 5,
-    color: "#808080",
-    activeColor: "#ffa534",
-    value: null,
-    isHalf: true,
-    edit: false,
-    emptyIcon: <FontAwesomeIcon icon={faStarHalfStroke} />,
-    halfIcon: <FontAwesomeIcon icon={faStarHalfStroke} />,
-    filledIcon: <FontAwesomeIcon icon={faStar} />,
-  };
+  // const reviewStar = {
+  //   size: 15,
+  //   count: 5,
+  //   color: "#808080",
+  //   activeColor: "#ffa534",
+  //   value: null,
+  //   isHalf: true,
+  //   edit: false,
+  //   emptyIcon: <FontAwesomeIcon icon={faStarHalfStroke} />,
+  //   halfIcon: <FontAwesomeIcon icon={faStarHalfStroke} />,
+  //   filledIcon: <FontAwesomeIcon icon={faStar} />,
+  // };
 
   return (
     

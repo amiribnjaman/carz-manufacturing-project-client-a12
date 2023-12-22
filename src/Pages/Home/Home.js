@@ -18,7 +18,7 @@ const BestSellingProduct = lazy(() =>
 );
 const LatestProduct = lazy(() => customDelay(import("./LatestProduct")));
 const AllProducts = lazy(() => customDelay(import("./AllProducts")));
-const Reviews = lazy(() => customDelay(import("./Reviews")));
+const Reviews = lazy(() => import("./Reviews"));
 const ProductCategory = lazy(() => customDelay(import("./ProductCategory")));
 
 const Home = () => {
