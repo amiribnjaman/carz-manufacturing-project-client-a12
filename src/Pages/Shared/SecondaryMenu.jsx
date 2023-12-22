@@ -6,6 +6,7 @@ import MainMenu from "./MainMenu";
 import CustomLink from "../../Components/CustomLink";
 import auth from "../../firebase.init";
 import "./CSS/Navbar.css";
+import MobileMenu from "./MobileMenu";
 
 const SecondaryMenu = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -16,11 +17,7 @@ const SecondaryMenu = () => {
   return (
     <div className="py-4 md:py-1 shadow fixed w-full z-50 top-0 left-0 bg-white">
       <nav class="bg-white py-2 mb-1 md:mb-0 md:py-2 w-10/12 z-50 mx-auto h-[65px] border-gray-200 md:px-9 sm:px-4 flex flex-wrap items-center justify-between dark:bg-gray-800">
-        <div
-          class={`${
-            showMenu ? "relative" : ""
-          } container flex justify-between items-center mx-auto`}
-        >
+        <div class={`container flex justify-between items-center mx-auto`}>
           <div className="">
             <Link to="/" class="flex">
               <span class="self-center LOGO text-3xl font-semibold whitespace-nowrap dark:text-white">
@@ -114,7 +111,10 @@ const SecondaryMenu = () => {
           /*
           /*
           */}
-          <div className="grid md:hidden gap-1.5 cursor-pointer">
+          <div
+            onClick={() => setShowMenu(!showMenu)}
+            className="grid md:hidden gap-1.5 cursor-pointer"
+          >
             <div className="w-[18px] h-[2px] bg-black rounded"></div>
             <div className="w-[30px] h-[1.5px] bg-black rounded"></div>
             <div className="w-[18px] h-[2px] bg-black rounded justify-self-end"></div>
@@ -179,6 +179,16 @@ const SecondaryMenu = () => {
           </div>
         </div>
       </nav>
+      {/*
+          /*
+          /*
+          /*NAVBAR FOR DESKTOP DEVICES
+          /*
+          /*
+          */}
+      <div className="w-full absolute top-0 left-0">
+        <MobileMenu user={user} showMenu={showMenu} setShowMenu={setShowMenu} />
+      </div>
     </div>
   );
 };

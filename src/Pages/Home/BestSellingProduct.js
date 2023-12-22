@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import ComponentLoading from "../../Components/componentLoading";
 import SectionDivider from "../Shared/SectionDivider";
 
-const BestSelling = () => {
+const BestSellingProduct = ({products}) => {
   const navigate = useNavigate();
   const [parts, setParts] = useState([]);
   const [showDetails, setShowDetails] = useState(false);
@@ -11,13 +11,13 @@ const BestSelling = () => {
     const [getProductDetails, setGetProductDetails] = useState(null);
     
 
-  useEffect(() => {
-    fetch(
-      "https://carz-manufacturing-project-server-a12.vercel.app/products/latest"
-    )
-      .then((res) => res.json())
-      .then((data) => setParts(data));
-  }, [parts]);
+  // useEffect(() => {
+  //   fetch(
+  //     "https://carz-manufacturing-project-server-a12.vercel.app/products/latest"
+  //   )
+  //     .then((res) => res.json())
+  //     .then((data) => setParts(data));
+  // }, [parts]);
 
   const handleNavigateToPurchase = (id) => {
     navigate(`/purchase/${id}`);
@@ -37,14 +37,16 @@ const BestSelling = () => {
   };
 
   return (
-      <>
-          {/* SECTION DIVIDER */}
-          {/* <SectionDivider /> */}
+    <>
+      {/* SECTION DIVIDER */}
+      {/* <SectionDivider /> */}
       <div className="md:mt-16 mt-16 md:w-[80%] mx-auto gap-5 px-3">
         {/* Best selling Heading */}
         <div className="flex justify-between text-left">
           <div>
-            <h2 className="text-[22px] font-[600] text-left">Best Selling Products</h2>
+            <h2 className="text-[22px] font-[600] text-left">
+              Best Selling Products
+            </h2>
             {/* Divider */}
             <div className="flex float-left mt-1 block jusify-between gap-2  mb-4">
               <span className="w-[8px] rounded-full h-[8px] bg-[#014E9C] "></span>
@@ -66,18 +68,18 @@ const BestSelling = () => {
             </button>
           </div>
         </div>
-        {parts.length <= 0 ? <ComponentLoading /> : ""}
+        {products.length <= 0 ? <ComponentLoading /> : ""}
 
         {/*----------------------- BEST SELLING PRODUCT BODY-------------------  */}
         <div className="mb-20 col-span-9 mx-auto grid grid-cols-1 md:grid-cols-4 gap-x-5 gap-y-10">
-          {parts.map((part) => (
+          {products.slice(0,4).map((product) => (
             <>
               <div className="grid grid-cols-1 gap-1 rounded-tl-md rounded-tr-md rounded-br-sm rounded-bl-sm">
                 <div className="">
                   <img
                     style={{ height: "210px", width: "100%" }}
                     className="rounded-[15px]"
-                    src={part.image}
+                    src={product.image}
                     alt=""
                   />
                 </div>
@@ -91,7 +93,7 @@ const BestSelling = () => {
                       {/* -----------Product name and rating */}
                       <div className="flex justify-between">
                         <h4 className="text-[15px] font-semibold">
-                          {part.productName.split(" ")[0]}
+                          {product.productName.split(" ")[0]}
                         </h4>
                         {/*-------------- Rating---------- */}
                         <h6 className="flex items-center gap-1">
@@ -130,12 +132,12 @@ const BestSelling = () => {
                       {/*-------------- Price and buy button------- */}
                       <div className="flex justify-between">
                         <h5 className="text-[12px] font-semibold text-[#717171]">
-                          ${part.price}
+                          ${product.price}
                         </h5>
                         <div className="text-left gap-1 -mt-2 mb-1">
                           <button
                             onClick={() => {
-                              handleNavigateToPurchase(part._id);
+                              handleNavigateToPurchase(product._id);
                             }}
                             className="bg-gradient-to-r from-[#e2effb] to-[#fafffd] text-[12px] px-2 py-1 rounded-full border border-[#014E9C] border-gradient-to-r from-[#e2effb] to-[#fafffd] text-[#014E9C] mt-1 font-semibold text-left text-black"
                           >
@@ -267,4 +269,4 @@ const BestSelling = () => {
   );
 };
 
-export default BestSelling;
+export default React.memo(BestSellingProduct);

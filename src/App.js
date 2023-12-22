@@ -28,6 +28,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import SecondaryMenu from "./Pages/Shared/SecondaryMenu.jsx";
 import { useMemo } from "react";
 import MyShopCard from "./Pages/Shared/MyShopCard.jsx";
+import LoadingSpinner from "./Components/LoadingSpinner.js";
 // const OrderContext = createContext([])
 
 function App() {
@@ -140,14 +141,14 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route
+        {/* <Route
           path="/payment/:id"
           element={
             <ProtectedRoute>
               <Payment />
             </ProtectedRoute>
           }
-        />
+        /> */}
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />

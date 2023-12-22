@@ -11,7 +11,7 @@ const NotFound = () => {
     }
     
     return (
-        <div className='text-center mx-auto w-2/4 mt-10 mb-24 md:h-[55vh]'>
+        <div className='text-center mx-auto w-2/4 md:mt-12 mt-36 mb-24 md:h-[55vh]'>
             <img className='my-6 mx-auto' src={NotFoundImg} alt="" />
             <button
                 onClick={handleGoHome}
