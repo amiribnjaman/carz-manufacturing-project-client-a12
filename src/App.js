@@ -141,14 +141,14 @@ function App() {
             </ProtectedRoute>
           }
         />
-        <Route
+        {/* <Route
           path="/payment/:id"
           element={
             <ProtectedRoute>
               <Payment />
             </ProtectedRoute>
           }
-        />
+        /> */}
         <Route path="/*" element={<NotFound />} />
       </Routes>
       <Footer />
