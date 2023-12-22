@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import ComponentLoading from "../../Components/componentLoading";
 import SectionDivider from "../Shared/SectionDivider";
 
-const BestSelling = ({products}) => {
+const BestSellingProduct = ({products}) => {
   const navigate = useNavigate();
   const [parts, setParts] = useState([]);
   const [showDetails, setShowDetails] = useState(false);
@@ -269,4 +269,4 @@ const BestSelling = ({products}) => {
   );
 };
 
-export default React.memo(BestSelling);
+export default React.memo(BestSellingProduct);

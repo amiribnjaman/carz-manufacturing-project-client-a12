@@ -191,7 +191,7 @@ const Navbar = () => {
                 </a>
               </li>
 
-              <li>
+              <li className="relative">
                 {!user ? (
                   <CustomLink
                     to="/login"
@@ -238,45 +238,122 @@ const Navbar = () => {
                     </p>
                   </>
                 )}
-              </li>
 
-              {/* User profile and logout button  */}
-              <div
-                className={` ${
-                  showLogout ? "block" : "hidden"
-                } z-40 absolute top-[65px] left-[-55px] bg-gray-100  px-5 py-2 rounded shadow-sm`}
-              >
-                <ul>
-                  <li>
-                    <CustomLink
-                      onClick={() => setShowLogout(!showLogout)}
-                      to="/dashboard/myprofile"
-                      class="font-semibold block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 dark:text-white"
-                      aria-current="page"
-                    >
-                      Profile
-                    </CustomLink>
-                  </li>
-                  <li>
-                    <button
-                      onClick={() => {
-                        setShowLogout(!showLogout);
-                        signOut(auth);
-                      }}
-                      class="font-semibold block py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 dark:text-white"
-                      aria-current="page"
-                    >
-                      Logout
-                    </button>
-                  </li>
-                </ul>
-              </div>
+                {/*
+          /*
+          /*
+          /*CARD FOR LOGIN USER WITH PROFILE, LOGOUT BUTTON AND MANY MORE
+          /*
+          /*
+          */}
+                <div
+                  className={` ${
+                    showLogout ? "block" : "hidden"
+                  } z-50 absolute w-[350px] top-[50px] left-[-308px] bg-white px-4 py-2 rounded shadow`}
+                >
+                  {/*----------ARROW SIGN-------------- */}
+                  <div className="arrow-sign absolute top-[-7px] right-[17px] "></div>
+                  <ul className="text-left py-3 px-2 gap-2 flex flex-col">
+                    <li className="bg-[#fafcfb] px-2 py-1 rounded">
+                      <CustomLink
+                        onClick={() => setShowLogout(!showLogout)}
+                        to="/dashboard/myprofile"
+                        class="font-semibold block w-full flex justify-between items-center py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 dark:text-white"
+                        aria-current="page"
+                      >
+                        <span>Profile</span>
+                        <span>
+                          {user?.photoURL ? (
+                            <img
+                              class="w-8 h-8 rounded-full cursor-pointer inline-block"
+                              src={user?.photoURL}
+                              alt={user.displayName}
+                            />
+                          ) : (
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              stroke-width="1"
+                              stroke="currentColor"
+                              class="w-7 h-7"
+                            >
+                              <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                              />
+                            </svg>
+                          )}
+                        </span>
+                      </CustomLink>
+                    </li>
+                    <li className="bg-[#fafcfb] px-2 py-1.5 rounded">
+                      <button
+                        class="font-semibold w-full flex justify-between items-center py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 dark:text-white"
+                        aria-current="page"
+                      >
+                        <span>Settings</span>
+                        <span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="w-6 h-6"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.325.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 0 1 1.37.49l1.296 2.247a1.125 1.125 0 0 1-.26 1.431l-1.003.827c-.293.241-.438.613-.43.992a7.723 7.723 0 0 1 0 .255c-.008.378.137.75.43.991l1.004.827c.424.35.534.955.26 1.43l-1.298 2.247a1.125 1.125 0 0 1-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.47 6.47 0 0 1-.22.128c-.331.183-.581.495-.644.869l-.213 1.281c-.09.543-.56.94-1.11.94h-2.594c-.55 0-1.019-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 0 1-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 0 1-1.369-.49l-1.297-2.247a1.125 1.125 0 0 1 .26-1.431l1.004-.827c.292-.24.437-.613.43-.991a6.932 6.932 0 0 1 0-.255c.007-.38-.138-.751-.43-.992l-1.004-.827a1.125 1.125 0 0 1-.26-1.43l1.297-2.247a1.125 1.125 0 0 1 1.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.086.22-.128.332-.183.582-.495.644-.869l.214-1.28Z"
+                            />
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                            />
+                          </svg>
+                        </span>
+                      </button>
+                    </li>
+                    <li className="bg-[#fafcfb] px-2 py-1.5 rounded">
+                      <button
+                        onClick={() => {
+                          setShowLogout(!showLogout);
+                          signOut(auth);
+                        }}
+                        class="font-semibold w-full flex justify-between items-center py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 dark:text-white"
+                        aria-current="page"
+                      >
+                        <span>Logout</span>
+                        <span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            height="23"
+                            width="18"
+                            viewBox="0 0 512 512"
+                          >
+                            <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
+                          </svg>
+                        </span>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+              </li>
             </ul>
           </div>
         </div>
       </nav>
 
-      {/* MAIN NAVBAR/MENU */}
+      {/*
+          /*
+          /*
+          /*NAVBAR MAIN MENU
+          /*
+          /*
+          */}
       {/* absolute w-[79%] mx-auto md:bottom-[-40px] md:left-[10%] left-[21%]  */}
       <div className="w-10/12 md:block hidden  mx-auto ">
         <MainMenu showMenu={showMenu} />
@@ -285,7 +362,7 @@ const Navbar = () => {
       {/*
           /*
           /*
-          /*NAVBAR FOR DESKTOP DEVICES
+          /*NAVBAR FOR MOBILE DEVICE
           /*
           /*
           */}

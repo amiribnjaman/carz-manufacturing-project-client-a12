@@ -22,3 +22,17 @@
 .search-btn .search-tooltip{
     display: 'none'
 }
+
+/*
+*
+*USER CARD FOR LOGOUT/PROFILE 
+*
+*/
+.arrow-sign{
+    width: 0;
+        height: 0;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 6px solid #e8eeee;
+
+}

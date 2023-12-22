@@ -25,12 +25,13 @@ const Home = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    console.log(products, "hey");
     fetch(
       "https://carz-manufacturing-project-server-a12.vercel.app/products/all"
     )
       .then((res) => res.json())
-      .then((data) => setProducts(data));
+      .then((data) => {
+        setProducts(data);
+      });
   }, []);
 
   return (
