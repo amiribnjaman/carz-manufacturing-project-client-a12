@@ -7,7 +7,8 @@ import Img5 from "./../../Assets/Images/cars/img-5.jpg";
 import { useState } from "react";
 
 const Banner = () => {
-  const [like, setLike] = useState(false)
+  const [like, setLike] = useState(false);
+  console.log("hello");
   return (
     <div className="bg-gradient-to-r from-[#e2effb] to-[#fafffd]">
       <div className="md:pt-[90px]">
@@ -19,8 +20,9 @@ const Banner = () => {
             </h1>
             <p className="text-[12px] hidden md:block md:text-[14px] w-[60%] text-left">
               We manufacturing automobiles for more than 10+ years with client
-              satisfaction priority. Latest & customizeable design and development team
-              always doing hard work for insure the best product.
+              satisfaction priority. Latest & customizeable design and
+              development team always doing hard work for insure the best
+              product.
             </p>
             <div className="flex items-center gap-4 mt-3">
               <div className="flex gap-2 items-center">
@@ -156,4 +158,4 @@ const Banner = () => {
   );
 };
 
-export default Banner;
+export default React.memo(Banner);

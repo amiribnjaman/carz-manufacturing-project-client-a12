@@ -6,6 +6,7 @@ import MainMenu from "./MainMenu";
 import CustomLink from "../../Components/CustomLink";
 import auth from "../../firebase.init";
 import "./CSS/Navbar.css";
+import MobileMenu from "./MobileMenu";
 
 const Navbar = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -17,13 +18,25 @@ const Navbar = () => {
   //   setShowLogout(!showMenu)
   // }
 
+  {
+    /*
+          /*
+          /*
+          /*HANDLE SHOW/HIDE MOBILE MENU
+          /*
+          /*
+          */
+  }
+  const handleShowMobileMenu = () => {
+    console.log("clicked");
+    setShowMenu(!showMenu);
+  };
+
   return (
     <div className="md:pt-6 md:pb-5 py-2 shadow relative">
       <nav class="bg-white md:pb-2 w-10/12 z-50 mx-auto h-[90px] border-gray-200 md:px-10 sm:px-4 flex items-center rounded rounded-full dark:bg-gray-800">
         <div
-          class={`${
-            showMenu ? "relative" : ""
-          } container flex flex-wrap justify-between items-center mx-auto`}
+          class={`container flex flex-wrap justify-between items-center mx-auto`}
         >
           <div className="flex items-center gap-20">
             <div>
@@ -110,7 +123,10 @@ const Navbar = () => {
           /*
           */}
 
-          <div className="grid md:hidden gap-1.5 cursor-pointer">
+          <div
+            onClick={handleShowMobileMenu}
+            className="grid md:hidden gap-1.5 cursor-pointer"
+          >
             <div className="w-[18px] h-[2px] bg-black rounded"></div>
             <div className="w-[30px] h-[1.5px] bg-black rounded"></div>
             <div className="w-[18px] h-[2px] bg-black rounded justify-self-end"></div>
@@ -264,6 +280,17 @@ const Navbar = () => {
       {/* absolute w-[79%] mx-auto md:bottom-[-40px] md:left-[10%] left-[21%]  */}
       <div className="w-10/12 md:block hidden  mx-auto ">
         <MainMenu showMenu={showMenu} />
+      </div>
+
+      {/*
+          /*
+          /*
+          /*NAVBAR FOR DESKTOP DEVICES
+          /*
+          /*
+          */}
+      <div className="w-full absolute top-0 left-0">
+        <MobileMenu user={user} showMenu={showMenu} setShowMenu={setShowMenu} />
       </div>
     </div>
   );

@@ -13,7 +13,7 @@ import ComponentLoading from '../../Components/componentLoading'
 import './CSS/Home.css'
 import LoadingSpinner from '../../Components/LoadingSpinner';
 
-const BestSelling = lazy (() => customDelay(import('./BestSelling')))
+const BestSellingProduct = lazy (() => customDelay(import('./BestSellingProduct')))
 const LatestProduct = lazy (() => customDelay(import('./LatestProduct')))
 const Products = lazy (() => customDelay(import('./AllProducts')))
 const Reviews = lazy (() => customDelay(import('./Reviews')))
@@ -33,7 +33,7 @@ const Home = () => {
           <LatestProduct />
         </Suspense>
         <Suspense fallback={<ComponentLoading />}>
-          <BestSelling />
+          <BestSellingProduct />
         </Suspense>
         <Suspense fallback={<ComponentLoading />}>
           <Products />
@@ -50,7 +50,7 @@ const Home = () => {
     );
 };
 
-const customDelay = (promise) => {
+const customDelay = async (promise) => {
     return new Promise(resolve => {
       setTimeout(resolve, 2000);
     }).then(() => promise);

@@ -3,11 +3,11 @@ import React from "react";
 export default function componentLoading() {
   const skeleton = [1, 2, 3, 4];
   return (
-    <div className="mt-20 w-full mx-auto flex justify-between gap-5">
+    <div className="mt-20 w-full mx-auto flex flex-col md:flex-row justify-between gap-5 gap-y-14 md:gap-y-0">
       {skeleton.map((skele) => (
         <div
           role="status"
-          class="w-[25%] rounded shadow-sm animate-pulse dark:border-gray-700"
+          class="md:w-[25%] rounded shadow-sm animate-pulse dark:border-gray-700"
         >
           <div class="flex items-center justify-center h-48 mb-4 bg-gray-300 rounded dark:bg-gray-700">
             <svg

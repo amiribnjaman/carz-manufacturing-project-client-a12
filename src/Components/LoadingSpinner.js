@@ -5,7 +5,7 @@ const LoadingSpinner = () => {
     return (
       <div className="">
         <div class="flex h-[100vh] w-full text-center items-center justify-center ">
-          <InfinitySpin width="300" color="#014E9C" />
+          <InfinitySpin width="300" className='mx-auto' color="#014E9C" />
         </div>
       </div>
     );
