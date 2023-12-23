@@ -14,7 +14,7 @@ export default function ProductCategory() {
             <div className="bg-[#fafffd] grid grid-cols-2 w-full rounded flex gap-1">
               <div className="col-span-1">
                 <img
-                  className="h-[180px] opacity-90 rounded-tl-lg rounded-bl-lg"
+                  className="h-[140px] opacity-90 rounded-tl-lg rounded-bl-lg"
                   width={500}
                   src={Cat1}
                   alt=""
@@ -35,7 +35,7 @@ export default function ProductCategory() {
             <div className="bg-[#e2effb] grid grid-cols-2 w-full rounded flex gap-1">
               <div className="col-span-1">
                 <img
-                  className="h-[180px] opacity-90 rounded-tl-lg rounded-bl-lg"
+                  className="h-[140px] opacity-90 rounded-tl-lg rounded-bl-lg"
                   width={500}
                   src={Cat2}
                   alt=""
@@ -65,7 +65,7 @@ export default function ProductCategory() {
               </div>
               <div className="col-span-1">
                 <img
-                  className="h-[180px] opacity-90 rounded-tr-lg rounded-br-lg"
+                  className="h-[140px] opacity-90 rounded-tr-lg rounded-br-lg"
                   width={500}
                   src={Cat3}
                   alt=""
@@ -89,7 +89,7 @@ export default function ProductCategory() {
               </div>
               <div className="col-span-1">
                 <img
-                  className="bg-blend-darken h-[180px] opacity-90 rounded-tr-lg rounded-br-lg"
+                  className="bg-blend-darken h-[140px] opacity-90 rounded-tr-lg rounded-br-lg"
                   width={500}
                   src={Cat4}
                   alt=""

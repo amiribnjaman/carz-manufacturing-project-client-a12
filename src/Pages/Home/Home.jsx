@@ -6,12 +6,15 @@ import ContactUs from "./ContactUs";
 import ShortDescription from "./ShortDescription";
 import InfoSection from "./InfoSection";
 import OurTeam from "./OurTeam";
-import ComponentLoading from "../../Components/componentLoading";
+import ComponentLoading from "../../Components/ComponentLoading";
 // import Parts from './Parts';
 // import Reviews from './Reviews';
+import auth from "../../firebase.init";
 
 import "./CSS/Home.css";
 import LoadingSpinner from "../../Components/LoadingSpinner";
+import { useAuthState } from "react-firebase-hooks/auth";
+import MyShopCard from "../../Components/MyShopCard";
 
 const BestSellingProduct = lazy(() =>
   customDelay(import("./BestSellingProduct"))
@@ -22,6 +25,7 @@ const Reviews = lazy(() => import("./Reviews"));
 const ProductCategory = lazy(() => customDelay(import("./ProductCategory")));
 
 const Home = () => {
+  const [user, loading, error] = useAuthState(auth);
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
@@ -36,6 +40,7 @@ const Home = () => {
 
   return (
     <>
+      <MyShopCard />
       <Banner />
       {/* <InfoSection /> */}
       {/* <Parts /> */}

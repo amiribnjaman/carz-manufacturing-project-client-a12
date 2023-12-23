@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function componentLoading() {
+export default function ComponentLoading() {
   const skeleton = [1, 2, 3, 4];
   return (
-    <div className="mt-20 w-full mx-auto flex flex-col md:flex-row justify-between gap-5 gap-y-14 md:gap-y-0">
+    <div className="mt-8 w-full mx-auto flex flex-col md:flex-row justify-between gap-5 gap-y-14 md:gap-y-0">
       {skeleton.map((skele) => (
         <div
           role="status"
