@@ -3,6 +3,9 @@ import { Link, useNavigate, useParams } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import toast from "react-hot-toast";
+import VisaCard from "./../../../src/Assets/Images/cards/visa.png";
+import MasterCard from "./../../../src/Assets/Images/cards/card.png";
+import AmericanExpress from "./../../../src/Assets/Images/cards/american-express.png";
 
 const Purchase = () => {
   const navigate = useNavigate();
@@ -127,9 +130,9 @@ const Purchase = () => {
       </div>
 
       {/*==========PURCHASE BODY============== */}
-      <div className="w-full text-left md:grid grid-cols-4 gap-6 mt-6 px-6">
+      <div className="w-full text-left md:grid grid-cols-9 gap-7 mt-6 px-6">
         {/*==========PURCHASE SIDEBAR============== */}
-        <div className="col-span-1 flex flex-col gap-4">
+        <div className="col-span-2 flex flex-col gap-4">
           <div className="shadow p-4 rounded ">
             <h4 className="text-[15px] font-semibold">
               Customer Order History
@@ -169,9 +172,9 @@ const Purchase = () => {
         </div>
 
         {/*==========PURCHASE CONTENT============== */}
-        <div className="col-span-3 grid grid-cols-3">
+        <div className="col-span-7 grid grid-cols-5 gap-8">
           {/*================PURCHASE PRODUCT TABEL============== */}
-          <div className="col-span-2">
+          <div className="col-span-3">
             <table class="w-full rounded-tl text-sm text-left text-gray-500 dark:text-gray-400">
               <thead class="text-xs text-gray-700  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                 <tr>
@@ -181,7 +184,7 @@ const Purchase = () => {
                   >
                     Product Id
                   </th> */}
-                  <th class="font-medium ">Product</th>
+                  <th class="font-medium pl-1">Product</th>
                   {/* <th class="font-medium px-6 py-4">Order Id</th> */}
                   <th class="font-medium px-6 py-4">Price</th>
                   <th class="font-medium px-6 py-4">Quantity</th>
@@ -214,7 +217,7 @@ const Purchase = () => {
             {/*================PURCHASE CALCULATION============== */}
             <div className="text-right mt-8">
               <div>
-                <h3 className="font-semibold mb-1">Calculation:</h3>
+                <h3 className="font-medium mb-1">Calculation:</h3>
                 <div className="flex justify-end gap-12">
                   <ul>
                     <li className="font-semibold text-[14px]">Subtotal:</li>
@@ -242,6 +245,107 @@ const Purchase = () => {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/*================PURCHASE PAYMENT CARD============== */}
+          <div className="col-span-2 shadow rounded pt-8 pb-6 px-4">
+            <div className="flex justify-between text-left items-center">
+              <h4 className="text-[14px]">Pay by credit/debit card</h4>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1"
+                stroke="currentColor"
+                class="w-5 h-5"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"
+                />
+              </svg>
+            </div>
+
+            <div className="flex justify-between items-center mt-2">
+              <h4 className="text-[14px]">We allowed</h4>
+              <div className="flex gap-0 mx-auto md:mx-0 items-center ">
+                <img
+                  src={VisaCard}
+                  alt=""
+                  className="w-[40px] p-1.5 h-[30px] rounded bg-[#fff]"
+                />
+                <img
+                  src={MasterCard}
+                  alt=""
+                  className="w-[40px] p-1.5 h-[25px] rounded  bg-[#fff]"
+                />
+              </div>
+            </div>
+
+            <form action="" className="mt-4 flex flex-col gap-3">
+              <div>
+                <label htmlFor="card-name" className="text-[14px]">
+                  Name of Card
+                </label>
+                <input
+                  type="text"
+                  id="card-name"
+                  className="w-full border-gray-100"
+                />
+              </div>
+
+              <div>
+                <label htmlFor="card-num" className="text-[14px]">
+                  Card Number
+                </label>
+                <input
+                  type="text"
+                  id="card-num"
+                  className="w-full border-gray-100"
+                />
+              </div>
+
+              <div className="flex gap-2">
+                <div>
+                  <label htmlFor="card-name" className="text-[13px]">
+                    Expiry Date
+                  </label>
+                  <input
+                    type="text"
+                    id="card-name"
+                    placeholder="12"
+                    className="w-full border-gray-100"
+                  />
+                </div>
+                <div>
+                  <label htmlFor=""></label>
+                  <input
+                    type="text"
+                    id="card-name"
+                    placeholder="2024"
+                    className="w-full border-gray-100 mt-6"
+                  />
+                </div>
+                <div>
+                  <label htmlFor="card-name" className="text-[12px]">
+                    Security Code
+                  </label>
+                  <input
+                    type="text"
+                    id="card-name"
+                    placeholder="398"
+                    className="w-full border-gray-100"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <button className="text-center w-full bg-[#014E9C] text-white py-3 mt-3 font-semibold text-[14px]">
+                  Pay now
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>
