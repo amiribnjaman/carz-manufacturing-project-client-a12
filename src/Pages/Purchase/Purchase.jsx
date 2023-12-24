@@ -107,10 +107,10 @@ const Purchase = () => {
   };
 
   return (
-    <div className="w-full mb-20">
+    <div className="w-full mb-16">
       {/*==========PURCHASE MENU============== */}
       <div className="bg-[#014E9C]">
-        <div class="md:flex py-2 pb-4 md:pb-0 justify-between items-center md:mx-auto md:w-[90%] sm:items-center sm:justify-between">
+        <div class="md:flex py-2 pb-4 md:pb-0 justify-between items-center md:mx-auto md:w-full px-8 sm:items-center sm:justify-between">
           <div className="footer-logo py-2 self-start md:mb-0 md:mt-24px mb-2">
             <Link to="/" class="md:flex sm:mb-0">
               <span class="self-center text-white LOGO text-2xl font-semibold whitespace-nowrap dark:text-white">
@@ -130,7 +130,7 @@ const Purchase = () => {
       </div>
 
       {/*==========PURCHASE BODY============== */}
-      <div className="w-full text-left md:grid grid-cols-9 gap-7 mt-6 px-6">
+      <div className="w-full text-left md:grid grid-cols-9 gap-5 mt-10 px-6">
         {/*==========PURCHASE SIDEBAR============== */}
         <div className="col-span-2 flex flex-col gap-4">
           <div className="shadow p-4 rounded ">
@@ -141,7 +141,7 @@ const Purchase = () => {
               <div></div>
               <div>
                 <h5 className="">Returned Cutomer</h5>
-                <ul className="text-[13px] font-semibold gap-1 flex flex-col">
+                <ul className="text-[13px] gap-1 flex flex-col">
                   <li>Orders total: 3462</li>
                   <li>Totally paid: 482914</li>
                   <li>Customer has refunds</li>
@@ -160,7 +160,7 @@ const Purchase = () => {
                 <div></div>
                 <div>
                   <h5 className="">New customer </h5>
-                  <ul className="text-[13px] font-semibold gap-1 flex flex-col">
+                  <ul className="text-[13px] gap-1 flex flex-col">
                     <li>Name: Mr. X</li>
                     <li>Email: example@mail.com</li>
                     <li>Mobile: null</li>
@@ -172,52 +172,53 @@ const Purchase = () => {
         </div>
 
         {/*==========PURCHASE CONTENT============== */}
-        <div className="col-span-7 grid grid-cols-5 gap-8">
+        <div className="col-span-7 grid grid-cols-6 gap-5">
           {/*================PURCHASE PRODUCT TABEL============== */}
-          <div className="col-span-3">
-            <table class="w-full rounded-tl text-sm text-left text-gray-500 dark:text-gray-400">
-              <thead class="text-xs text-gray-700  bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                <tr>
-                  {/* <th
-                    scope="row"
-                    class="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap"
-                  >
-                    Product Id
-                  </th> */}
-                  <th class="font-medium pl-1">Product</th>
-                  {/* <th class="font-medium px-6 py-4">Order Id</th> */}
-                  <th class="font-medium px-6 py-4">Price</th>
-                  <th class="font-medium px-6 py-4">Quantity</th>
-                  <th class="font-medium px-6 py-4">Subtotal</th>
-                </tr>
-              </thead>
-              <tbody>
-                {/* {myOrders.map((order, index) => (
-                <MyOrdersSingleRow
-                  index={index}
-                  key={order._id}
-                  order={order}
-                />
-              ))} */}
-                <tr>
-                  <th
-                    scope="row"
-                    class="px-6 py-4 font-medium dark:text-white whitespace-nowrap"
-                  >
-                    afhej456282
-                  </th>
-                  {/* <th class="font-medium ">Marcediz m12</th> */}
-                  <th class="font-medium px-6 py-4">afhej456282</th>
-                  <th class="font-medium px-6 py-4">1299999999</th>
-                  <th class="font-medium px-6 py-4">1</th>
-                </tr>
-              </tbody>
-            </table>
+          <div className="col-span-4">
+            <div class="relative overflow-x-auto">
+              <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                <thead class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400">
+                  <tr>
+                    <th scope="col" class="px-4 py-3 rounded-s-lg">
+                      Product
+                    </th>
+                    <th scope="col" class="px-4 py-3">
+                      Qty
+                    </th>
+                    <th scope="col" class="px-4 py-3 rounded-e-lg text-right">
+                      Subtotal
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="bg-white dark:bg-gray-800">
+                    <th
+                      scope="row"
+                      class="px-4 flex gap-1 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                    >
+                      <div>
+                        <img
+                          className="w-[80px] h-[50px]"
+                          src={product.image}
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <h4 className="text-blue-600">{product.productName}</h4>
+                        <h6>Code: {product._id}</h6>
+                      </div>
+                    </th>
+                    <td class="px-4 py-4 text-center">1</td>
+                    <td class="px-4 py-4 text-right">{product.price}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
 
             {/*================PURCHASE CALCULATION============== */}
             <div className="text-right mt-8">
               <div>
-                <h3 className="font-medium mb-1">Calculation:</h3>
+                {/* <h3 className="font-medium mb-1">Calculation:</h3> */}
                 <div className="flex justify-end gap-12">
                   <ul>
                     <li className="font-semibold text-[14px]">Subtotal:</li>
@@ -228,10 +229,12 @@ const Purchase = () => {
                     <li className="font-semibold text-[14px]">Taxes: </li>
                   </ul>
                   <ul>
-                    <li className="font-semibold text-[14px]">1299999999</li>
-                    <li className="font-semibold text-[14px]">1000</li>
-                    <li className="font-semibold text-[14px]">1000</li>
-                    <li className="font-semibold text-[14px]">450</li>
+                    <li className="font-semibold text-[14px]">
+                      {product.price}
+                    </li>
+                    <li className="font-semibold text-[14px]">100</li>
+                    <li className="font-semibold text-[14px]">00</li>
+                    <li className="font-semibold text-[14px]">150</li>
                   </ul>
                 </div>
                 {/* Total */}
@@ -240,7 +243,7 @@ const Purchase = () => {
                   <h5 className="text-green-400 font-bold">
                     {" "}
                     <span className="text-black mr-2 text-[11px]">BDT</span>
-                    18393739
+                    {+product.price + 100 + 0 + 150}
                   </h5>
                 </div>
               </div>
@@ -248,7 +251,7 @@ const Purchase = () => {
           </div>
 
           {/*================PURCHASE PAYMENT CARD============== */}
-          <div className="col-span-2 shadow rounded pt-8 pb-6 px-4">
+          <div className="col-span-2 shadow rounded py-6 px-4">
             <div className="flex justify-between text-left items-center">
               <h4 className="text-[14px]">Pay by credit/debit card</h4>
               <svg
@@ -268,7 +271,7 @@ const Purchase = () => {
             </div>
 
             <div className="flex justify-between items-center mt-2">
-              <h4 className="text-[14px]">We allowed</h4>
+              <h4 className="text-[14px]">We accept:</h4>
               <div className="flex gap-0 mx-auto md:mx-0 items-center ">
                 <img
                   src={VisaCard}
@@ -354,100 +357,3 @@ const Purchase = () => {
 };
 
 export default Purchase;
-
-{
-  /* <div className="md:flex">
-  <div className="md:w-1/2">
-    <div class="p-3 mb-4 max-w-md text-left bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 ">
-      <h4 className="font-semibold text-md">Name: {user?.displayName}</h4>
-      <h5 className="font-semibold text-sm">Email: {user?.email}</h5>
-    </div>
-    <div class="p-5 gap-4 max-w-md text-left bg-white rounded-lg border border-gray-200 shadow-md hover:bg-gray-100 ">
-      <div className="flex gap-4">
-        <div>
-          <img width={200} src={product.image} alt="" />
-        </div>
-        <div>
-          <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            {product.productName}
-          </h5>
-          <p>Description: {product.description}</p>
-          <h6 className="text-md">Min Order: {product.minOrder}</h6>
-          <h6 className="text-md">Available Quantity: {product.quantity}</h6>
-
-          <h5 className="font-semibold">price: ${product.price}</h5>
-          <p>Ratings: 5</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div className="md:w-1/2 mt-8 md:mt-0 md:mx-12">
-    <form onSubmit={handleOrderForm} className="border p-3 rounded shadow">
-      <div className="">
-        <div class="relative z-0 w-full mb-6 group">
-          <input
-            type="text"
-            name="pro_name"
-            class="block py-2.5 px-3 w-full text-sm text-gray-900 cursor-not-allowed bg-transparent border-0 border-b border-gray-300 appearance-none "
-            placeholder="Product Name *"
-            required=""
-            value={product.productName}
-            disabled
-          />
-        </div>
-        <div class="relative z-0 w-full mb-6 group">
-          <input
-            type="text"
-            name="pro_price"
-            class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none "
-            value={product.price + " USD"}
-            disabled
-            placeholder="Product Unique code "
-          />
-        </div>
-        <div class="relative z-0 w-full mb-6 group">
-          <input
-            onChange={(e) => handleQuantityOnChange(e.target.value)}
-            type="text"
-            name="pro_quantity"
-            class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none"
-            placeholder="Min Product Order Quantity"
-          />
-          {quantityMsg && quantityMsg}
-        </div>
-        <div class="relative z-0 w-full mb-6 group">
-          <input
-            type="text"
-            name="address"
-            class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none"
-            placeholder="Your Address "
-          />
-        </div>
-        <div class="relative z-0 w-full mb-6 group">
-          <input
-            type="text"
-            name="phone_number"
-            class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none"
-            placeholder="Your Phone Number "
-          />
-        </div>
-      </div>
-      {errMsg && errMsg}
-      <div className="flex gap-4">
-        <button
-          disabled={orderBtnDisable}
-          type="submit"
-          class={`${
-            orderBtnDisable
-              ? "cursor-not-allowed bg-gray-400 hover:bg-gray-400"
-              : "cursor-pointer bg-yellow-400 hover:bg-yellow-500 "
-          } mt-2 text-left text-white  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-6 py-2.5`}
-        >
-          Order Now
-        </button>
-      </div>
-    </form>
-  </div>
-</div>; */
-}
