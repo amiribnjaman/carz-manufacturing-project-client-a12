@@ -67,7 +67,7 @@ export default function ProductCategory() {
                 <img
                   className="h-[140px] opacity-90 rounded-tr-lg rounded-br-lg"
                   width={500}
-                  src={Cat3}
+                  src={Cat4}
                   alt=""
                 />
               </div>
@@ -80,18 +80,17 @@ export default function ProductCategory() {
             <div className="bg-[#fafffd] grid grid-cols-2 w-full rounded flex gap-1">
               <div className="p-4 text-justify text-black font-[500]">
                 <h4 className="text-[14px] hover:underline">
-                  # World famous car
+                  # Car parts
                 </h4>
                 <p className="text-[11px] mt-2 text-black">
-                  If you wish to buy a world famous car, we also can provide it.
-                  We've third party car provide package.
+                  Beside car we manufacturing car's all type of parts. Like tire, stering/wheel, engine, and other body parts.
                 </p>
               </div>
               <div className="col-span-1">
                 <img
                   className="bg-blend-darken h-[140px] opacity-90 rounded-tr-lg rounded-br-lg"
                   width={500}
-                  src={Cat4}
+                  src={Cat3}
                   alt=""
                 />
               </div>

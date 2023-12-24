@@ -6,6 +6,18 @@ import toast from "react-hot-toast";
 import VisaCard from "./../../../src/Assets/Images/cards/visa.png";
 import MasterCard from "./../../../src/Assets/Images/cards/card.png";
 import AmericanExpress from "./../../../src/Assets/Images/cards/american-express.png";
+import {
+  CardElement,
+  Elements,
+  useStripe,
+  useElements,
+} from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import CheckoutForm from "./CheckoutForm";
+
+const stripe = loadStripe(
+  "pk_test_51L3UM8Bz2Bj9ObfRnuJFUOwzC4icUuFiWDpKEni77bzv5tORC2bA4eepjCg0u5xcQskWbvAmzaVkQ13nUb6XeRnP00z0iLMb9t"
+);
 
 const Purchase = () => {
   const navigate = useNavigate();
@@ -19,6 +31,7 @@ const Purchase = () => {
   const [limit, setLimit] = useState(product?.quantity);
   const [orderBtnDisable, setOrderBtnDisable] = useState(true);
   const [paymentBtnDisable, setPaymentBtnDisable] = useState(true);
+  const [clientSecret, setClientSecret] = useState("");
 
   useEffect(() => {
     fetch(
@@ -30,7 +43,14 @@ const Purchase = () => {
         setQuantity(+data.minOrder);
         setLimit(+data.quantity);
       });
-  }, [id, product]);
+  }, []);
+
+    const options = {
+      layout: {
+        type: "tabs",
+        defaultCollapsed: false,
+      },
+    };
 
   const handleQuantityOnChange = (value) => {
     if (value < quantity) {
@@ -105,6 +125,9 @@ const Purchase = () => {
       );
     }
   };
+
+  // Pass the appearance object to the Elements instance
+  // const elements = stripe.elements({ appearance});
 
   return (
     <div className="w-full mb-16">
@@ -199,24 +222,26 @@ const Purchase = () => {
                       <div>
                         <img
                           className="w-[80px] h-[50px]"
-                          src={product.image}
+                          src={product?.image}
                           alt=""
                         />
                       </div>
                       <div>
-                        <h4 className="text-blue-600">{product.productName}</h4>
-                        <h6>Code: {product._id}</h6>
+                        <h4 className="text-blue-600">
+                          {product?.productName}
+                        </h4>
+                        <h6>Code: {product?._id}</h6>
                       </div>
                     </th>
                     <td class="px-4 py-4 text-center">1</td>
-                    <td class="px-4 py-4 text-right">{product.price}</td>
+                    <td class="px-4 py-4 text-right">{product?.price}</td>
                   </tr>
                 </tbody>
               </table>
             </div>
 
             {/*================PURCHASE CALCULATION============== */}
-            <div className="text-right mt-8">
+            <div className="text-right mt-8 pr-4">
               <div>
                 {/* <h3 className="font-medium mb-1">Calculation:</h3> */}
                 <div className="flex justify-end gap-12">
@@ -230,7 +255,7 @@ const Purchase = () => {
                   </ul>
                   <ul>
                     <li className="font-semibold text-[14px]">
-                      {product.price}
+                      {product?.price}
                     </li>
                     <li className="font-semibold text-[14px]">100</li>
                     <li className="font-semibold text-[14px]">00</li>
@@ -241,9 +266,8 @@ const Purchase = () => {
                 <div className="mt-8 flex gap-14 justify-end">
                   <h4 className="text-green-400 font-bold">Total</h4>
                   <h5 className="text-green-400 font-bold">
-                    {" "}
                     <span className="text-black mr-2 text-[11px]">BDT</span>
-                    {+product.price + 100 + 0 + 150}
+                    {+product?.price ? +product?.price + 100 + 0 + 150 : 0}
                   </h5>
                 </div>
               </div>
@@ -286,69 +310,75 @@ const Purchase = () => {
               </div>
             </div>
 
-            <form action="" className="mt-4 flex flex-col gap-3">
-              <div>
-                <label htmlFor="card-name" className="text-[14px]">
-                  Name of Card
-                </label>
-                <input
-                  type="text"
-                  id="card-name"
-                  className="w-full border-gray-100"
-                />
-              </div>
-
-              <div>
-                <label htmlFor="card-num" className="text-[14px]">
-                  Card Number
-                </label>
-                <input
-                  type="text"
-                  id="card-num"
-                  className="w-full border-gray-100"
-                />
-              </div>
-
-              <div className="flex gap-2">
+            {/*==============CHECKOUT FORM============= */}
+            <Elements stripe={stripe} options={options}>
+              {/* <form action="" className="mt-4 flex flex-col gap-3">
                 <div>
-                  <label htmlFor="card-name" className="text-[13px]">
-                    Expiry Date
+                  <label htmlFor="card-name" className="text-[14px]">
+                    Name of Card
                   </label>
                   <input
                     type="text"
                     id="card-name"
-                    placeholder="12"
                     className="w-full border-gray-100"
                   />
                 </div>
+
                 <div>
-                  <label htmlFor=""></label>
-                  <input
-                    type="text"
-                    id="card-name"
-                    placeholder="2024"
-                    className="w-full border-gray-100 mt-6"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="card-name" className="text-[12px]">
-                    Security Code
+                  <label htmlFor="card-num" className="text-[14px]">
+                    Card Number
                   </label>
                   <input
                     type="text"
-                    id="card-name"
-                    placeholder="398"
+                    id="card-num"
                     className="w-full border-gray-100"
                   />
                 </div>
-              </div>
 
-              <div>
-                <button className="text-center w-full bg-[#014E9C] text-white py-3 mt-3 font-semibold text-[14px]">
-                  Pay now
-                </button>
-              </div>
-            </form>
+                <div className="flex gap-2">
+                  <div>
+                    <label htmlFor="card-name" className="text-[13px]">
+                      Expiry Date
+                    </label>
+                    <input
+                      type="text"
+                      id="card-name"
+                      placeholder="12"
+                      className="w-full border-gray-100"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor=""></label>
+                    <input
+                      type="text"
+                      id="card-name"
+                      placeholder="2024"
+                      className="w-full border-gray-100 mt-6"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="card-name" className="text-[12px]">
+                      Security Code
+                    </label>
+                    <input
+                      type="text"
+                      id="card-name"
+                      placeholder="398"
+                      className="w-full border-gray-100"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <button className="text-center w-full bg-[#014E9C] text-white py-3 mt-3 font-semibold text-[14px]">
+                    Pay now
+                  </button>
+                </div>
+              </form> */}
+              <CheckoutForm
+                product={product}
+              />
+            </Elements>
           </div>
         </div>
       </div>
@@ -356,4 +386,4 @@ const Purchase = () => {
   );
 };
 
-export default Purchase;
+export default React.memo(Purchase);

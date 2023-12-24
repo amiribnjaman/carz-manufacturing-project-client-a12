@@ -3,8 +3,8 @@ import React from "react";
 export default function ComponentLoading() {
   const skeleton = [1, 2, 3, 4];
   return (
-    <div className="mt-8 w-full mx-auto flex flex-col md:flex-row justify-between gap-5 gap-y-14 md:gap-y-0">
-      {skeleton.map((skele) => (
+    <div className="mt-4 w-full mx-auto flex flex-col md:flex-row justify-between gap-5 gap-y-14 md:gap-y-0">
+      {skeleton.map(() => (
         <div
           role="status"
           class="md:w-[25%] rounded shadow-sm animate-pulse dark:border-gray-700"
