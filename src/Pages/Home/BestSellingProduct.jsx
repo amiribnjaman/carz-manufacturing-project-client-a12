@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import ComponentLoading from "../../Components/componentLoading";
+import ComponentLoading from "../../Components/ComponentLoading";
 import SectionDivider from "../Shared/SectionDivider";
 
-const BestSellingProduct = ({products}) => {
+const BestSellingProduct = ({ products }) => {
   const navigate = useNavigate();
   const [parts, setParts] = useState([]);
   const [showDetails, setShowDetails] = useState(false);
   const [detailsId, setDetailsId] = useState(0);
-    const [getProductDetails, setGetProductDetails] = useState(null);
-    
+  const [getProductDetails, setGetProductDetails] = useState(null);
 
   // useEffect(() => {
   //   fetch(
@@ -72,7 +71,7 @@ const BestSellingProduct = ({products}) => {
 
         {/*----------------------- BEST SELLING PRODUCT BODY-------------------  */}
         <div className="mb-20 col-span-9 mx-auto grid grid-cols-1 md:grid-cols-4 gap-x-5 gap-y-10">
-          {products.slice(0,4).map((product) => (
+          {products.slice(0, 4).map((product) => (
             <>
               <div className="grid grid-cols-1 gap-1 rounded-tl-md rounded-tr-md rounded-br-sm rounded-bl-sm">
                 <div className="">

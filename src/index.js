@@ -17,6 +17,7 @@ root.render(
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Suspense fallback={<LoadingSpinner />}>
+          
         <App />
         </Suspense>
       </BrowserRouter>

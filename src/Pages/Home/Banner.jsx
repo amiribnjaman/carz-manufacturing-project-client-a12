@@ -8,10 +8,9 @@ import { useState } from "react";
 
 const Banner = () => {
   const [like, setLike] = useState(false);
-  console.log("hello");
   return (
     <div className="bg-gradient-to-r from-[#e2effb] to-[#fafffd]">
-      <div className="md:pt-[90px]">
+      <div className="md:pt-[70px]">
         {/* BANNER SECTION HEADING */}
         <div className="md:w-[80%] mb-4 md:mb-0 mx-auto flex md:flex-row flex-col justify-between px-3">
           <div className="gap-3 mt-4 md:mt-0 items-center md:w-[80%]">
@@ -20,11 +19,16 @@ const Banner = () => {
             </h1>
             <p className="text-[12px] hidden md:block md:text-[14px] w-[60%] text-left">
               We manufacturing automobiles for more than 10+ years with client
-              satisfaction priority. Latest & customizeable design and
-              development team always doing hard work for insure the best
-              product.
+              satisfaction priority. Our team always doing hard work for insure the best
+              product & services.
             </p>
-            <div className="flex items-center gap-4 mt-3">
+          </div>
+
+          <div className="flex flex-col gap-3 h-[35px] mt-2 md:mt-[5px]">
+            <span className="underline hover:text-[#014E9C] hover:decoration-[#014E9C] cursor-pointer text-right">
+              Explore More
+            </span>
+            <div className="flex items-center gap-2 mt-0">
               <div className="flex gap-2 items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -42,6 +46,7 @@ const Banner = () => {
                 </svg>
                 <span className="font-normal">4.9</span>
               </div>
+              <span className="mb-[6px]">.</span>
               <div className="flex gap-1 items-center ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -72,11 +77,12 @@ const Banner = () => {
                     d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
                   />
                 </svg> */}
+
                 <span className="text-[11px] font-semibold">
                   {like ? "271" : "270"} Likes
                 </span>
               </div>
-              <span>.</span>
+              <span className="mb-[6px]">.</span>
               <button className="flex items-center gap-2 ">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -97,12 +103,6 @@ const Banner = () => {
                 </svg>
               </button>
             </div>
-          </div>
-
-          <div className="flex gap-3 h-[35px] mt-2 md:mt-0">
-            <span className="underline hover:text-[#014E9C] hover:decoration-[#014E9C] cursor-pointer">
-              Explore More
-            </span>
           </div>
         </div>
 

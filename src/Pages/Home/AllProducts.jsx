@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import ComponentLoading from "../../Components/componentLoading";
+import ComponentLoading from "../../Components/ComponentLoading";
 
-const AllProducts = ({products}) => {
+const AllProducts = ({ products }) => {
   const navigate = useNavigate();
   // const [parts, setParts] = useState([]);
   const [showDetails, setShowDetails] = useState(false);
