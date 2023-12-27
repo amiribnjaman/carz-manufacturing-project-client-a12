@@ -32,6 +32,7 @@ const Purchase = () => {
   const [orderBtnDisable, setOrderBtnDisable] = useState(true);
   const [paymentBtnDisable, setPaymentBtnDisable] = useState(true);
   const [clientSecret, setClientSecret] = useState("");
+  const total = +product?.price ? +product?.price + 100 + 0 + 150 : 0
 
   useEffect(() => {
     fetch(
@@ -267,7 +268,7 @@ const Purchase = () => {
                   <h4 className="text-green-400 font-bold">Total</h4>
                   <h5 className="text-green-400 font-bold">
                     <span className="text-black mr-2 text-[11px]">BDT</span>
-                    {+product?.price ? +product?.price + 100 + 0 + 150 : 0}
+                    {total}
                   </h5>
                 </div>
               </div>
@@ -376,6 +377,7 @@ const Purchase = () => {
                 </div>
               </form> */}
               <CheckoutForm
+                total={total}
                 product={product}
               />
             </Elements>

@@ -8,45 +8,48 @@ import {
 
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import toast, { Toaster } from "react-hot-toast";
 
-const CheckoutForm = ({ product }) => {
+const CheckoutForm = ({ total, product }) => {
   const stripe = useStripe();
   const elements = useElements();
   const [cardError, setCardError] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
-const [clientSecret, setClientSecret] = useState("");
+  const [clientSecret, setClientSecret] = useState("");
   const [transactionId, setTransactionId] = useState("");
   const [reload, setReload] = useState(false);
   const [user] = useAuthState(auth);
-    const { _id, price } = product;
+  const { _id, price } = product;
 
-    useEffect(() => {
-      console.log(price);
-      if (price) {
-        fetch(
-          "https://carz-manufacturing-project-server-a12.vercel.app/create-payment-intent",
-          {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
-            },
-            body: JSON.stringify({ price }),
+  useEffect(() => {
+    if (price) {
+      fetch(
+        "https://carz-manufacturing-project-server-a12.vercel.app/create-payment-intent",
+        {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+          },
+          body: JSON.stringify({ price }),
+        }
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.clientSecret) {
+            setClientSecret(data.clientSecret);
           }
-        )
-          .then((res) => res.json())
-          .then((data) => {
-            console.log(data);
-            if (data.clientSecret) {
-              setClientSecret(data.clientSecret);
-            }
-          });
-      }
-      console.log(price);
-    }, [price]);
+        });
+    }
+  }, [price]);
 
-  const handleSubmit = async (e) => {
-      e.preventDefault();
+  /**
+   * HANDLE PAYMENT SUBMIT FUNCTION
+   * @param {*} e FOR HANDEL EVENT
+   *
+   */
+  const handlePaymentSubmit = async (e) => {
+    e.preventDefault();
     if (!stripe) {
       return;
     }
@@ -96,11 +99,7 @@ const [clientSecret, setClientSecret] = useState("");
       setTransactionId(paymentIntent.id);
       console.log(paymentIntent.id);
       setReload(!reload);
-      setSuccessMsg(
-        <div className="mt-3 text-green-500 text-left text-sm font-semibold">
-          <p>Your Payment Succeed.</p>
-        </div>
-      );
+      toast.success("Your Payment has Succeed.");
 
       // data
       const data = {
@@ -122,8 +121,8 @@ const [clientSecret, setClientSecret] = useState("");
         }
       );
     }
-    };
-    
+  };
+
   const appearance = {
     theme: "stripe",
     variables: {
@@ -145,19 +144,19 @@ const [clientSecret, setClientSecret] = useState("");
   };
 
   // STRIPE STYLES
-//   const appearance = {
-//     theme: "stripe",
-//     variables: {
-//       colorPrimary: "#0570de",
-//       colorBackground: "#ffffff",
-//       colorText: "#30313d",
-//       colorDanger: "#df1b41",
-//       fontFamily: "Ideal Sans, system-ui, sans-serif",
-//       spacingUnit: "2px",
-//       borderRadius: "4px",
-//       // See all possible variables below
-//     },
-//   };
+  //   const appearance = {
+  //     theme: "stripe",
+  //     variables: {
+  //       colorPrimary: "#0570de",
+  //       colorBackground: "#ffffff",
+  //       colorText: "#30313d",
+  //       colorDanger: "#df1b41",
+  //       fontFamily: "Ideal Sans, system-ui, sans-serif",
+  //       spacingUnit: "2px",
+  //       borderRadius: "4px",
+  //       // See all possible variables below
+  //     },
+  //   };
 
   const options = {
     layout: {
@@ -171,7 +170,7 @@ const [clientSecret, setClientSecret] = useState("");
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handlePaymentSubmit}>
         <div className="my-2">
           <label className="text-sm" htmlFor="phone">
             Your phone number
@@ -194,7 +193,7 @@ const [clientSecret, setClientSecret] = useState("");
         </div>
         <label className="text-sm mt-4">
           Card details
-          <CardElement className="border border-gray-100 p-3" />
+          <CardElement className="border border-gray-100 p-3 " />
         </label>
 
         <button

@@ -97,6 +97,7 @@ function App() {
   return (
     // <OrderContext.provider value={order}>
     <div className="App">
+        <Toaster position="top-center" />
       {path == "/" ? (
         <>
           <TopNav />
