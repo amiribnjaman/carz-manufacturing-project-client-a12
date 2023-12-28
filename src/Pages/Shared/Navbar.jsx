@@ -257,7 +257,7 @@ const Navbar = () => {
                     <li className="bg-[#fafcfb] px-2 py-1 rounded">
                       <CustomLink
                         onClick={() => setShowLogout(!showLogout)}
-                        to="/dashboard/myprofile"
+                        to="/my-shop/myprofile"
                         class="font-semibold block w-full flex justify-between items-center py-2 pr-4 pl-3 text-white bg-blue-700 rounded md:bg-transparent md:text-black md:p-0 dark:text-white"
                         aria-current="page"
                       >
