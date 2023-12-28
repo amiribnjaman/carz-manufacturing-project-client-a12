@@ -10,6 +10,7 @@ const Banner = () => {
   const [like, setLike] = useState(false);
   return (
     <div className="bg-gradient-to-r from-[#e2effb] to-[#fafffd]">
+      
       <div className="md:pt-[70px]">
         {/* BANNER SECTION HEADING */}
         <div className="md:w-[80%] mb-4 md:mb-0 mx-auto flex md:flex-row flex-col justify-between px-3">
@@ -19,8 +20,8 @@ const Banner = () => {
             </h1>
             <p className="text-[12px] hidden md:block md:text-[14px] w-[60%] text-left">
               We manufacturing automobiles for more than 10+ years with client
-              satisfaction priority. Our team always doing hard work for insure the best
-              product & services.
+              satisfaction priority. Our team always doing hard work for insure
+              the best product & services.
             </p>
           </div>
 
