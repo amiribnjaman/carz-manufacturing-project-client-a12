@@ -93,7 +93,14 @@ function App() {
   //   setMyOrders
   // }
 
-  const userRoute = ['/phachase']
+  const purchasePath = path.includes("/purchase");
+  const userRoute = [
+    "/my-shop",
+    "/my-shop/manage-products",
+    "/my-shop/addproduct",
+    "/my-shop/makeadmin",
+    "/my-shop/myprofile",
+  ];
 
   return (
     // <OrderContext.provider value={order}>
@@ -105,7 +112,7 @@ function App() {
           <Navbar />
           {showSecondaryNav && <SecondaryMenu />}
         </>
-      ) : path.includes("/purchase") ? (
+      ) : purchasePath || userRoute.includes(path) ? (
         ""
       ) : (
         <SecondaryMenu />
@@ -136,7 +143,7 @@ function App() {
           <Route path="manageorder" element={<ManageAllOrders />} />
           <Route path="addproduct" element={<AddProduct />} />
           <Route path="makeadmin" element={<MakeAdmin />} />
-          <Route path="manageproducts" element={<ManageProducts />} />
+          <Route path="manage-products" element={<ManageProducts />} />
         </Route>
         <Route
           path="/purchase/:id"
