@@ -79,56 +79,8 @@ const Purchase = () => {
     }
   };
 
-  const handleOrderForm = (e) => {
-    e.preventDefault();
-    const orderProduct = product.productName;
-    const price = product.price;
-    const orderQuantity = newQuantity;
-    const address = e.target.address.value;
-    const phone_number = e.target.phone_number.value;
 
-    const data = {
-      email: user?.email,
-      productId: id,
-      productName: orderProduct,
-      price,
-      quantity: orderQuantity,
-      address,
-      phoneNumber: phone_number,
-      payment_status: false,
-    };
-    if (orderProduct && price && orderQuantity && address && phone_number) {
-      setErrMsg("");
-      fetch("https://carz-manufacturing-project-server-a12.vercel.app/order", {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(data),
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          e.target.reset();
-          if (data?.insertedId) {
-            toast.success("Ordered Successfully!");
-            setPaymentBtnDisable(false);
-            setQuantity();
-          } else {
-            setPaymentBtnDisable(true);
-            toast.error("Something wrong. Please try again.");
-          }
-        });
-    } else {
-      setErrMsg(
-        <p className="text-red-800 font-semibold text-sm text-left my-1 ml-2">
-          Please provide all valid information to Order.
-        </p>
-      );
-    }
-  };
-
-  // Pass the appearance object to the Elements instance
-  // const elements = stripe.elements({ appearance});
+  
 
   return (
     <div className="w-full mb-16">

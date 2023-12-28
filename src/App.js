@@ -29,6 +29,7 @@ import SecondaryMenu from "./Pages/Shared/SecondaryMenu.jsx";
 import { useMemo } from "react";
 import MyShopCard from "./Components/MyShopCard.jsx";
 import LoadingSpinner from "./Components/LoadingSpinner.js";
+import PaymentMessage from "./Pages/Message/PaymentMessage.jsx";
 // const OrderContext = createContext([])
 
 function App() {
@@ -97,7 +98,7 @@ function App() {
   return (
     // <OrderContext.provider value={order}>
     <div className="App">
-        <Toaster position="top-center" />
+      <Toaster position="top-center" />
       {path == "/" ? (
         <>
           <TopNav />
@@ -142,6 +143,14 @@ function App() {
           element={
             <ProtectedRoute>
               <Purchase />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/purchase/message"
+          element={
+            <ProtectedRoute>
+              <PaymentMessage />
             </ProtectedRoute>
           }
         />

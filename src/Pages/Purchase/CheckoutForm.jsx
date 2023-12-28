@@ -9,6 +9,7 @@ import {
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import toast, { Toaster } from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 
 const CheckoutForm = ({ total, product }) => {
   const stripe = useStripe();
@@ -20,6 +21,7 @@ const CheckoutForm = ({ total, product }) => {
   const [reload, setReload] = useState(false);
   const [user] = useAuthState(auth);
   const { _id, price } = product;
+  const navigate = useNavigate()
 
   useEffect(() => {
     if (price) {
@@ -95,11 +97,10 @@ const CheckoutForm = ({ total, product }) => {
       );
     } else {
       setCardError("");
-      console.log(paymentIntent);
       setTransactionId(paymentIntent.id);
-      console.log(paymentIntent.id);
       setReload(!reload);
       toast.success("Your Payment has Succeed.");
+      navigate('/purchase/message')
 
       // data
       const data = {
@@ -123,50 +124,7 @@ const CheckoutForm = ({ total, product }) => {
     }
   };
 
-  const appearance = {
-    theme: "stripe",
-    variables: {
-      borderRadius: "6px",
-      // colorDanger: 'purple',
-    },
-    rules: {
-      ".Input": {
-        boxShadow: "inset 0 0 0 1px rgb(209, 213, 219)",
-        border: "none",
-        outline: "none",
-        padding: "0.75em 1em",
-        color: "#444",
-      },
-      ".Input:focus": {
-        boxShadow: "inset 0 0 0 2px #2563eb",
-      },
-    },
-  };
 
-  // STRIPE STYLES
-  //   const appearance = {
-  //     theme: "stripe",
-  //     variables: {
-  //       colorPrimary: "#0570de",
-  //       colorBackground: "#ffffff",
-  //       colorText: "#30313d",
-  //       colorDanger: "#df1b41",
-  //       fontFamily: "Ideal Sans, system-ui, sans-serif",
-  //       spacingUnit: "2px",
-  //       borderRadius: "4px",
-  //       // See all possible variables below
-  //     },
-  //   };
-
-  const options = {
-    layout: {
-      type: "tabs",
-      defaultCollapsed: false,
-    },
-  };
-  // const { elements: element } = stripe.elements({ appearance });
-  // const paymentElement = element.create("payment", options);
-  // paymentElement.mount("#payment-element");
 
   return (
     <>
