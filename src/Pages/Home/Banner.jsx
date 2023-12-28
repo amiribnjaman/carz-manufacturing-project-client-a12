@@ -10,6 +10,7 @@ const Banner = () => {
   const [like, setLike] = useState(false);
   return (
     <div className="bg-gradient-to-r from-[#e2effb] to-[#fafffd]">
+      
       <div className="md:pt-[70px]">
         {/* BANNER SECTION HEADING */}
         <div className="md:w-[80%] mb-4 md:mb-0 mx-auto flex md:flex-row flex-col justify-between px-3">
@@ -19,16 +20,16 @@ const Banner = () => {
             </h1>
             <p className="text-[12px] hidden md:block md:text-[14px] w-[60%] text-left">
               We manufacturing automobiles for more than 10+ years with client
-              satisfaction priority. Our team always doing hard work for insure the best
-              product & services.
+              satisfaction priority. Our team always doing hard work for insure
+              the best product & services.
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 h-[35px] mt-2 md:mt-[5px]">
-            <span className="underline hover:text-[#014E9C] hover:decoration-[#014E9C] cursor-pointer text-right">
+          <div className="flex md:flex-col gap-3 h-[35px] md:mb-0 mb-4 mt-2 md:mt-[5px]">
+            <span className="underline hover:text-[#014E9C] hover:decoration-[#014E9C] cursor-pointer text-left md:text-right">
               Explore More
             </span>
-            <div className="flex items-center gap-2 mt-0">
+            <div className="flex items-center gap-1 md:gap-2 mt-0">
               <div className="flex gap-2 items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

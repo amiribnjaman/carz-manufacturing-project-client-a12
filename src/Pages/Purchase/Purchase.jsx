@@ -95,7 +95,7 @@ const Purchase = () => {
             </Link>
           </div>
 
-          <div className="flex gap-1 md:gap-3 items-center">
+          <div className="flex gap-1 md:gap-3 justify-center items-center">
             <ul className="text-white flex gap-8 text-sm">
               <li>Wishlist</li>
               <li>Cart</li>
@@ -108,7 +108,7 @@ const Purchase = () => {
       {/*==========PURCHASE BODY============== */}
       <div className="w-full text-left md:grid grid-cols-9 gap-5 mt-10 px-6">
         {/*==========PURCHASE SIDEBAR============== */}
-        <div className="col-span-2 flex flex-col gap-4">
+        <div className="col-span-2 hidden md:flex flex-col gap-4">
           <div className="shadow p-4 rounded ">
             <h4 className="text-[15px] font-semibold">
               Customer Order History
@@ -148,7 +148,7 @@ const Purchase = () => {
         </div>
 
         {/*==========PURCHASE CONTENT============== */}
-        <div className="col-span-7 grid grid-cols-6 gap-5">
+        <div className="col-span-7 md:grid grid-cols-6 gap-5">
           {/*================PURCHASE PRODUCT TABEL============== */}
           <div className="col-span-4">
             <div class="relative overflow-x-auto">
@@ -228,7 +228,7 @@ const Purchase = () => {
           </div>
 
           {/*================PURCHASE PAYMENT CARD============== */}
-          <div className="col-span-2 shadow rounded py-6 px-4">
+          <div className="col-span-2 shadow rounded py-6 px-4 mt-12 md:mt-0">
             <div className="flex justify-between text-left items-center">
               <h4 className="text-[14px]">Pay by credit/debit card</h4>
               <svg

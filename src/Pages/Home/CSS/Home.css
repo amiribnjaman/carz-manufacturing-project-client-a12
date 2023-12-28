@@ -1,3 +1,41 @@
+/* .wrapper{
+    position: relative;
+}
+
+.base {
+    position: absolute;
+    filter: blur(60px);
+    opacity: 0.8;
+}
+
+.one {
+    border-radius: 100%;
+     width: 600px;
+    height: 600px; 
+    background-color: #373372;
+    left: -50px;
+    top: -300px;
+    z-index: 3;
+}
+
+.two {
+     width: 500px;
+    height: 800px; 
+    background-color: #7C336C;
+    bottom: -30px;
+    left: -80px;
+}
+
+.three {
+    border-radius: 100%;
+    width: 450px;
+    height: 450px;
+    bottom: -80px;
+    right: -100px;
+    background-color: #B3588A;
+} */
+
+
 .banner-section {
     /* background: #343C97; */
     /* background: #03a89d; */
