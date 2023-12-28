@@ -29,6 +29,7 @@ import SecondaryMenu from "./Pages/Shared/SecondaryMenu.jsx";
 import { useMemo } from "react";
 import MyShopCard from "./Components/MyShopCard.jsx";
 import LoadingSpinner from "./Components/LoadingSpinner.js";
+import PaymentMessage from "./Pages/Message/PaymentMessage.jsx";
 // const OrderContext = createContext([])
 
 function App() {
@@ -92,19 +93,26 @@ function App() {
   //   setMyOrders
   // }
 
-  const userRoute = ['/phachase']
+  const purchasePath = path.includes("/purchase");
+  const userRoute = [
+    "/my-shop",
+    "/my-shop/manage-products",
+    "/my-shop/addproduct",
+    "/my-shop/makeadmin",
+    "/my-shop/myprofile",
+  ];
 
   return (
     // <OrderContext.provider value={order}>
     <div className="App">
-        <Toaster position="top-center" />
+      <Toaster position="top-center" />
       {path == "/" ? (
         <>
           <TopNav />
           <Navbar />
           {showSecondaryNav && <SecondaryMenu />}
         </>
-      ) : path.includes("/purchase") ? (
+      ) : purchasePath || userRoute.includes(path) ? (
         ""
       ) : (
         <SecondaryMenu />
@@ -135,13 +143,21 @@ function App() {
           <Route path="manageorder" element={<ManageAllOrders />} />
           <Route path="addproduct" element={<AddProduct />} />
           <Route path="makeadmin" element={<MakeAdmin />} />
-          <Route path="manageproducts" element={<ManageProducts />} />
+          <Route path="manage-products" element={<ManageProducts />} />
         </Route>
         <Route
           path="/purchase/:id"
           element={
             <ProtectedRoute>
               <Purchase />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/purchase/message"
+          element={
+            <ProtectedRoute>
+              <PaymentMessage />
             </ProtectedRoute>
           }
         />

@@ -59,52 +59,91 @@ const AddProduct = () => {
 
 
     return (
-        <div className='w-full border flex justify-between h-[460px] text-left'>
-            <div className='w-full p-4 overflow-y-auto'>
-                <h2 className='text-xl font-semibold mb-2'>Add A Product</h2>
+      <div className="w-full border flex justify-between h-[460px] text-left">
+        <div className="w-full p-4 overflow-y-auto mt-6">
+          <h2 className="text-xl font-semibold mb-2">Add A Product</h2>
 
-                {customError && customError}
+          {customError && customError}
 
-                <form onSubmit={handleAddProductForm}>
-                    <div className=''>
-                        <div className='flex gap-8'>
-                            <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="pro_name" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Product Name *" required="" />
-                            </div>
-                            <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="pro_code" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Product Unique code " />
-                            </div>
-                        </div>
-                        <div className='flex gap-8'>
-                            <div class="relative z-0 w-full mb-6 group">
-                                <input type="number" name="pro_quantity" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Product total quantity *" />
-                            </div>
-                            <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="pro_price" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Per unit price *" />
-                            </div>
-                            <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="pro_min_order" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Minimum Order *" />
-                            </div>
-                        </div>
+          <form onSubmit={handleAddProductForm}>
+            <div className="">
+              <div className="flex gap-8">
+                <div class="relative z-0 w-full mb-6 group">
+                  <input
+                    type="text"
+                    name="pro_name"
+                    class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none "
+                    placeholder="Product Name *"
+                    required=""
+                  />
+                </div>
+                <div class="relative z-0 w-full mb-6 group">
+                  <input
+                    type="text"
+                    name="pro_code"
+                    class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none "
+                    placeholder="Product Unique code "
+                  />
+                </div>
+              </div>
+              <div className="flex gap-8">
+                <div class="relative z-0 w-full mb-6 group">
+                  <input
+                    type="number"
+                    name="pro_quantity"
+                    class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none "
+                    placeholder="Product total quantity *"
+                  />
+                </div>
+                <div class="relative z-0 w-full mb-6 group">
+                  <input
+                    type="text"
+                    name="pro_price"
+                    class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none "
+                    placeholder="Per unit price *"
+                  />
+                </div>
+                <div class="relative z-0 w-full mb-6 group">
+                  <input
+                    type="text"
+                    name="pro_min_order"
+                    class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none "
+                    placeholder="Minimum Order *"
+                  />
+                </div>
+              </div>
 
-                        <div className='flex gap-8'>
-                            <div class="relative z-0 w-full mb-6 group">
-                                <input type="text" name="pro_image" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Product Image URL *" />
-                            </div>
-                        </div>
+              <div className="flex gap-8">
+                <div class="relative z-0 w-full mb-6 group">
+                  <input
+                    type="text"
+                    name="pro_image"
+                    class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none "
+                    placeholder="Product Image URL *"
+                  />
+                </div>
+              </div>
 
-                        <div>
-                            <div class="relative z-0 w-full mb-6 group">
-                                <textarea rows='3' name="pro_desc" class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none " placeholder="Description *" ></textarea>
-                            </div>
-                        </div>
-
-                    </div>
-                    <button type="submit" class="mt-4 text-white bg-[#06998f] hover:bg-[#06998f] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-6 py-2.5 text-center ">Add Product</button>
-                </form>
-
-            </div >
-        </div >
+              <div>
+                <div class="relative z-0 w-full mb-6 group">
+                  <textarea
+                    rows="3"
+                    name="pro_desc"
+                    class="block py-2.5 px-3 w-full text-sm text-gray-900 bg-transparent border-0 border-b border-gray-300 appearance-none "
+                    placeholder="Description *"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="mt-4 text-white bg-[#014E9C] hover:bg-[#186bbf] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-6 py-2.5 text-center "
+            >
+              Add Product
+            </button>
+          </form>
+        </div>
+      </div>
     );
 };
 
