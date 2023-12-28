@@ -25,11 +25,11 @@ const Banner = () => {
             </p>
           </div>
 
-          <div className="flex flex-col gap-3 h-[35px] mt-2 md:mt-[5px]">
-            <span className="underline hover:text-[#014E9C] hover:decoration-[#014E9C] cursor-pointer text-right">
+          <div className="flex md:flex-col gap-3 h-[35px] md:mb-0 mb-4 mt-2 md:mt-[5px]">
+            <span className="underline hover:text-[#014E9C] hover:decoration-[#014E9C] cursor-pointer text-left md:text-right">
               Explore More
             </span>
-            <div className="flex items-center gap-2 mt-0">
+            <div className="flex items-center gap-1 md:gap-2 mt-0">
               <div className="flex gap-2 items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
