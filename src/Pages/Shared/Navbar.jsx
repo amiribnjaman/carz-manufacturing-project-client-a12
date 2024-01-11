@@ -144,8 +144,8 @@ const Navbar = () => {
             <div className="hidden md:flex mr-20 -mt-[10px] gap-5 text-[13px] items-center"></div>
             <ul class="hidden items-center md:flex mt-3 flex-col md:flex-row md:space-x-5 md:mt-0 md:text-sm md:font-medium">
               <li className="ml-[22px]">
-                <a
-                  href="#"
+                <Link
+                  to="/wishlist"
                   class="flex gap-1 text-[12px] py-2 pr-1 pl-3 text-gray-700 border-b border-gray-100 hover:bg-gray-50 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
                 >
                   <svg
@@ -164,7 +164,7 @@ const Navbar = () => {
                     />
                   </svg>
                   <span className="text-[11px] mt-1.5">Wishlist </span>
-                </a>
+                </Link>
               </li>
               <li className="ml-[22px] flex gap-1">
                 <a

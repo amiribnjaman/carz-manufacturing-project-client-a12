@@ -30,6 +30,7 @@ import { useMemo } from "react";
 import MyShopCard from "./Components/MyShopCard.jsx";
 import LoadingSpinner from "./Components/LoadingSpinner.js";
 import PaymentMessage from "./Pages/Message/PaymentMessage.jsx";
+import Wishlist from "./Pages/Wishlist/Wishlist";
 // const OrderContext = createContext([])
 
 function App() {
@@ -123,6 +124,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/blogs" element={<Blogs />} />
+        <Route path="/wishlist" element={<Wishlist />} />
         {/* <Route path='/myportfolio' element={<MyPortfolio />} /> */}
         <Route
           path="/my-shop"
