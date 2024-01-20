@@ -132,13 +132,13 @@ const Navbar = () => {
             <div className="w-[18px] h-[2px] bg-black rounded justify-self-end"></div>
           </div>
 
-          {/*
-          /*
-          /*
-          /*NAVBAR FOR DESKTOP DEVICES
-          /*
-          /*
-          */}
+          {/**
+           **
+           **=========================
+           **NAVBAR FOR DESKTOP VERSION
+           **===================
+           **
+           **/}
           <div class="hidden md:flex items-center md:order-2 relative">
             {/* Navbar mid section */}
             <div className="hidden md:flex mr-20 -mt-[10px] gap-5 text-[13px] items-center"></div>
@@ -347,25 +347,25 @@ const Navbar = () => {
         </div>
       </nav>
 
-      {/*
-          /*
-          /*
-          /*NAVBAR MAIN MENU
-          /*
-          /*
-          */}
+      {/**
+       **
+       **=========================
+       **NAVBAR MAIN MENU LIST
+       **===================
+       **
+       **/}
       {/* absolute w-[79%] mx-auto md:bottom-[-40px] md:left-[10%] left-[21%]  */}
       <div className="w-10/12 md:block hidden  mx-auto ">
         <MainMenu showMenu={showMenu} />
       </div>
 
-      {/*
-          /*
-          /*
-          /*NAVBAR FOR MOBILE DEVICE
-          /*
-          /*
-          */}
+      {/**
+       **
+       **=========================
+       **NAVBAR FOR MOBILE VERSION
+       **===================
+       **
+       **/}
       <div className="w-full absolute top-0 left-0">
         <MobileMenu user={user} showMenu={showMenu} setShowMenu={setShowMenu} />
       </div>

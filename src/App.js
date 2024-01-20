@@ -35,7 +35,12 @@ import Wishlist from "./Pages/Wishlist/Wishlist";
 
 function App() {
   const [myOrders, setMyOrders] = useState([]);
-  // This operation for getting the user role and then set the dashboar default component.
+
+  /**
+   **
+   **This operation for getting the user role and then set the dashboar default component.
+   **
+   **/
   const [user, setUser] = useState("");
   const [loginUser, ,] = useAuthState(auth);
   const location = useLocation();

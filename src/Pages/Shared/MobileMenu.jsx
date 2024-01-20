@@ -1,33 +1,31 @@
 import React, { useRef } from "react";
 import CustomLink from "../../Components/CustomLink";
+import "./CSS/Navbar.css";
+
 
 export default function MobileMenu({ user, showMenu, setShowMenu }) {
-  {
-    /*
-          /*
-          /*
-          /*HIDE NAVBAR WHEN LIST ITEM CLICK EVENT OCCURED
-          /*
-          /*
-          */
-  }
+  /**
+   **
+   **HIDE NAVBAR WHEN LIST ITEM CLICK EVENT OCCURED
+   **
+   */
   const handleListClick = () => {
     setShowMenu(!showMenu);
   };
 
   return (
-    <div className={`${showMenu ? "block" : "hidden"} w-full relative`}>
+    <div className={`mobile-menu ${showMenu ? "block" : "hidden"} w-full fixed z-[100]`}>
       <div
         onClick={() => setShowMenu(!showMenu)}
-        className="absolute top-4 right-6 bg-[#eee] p-1"
+        className="absolute top-8 right-7 bg-[#eee] p-1 rounded-full"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
-          stroke-width="1.5"
+          stroke-width="1"
           stroke="currentColor"
-          class="w-9 h-9"
+          class="w-9 h-9 p-1"
         >
           <path
             stroke-linecap="round"
