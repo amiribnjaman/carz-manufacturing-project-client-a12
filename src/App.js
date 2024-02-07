@@ -31,6 +31,7 @@ import MyShopCard from "./Components/MyShopCard.jsx";
 import LoadingSpinner from "./Components/LoadingSpinner.js";
 import PaymentMessage from "./Pages/Message/PaymentMessage.jsx";
 import Wishlist from "./Pages/Wishlist/Wishlist";
+import Cart from "./Pages/Cart/Cart";
 // const OrderContext = createContext([])
 
 function App() {
@@ -130,6 +131,7 @@ function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/blogs" element={<Blogs />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/cart" element={<Cart />} />
         {/* <Route path='/myportfolio' element={<MyPortfolio />} /> */}
         <Route
           path="/my-shop"
