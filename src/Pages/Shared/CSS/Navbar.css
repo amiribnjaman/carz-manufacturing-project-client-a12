@@ -36,3 +36,13 @@
         border-bottom: 6px solid #e8eeee;
 
 }
+
+
+/**
+**
+**MOBILE MENU STYLES
+**
+**/
+.mobile-menu{
+    background: linear-gradient(to top, #e4f0fa, #fafffd);
+}

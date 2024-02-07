@@ -9,13 +9,13 @@ const CustomLink = ({ children, to, ...props }) => {
     <div>
       <Link
         style={{
-          color: match ? "#014E9C" : "",
-          // background: match && '#f4faff',
-          // padding: match && '8px 20px',
           fontWeight: match ? "bold" : " ",
         }}
         to={to}
         {...props}
+        className={`${
+          match ? "text-[#ffa500] md:text-[#014E9C] text-[20px] md:text-[16px]" : "text-[#fff] md:text-[#000]"
+        } py-1 inline-block`}
       >
         {children}
       </Link>

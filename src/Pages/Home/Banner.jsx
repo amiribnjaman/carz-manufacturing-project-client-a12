@@ -10,7 +10,6 @@ const Banner = () => {
   const [like, setLike] = useState(false);
   return (
     <div className="bg-gradient-to-r from-[#e2effb] to-[#fafffd]">
-      
       <div className="md:pt-[70px]">
         {/* BANNER SECTION HEADING */}
         <div className="md:w-[80%] mb-4 md:mb-0 mx-auto flex md:flex-row flex-col justify-between px-3">
@@ -25,7 +24,7 @@ const Banner = () => {
             </p>
           </div>
 
-          <div className="flex md:flex-col gap-3 h-[35px] md:mb-0 mb-4 mt-2 md:mt-[5px]">
+          <div className="flex items-center md:items-end md:flex-col gap-3 h-[35px] md:mb-0 mb-4 mt-2 md:mt-[5px]">
             <span className="underline hover:text-[#014E9C] hover:decoration-[#014E9C] cursor-pointer text-left md:text-right">
               Explore More
             </span>
@@ -107,8 +106,8 @@ const Banner = () => {
           </div>
         </div>
 
-        {/* BANNER SECTION BODY */}
-        <div className="md:mt-5 md:pb-20">
+        {/*===============BANNER SECTION BODY DESKTOP VERSION==============*/}
+        <div className="md:mt-5 md:pb-20 hidden md:block">
           <div className="w-full grid grid-cols-4 grid-rows-1 gap-3">
             <div className="col-span-2 row-span-1">
               <div className="row-span-1">
@@ -148,6 +147,21 @@ const Banner = () => {
                 <img
                   className="cursor-pointer hover:opacity-80 h-[186px] w-full "
                   src={Img5}
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/*===============BANNER SECTION BODY (MOBILE VERSION)==============*/}
+        <div className="md:mt-5 md:pb-20 block md:hidden">
+          <div className="w-full gap-3">
+            <div className="col-span-2 row-span-1">
+              <div className="row-span-1">
+                <img
+                  className="cursor-pointer hover:opacity-90 h-[390px] w-full"
+                  src={Img1}
                   alt=""
                 />
               </div>
