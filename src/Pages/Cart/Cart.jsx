@@ -7,7 +7,7 @@ export default function Cart() {
         {/* CART HEADING*/}
         <div className="flex justify-between">
           <h3 className="text-2xl font-semibold">My Cart</h3>
-          <h4 className="text-xl">Items</h4>
+          <h4 className="text-xl"><span className="">1</span> Items</h4>
         </div>
 
         {/* CART */}
