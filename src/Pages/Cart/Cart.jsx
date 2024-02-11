@@ -23,10 +23,14 @@ export default function Cart() {
             <h2 className="text-2xl font-semibold">this is items Title</h2>
             <p>Details</p>
             <h4 className="text-xl font-semibold">280</h4>
-            <div className="flex mt-2 border border-2 border-gray-200 justify-between items-center w-1/3 py-[2px] px-2 rounded-md">
-              <span className="text-xl cursor-pointer">+</span>
+            <div className="flex mt-2 border border-2 border-gray-200 justify-between items-center w-1/3 p-[2px] rounded-md">
+              <span className="text-xl cursor-pointer hover:bg-gray-200 px-2 rounded">
+                +
+              </span>
               <span className="text-xl ">1</span>
-              <span className="text-xl cursor-pointer">-</span>
+              <span className="text-xl cursor-pointer hover:bg-gray-200 px-2 rounded">
+                -
+              </span>
             </div>
           </div>
           <div className="w-1/4 text-right flex flex-col justify-between">
